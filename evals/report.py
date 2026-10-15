@@ -37,6 +37,25 @@ def _pick(
 
 def conclusion(ext: dict, cat: dict, ag: dict) -> str:
     parts = []
+    llms = sorted({k for k in (*ext, *cat, *ag) if _is_llm(k)})
+    if len(llms) == 1:
+        m = llms[0]
+        bits = []
+        if m in ext:
+            e = ext[m]
+            bits.append(
+                f"extraction F1 {e['f1']} on {e['documents']} statements "
+                f"(US$ {e['cost_per_statement_usd']}/statement, p95 {e['latency_p95_ms']} ms)"
+            )
+        if m in cat:
+            bits.append(f"categorization accuracy {cat[m]['without_memory']['accuracy']}")
+        if m in ag:
+            bits.append(f"agent pass rate {ag[m]['pass_rate']} on {ag[m]['cases']} cases")
+        return (
+            f"Only one LLM has been evaluated so far: `{m}` — {'; '.join(bits)}. "
+            "No model choice can be made from a single data point; the multi-model comparison is pending "
+            "(run `uv run python -m evals.run --suite all` with keys for other providers)."
+        )
     if ext:
         pick = _pick(ext, "f1", "cost_per_statement_usd")
         if pick:
@@ -106,9 +125,21 @@ def build_latest(results_dir: Path) -> Path:
     rows = []
     for m in models:
         e, c, a = ext.get(m, {}), cat.get(m, {}), ag.get(m, {})
+        eval_set = " / ".join(
+            x
+            for x in (
+                f"{e['documents']} PDFs" if e else "",
+                f"{a['cases']} cases" if a else "",
+                f"{len(c.get('without_memory', {}).get('per_category', {}))} categories"
+                if c
+                else "",
+            )
+            if x
+        )
         rows.append(
             [
                 m,
+                eval_set,
                 e.get("f1"),
                 e.get("cost_per_statement_usd"),
                 e.get("latency_p95_ms"),
@@ -120,7 +151,17 @@ def build_latest(results_dir: Path) -> Path:
         )
     for label, b in base.items():
         rows.append(
-            [f"{label} (no LLM)", b["f1"], 0.0, b["latency_p95_ms"], None, None, None, None]
+            [
+                f"{label} (no LLM)",
+                f"{b['documents']} PDFs",
+                b["f1"],
+                0.0,
+                b["latency_p95_ms"],
+                None,
+                None,
+                None,
+                None,
+            ]
         )
 
     lines = ["# Eval results (latest)", ""]
@@ -144,6 +185,7 @@ def build_latest(results_dir: Path) -> Path:
         md_table(
             [
                 "model",
+                "eval set",
                 "extraction F1",
                 "cost / statement (USD)",
                 "extraction p95 (ms)",

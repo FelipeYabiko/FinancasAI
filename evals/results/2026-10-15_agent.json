@@ -1,8 +1,8 @@
 {
  "meta": {
   "suite": "agent",
-  "timestamp": "2026-10-15T14:00:51+00:00",
-  "git_sha": "9674aa6",
+  "timestamp": "2026-10-15T15:19:05+00:00",
+  "git_sha": "b55936d",
   "prompt_versions": {
    "extraction": "v1",
    "categorization": "v1",
@@ -10,504 +10,136 @@
    "insights": "v1",
    "ping": "v1"
   },
-  "subset": null,
+  "subset": "ci",
   "limit": null
  },
  "results": {
-  "fake:fake": {
-   "cases": 31,
-   "pass_rate": 0.0,
-   "tool_accuracy": 0.3913,
-   "args_accuracy": 0.0,
-   "state_accuracy": 0.0,
-   "answer_accuracy": 0.0,
-   "ask_when_ambiguous": 0.0,
+  "groq:openai/gpt-oss-20b": {
+   "cases": 6,
+   "pass_rate": 1.0,
+   "tool_accuracy": 1.0,
+   "args_accuracy": 1.0,
+   "state_accuracy": 1.0,
+   "answer_accuracy": 1.0,
+   "ask_when_ambiguous": 1.0,
    "confirmation_before_write": 1.0,
-   "avg_steps": 2.0,
-   "cost_per_case_usd": 0.0,
-   "latency_p50_ms": 2,
-   "latency_p95_ms": 2,
+   "avg_steps": 1.83,
+   "cost_per_case_usd": 0.000271,
+   "latency_p50_ms": 804,
+   "latency_p95_ms": 1094,
    "per_case": [
     {
      "id": "expense_yesterday_card",
      "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
+     "cost_usd": 0.000298,
+     "latency_ms": 804,
      "no_write_before_confirm": true,
      "proposed": [
       "create_transaction"
      ],
-     "reply": "Preparei: Despesa de R$ 45,00 — “Mercado” em 15/10/2026, conta Nubank, categoria Sem categoria. Confirme abaixo.",
+     "reply": "**Despesa de R$ 45,00 — “Mercado” em 14/10/2026, conta Nubank, categoria Mercado**  \nClique no botão “Confirmar” para registrar.",
+     "error": null,
      "checks": {
       "tool": true,
-      "args": false,
-      "state": false,
-      "confirmation": true
+      "args": true,
+      "state": true,
+      "confirmation": true,
+      "turn_completed": true
      },
-     "passed": false
+     "passed": true
     },
     {
      "id": "delivery_this_month",
      "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
+     "cost_usd": 0.000286,
+     "latency_ms": 1094,
      "no_write_before_confirm": true,
      "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
+     "reply": "Você gastou **R$ 123,40** com delivery em outubro de 2026.",
+     "error": null,
      "checks": {
       "tool": true,
-      "answer": false,
-      "confirmation": true
+      "answer": true,
+      "confirmation": true,
+      "turn_completed": true
      },
-     "passed": false
+     "passed": true
     },
     {
      "id": "tv_installments",
      "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
+     "cost_usd": 0.000312,
+     "latency_ms": 930,
      "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
+     "proposed": [
+      "create_installment_purchase"
+     ],
+     "reply": "**Compra parcelada “TV”**: R$ 3.000,00 em 10x de R$ 300,00 na conta Nubank, a partir de 15/10/2026.  \nClique no botão “Confirmar” para registrar.",
+     "error": null,
      "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
+      "tool": true,
+      "args": true,
+      "state": true,
+      "confirmation": true,
+      "turn_completed": true
      },
-     "passed": false
+     "passed": true
     },
     {
      "id": "freelance_income",
      "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
+     "cost_usd": 0.000292,
+     "latency_ms": 593,
      "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
+     "proposed": [
+      "create_transaction"
+     ],
+     "reply": "Receita de R$ 2.500,00 — “Freela” em 15/10/2026, conta Conta Corrente, categoria Freelance.  \nClique no botão para confirmar.",
+     "error": null,
      "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
+      "tool": true,
+      "args": true,
+      "state": true,
+      "confirmation": true,
+      "turn_completed": true
      },
-     "passed": false
+     "passed": true
     },
     {
      "id": "uber_today_card",
      "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
+     "cost_usd": 0.000297,
+     "latency_ms": 619,
      "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
+     "proposed": [
+      "create_transaction"
+     ],
+     "reply": "**Despesa de R$ 32,90 — “Uber” em 15/10/2026, conta Nubank, categoria Transporte**  \nClique no botão para confirmar.",
+     "error": null,
      "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
+      "tool": true,
+      "args": true,
+      "state": true,
+      "confirmation": true,
+      "turn_completed": true
      },
-     "passed": false
+     "passed": true
     },
     {
      "id": "ambiguous_account",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
+     "iterations": 1,
+     "cost_usd": 0.000139,
+     "latency_ms": 534,
      "no_write_before_confirm": true,
      "proposed": [],
-     "reply": "(modo demonstração) conta não informada e há mais de uma conta. Pergunte ao usuário qual conta usar.",
+     "reply": "Qual conta devo usar para registrar a compra de R$ 50,00 na farmácia?",
+     "error": null,
      "checks": {
-      "ask": false,
-      "confirmation": true
+      "ask": true,
+      "confirmation": true,
+      "turn_completed": true
      },
-     "passed": false
-    },
-    {
-     "id": "pay_invoice_transfer",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "set_budget_market",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "create_goal",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "update_goal_add",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "delete_cinema",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "balance_checking",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "answer": false,
-      "no_write": true,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "spent_september",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": true,
-      "answer": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "biggest_expenses_month",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": true,
-      "answer": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "missing_amount",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "ask": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "ambiguous_delete",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "ask": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "phone_installments_yesterday",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "cash_lunch",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "budget_remaining",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": true,
-      "answer": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "change_budget",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "salary_checking",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "transport_two_months",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": true,
-      "answer": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "two_expenses",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [
-      "create_transaction"
-     ],
-     "reply": "Preparei: Despesa de R$ 120,00 — “Mercado” em 15/10/2026, conta Nubank, categoria Sem categoria. Confirme abaixo.",
-     "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "unknown_account",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "ask": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "biggest_september",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": true,
-      "answer": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "goal_status_from_context",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "answer": false,
-      "no_write": true,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "vague_delete_all",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "ask": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "ifood_today",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [
-      "create_transaction"
-     ],
-     "reply": "Preparei: Despesa de R$ 25,50 — “Ifood” em 15/10/2026, conta Nubank, categoria Sem categoria. Confirme abaixo.",
-     "checks": {
-      "tool": true,
-      "args": false,
-      "state": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "budget_missing_category",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "ask": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "flight_installments_date",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": false,
-      "args": false,
-      "state": false,
-      "confirmation": true
-     },
-     "passed": false
-    },
-    {
-     "id": "netflix_how_much",
-     "iterations": 2,
-     "cost_usd": 0.0,
-     "latency_ms": 2,
-     "no_write_before_confirm": true,
-     "proposed": [],
-     "reply": "(modo demonstração, sem IA) Em 2026-10: receitas R$ 7.200,00, despesas R$ 679,30.",
-     "checks": {
-      "tool": true,
-      "answer": false,
-      "confirmation": true
-     },
-     "passed": false
+     "passed": true
     }
    ]
   }

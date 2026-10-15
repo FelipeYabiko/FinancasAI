@@ -1,20 +1,21 @@
 # Eval results (latest)
 
-- **extraction**: 2026-10-15T14:00:50+00:00 · commit `9674aa6` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1
+- **extraction**: 2026-10-15T15:16:58+00:00 · commit `b55936d` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1 · subset ci
 - **categorization**: 2026-10-15T14:00:50+00:00 · commit `9674aa6` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1
-- **agent**: 2026-10-15T14:00:51+00:00 · commit `9674aa6` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1
-- **baseline**: 2026-10-15T14:00:55+00:00 · commit `9674aa6` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1
+- **agent**: 2026-10-15T15:19:05+00:00 · commit `b55936d` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1 · subset ci
+- **baseline**: 2026-10-15T16:40:01+00:00 · commit `b55936d` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1 · subset ci
 
 ## Comparison
 
-| model | extraction F1 | cost / statement (USD) | extraction p95 (ms) | categ. acc | categ. acc + memory | agent pass rate | cost / agent case (USD) |
-|---|---|---|---|---|---|---|---|
-| fake:fake | 0.8551 | 0.0000 | 5 | 0.6138 | 0.6759 | 0.0000 | 0.0000 |
-| regex-baseline (no LLM) | 0.8551 | 0.0000 | 154 | — | — | — | — |
+| model | eval set | extraction F1 | cost / statement (USD) | extraction p95 (ms) | categ. acc | categ. acc + memory | agent pass rate | cost / agent case (USD) |
+|---|---|---|---|---|---|---|---|---|
+| groq:openai/gpt-oss-20b | 4 PDFs / 6 cases | 0.9249 | 0.0007 | 22839 | — | — | 1.00 | 0.0003 |
+| fake:fake | 19 categories | — | — | — | 0.6138 | 0.6759 | — | — |
+| regex-baseline (no LLM) | 4 PDFs | 0.8667 | 0.0000 | 90 | — | — | — | — |
 
 ## Conclusion
 
-_No real LLM has been evaluated yet in this results folder (only the offline baseline/fake provider). Configure API keys in `.env` and run `uv run python -m evals.run --suite all` to fill the comparison; this paragraph is generated from the measured numbers._
+Only one LLM has been evaluated so far: `groq:openai/gpt-oss-20b` — extraction F1 0.9249 on 4 statements (US$ 0.000708/statement, p95 22839 ms); agent pass rate 1.0 on 6 cases. No model choice can be made from a single data point; the multi-model comparison is pending (run `uv run python -m evals.run --suite all` with keys for other providers).
 
 > `fake:fake` is the offline stand-in provider (regex parser for extraction, keyword rules for categorization, a rule-based toy for the agent). It is **not an LLM**; it shows the deterministic floor and proves the harness runs end to end without API keys.
 
@@ -24,19 +25,19 @@ _No real LLM has been evaluated yet in this results folder (only the offline bas
 
 | model | f1 | precision | recall | acc_date | acc_amount | acc_description | acc_type | parse_failure_rate | cost_per_statement_usd | latency_p50_ms | latency_p95_ms |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| fake:fake | 0.8551 | 1.00 | 0.7469 | 1.00 | 0.7315 | 0.9598 | 0.7443 | 0.0000 | 0.0000 | 3 | 5 |
+| groq:openai/gpt-oss-20b | 0.9249 | 1.00 | 0.8603 | 1.00 | 0.7094 | 1.00 | 1.00 | 0.0000 | 0.0007 | 4279 | 22839 |
 
 F1 by layout:
 
 | model | aurora | ipe | lume | mare |
 |---|---|---|---|---|
-| fake:fake | 1.00 | 1.00 | 0.0000 | 1.00 |
+| groq:openai/gpt-oss-20b | 1.00 | 0.9512 | 0.6938 | 1.00 |
 
 ### Baseline (regex parser, no LLM)
 
 | model | f1 | precision | recall | acc_date | acc_amount | acc_description | acc_type | parse_failure_rate | cost_per_statement_usd | latency_p50_ms | latency_p95_ms |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| regex-baseline | 0.8551 | 1.00 | 0.7469 | 1.00 | 0.7315 | 0.9598 | 0.7443 | 0.0000 | 0.0000 | 62 | 154 |
+| regex-baseline | 0.8667 | 1.00 | 0.7647 | 1.00 | 0.7692 | 0.9712 | 0.7692 | 0.0000 | 0.0000 | 63 | 90 |
 
 F1 by layout:
 
@@ -78,7 +79,7 @@ Per-category accuracy (no memory):
 
 | model | pass_rate | tool_accuracy | args_accuracy | state_accuracy | answer_accuracy | ask_when_ambiguous | confirmation_before_write | avg_steps | cost_per_case_usd | latency_p95_ms |
 |---|---|---|---|---|---|---|---|---|---|---|
-| fake:fake | 0.0000 | 0.3913 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 1.00 | 2.00 | 0.0000 | 2 |
+| groq:openai/gpt-oss-20b | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.83 | 0.0003 | 1094 |
 
 ## Methodology
 

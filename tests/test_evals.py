@@ -184,3 +184,19 @@ def test_agent_case_fails_when_turn_errors(cases):
     assert r["checks"]["turn_completed"] is False
     assert not r["passed"]
     assert "400" in r["error"]
+
+
+def test_report_with_single_llm_does_not_pick_a_winner():
+    from evals.report import conclusion
+
+    ext = {
+        "groq:x": {
+            "f1": 0.9,
+            "documents": 4,
+            "cost_per_statement_usd": 0.001,
+            "latency_p95_ms": 100,
+        }
+    }
+    text = conclusion(ext, {}, {"groq:x": {"pass_rate": 1.0, "cases": 6}})
+    assert "Only one LLM" in text
+    assert "best" not in text

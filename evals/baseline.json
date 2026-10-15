@@ -12,6 +12,19 @@
    "cost_per_statement_usd": 0.0,
    "latency_p50_ms": 3,
    "latency_p95_ms": 5
+  },
+  "groq:openai/gpt-oss-20b": {
+   "f1": 0.9249,
+   "precision": 1.0,
+   "recall": 0.8603,
+   "acc_date": 1.0,
+   "acc_amount": 0.7094,
+   "acc_description": 1.0,
+   "acc_type": 1.0,
+   "parse_failure_rate": 0.0,
+   "cost_per_statement_usd": 0.000708,
+   "latency_p50_ms": 4279,
+   "latency_p95_ms": 22839
   }
  },
  "categorization": {
@@ -33,6 +46,18 @@
    "avg_steps": 2.0,
    "cost_per_case_usd": 0.0,
    "latency_p95_ms": 2
+  },
+  "groq:openai/gpt-oss-20b": {
+   "pass_rate": 1.0,
+   "tool_accuracy": 1.0,
+   "args_accuracy": 1.0,
+   "state_accuracy": 1.0,
+   "answer_accuracy": 1.0,
+   "ask_when_ambiguous": 1.0,
+   "confirmation_before_write": 1.0,
+   "avg_steps": 1.83,
+   "cost_per_case_usd": 0.000271,
+   "latency_p95_ms": 1094
   }
  },
  "baseline": {

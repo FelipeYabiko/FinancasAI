@@ -58,30 +58,53 @@ flowchart LR
 
 ## Evaluation
 
-> **Status:** the eval harness, datasets and CI wiring are done and tested. **The multi-model comparison has
-> not been run yet**: this build environment had no provider API keys, and no numbers here were invented. The
-> table below is the current `evals/results/latest.md`: the deterministic regex baseline and the offline
-> `fake` provider. To fill in the LLM rows, run:
->
-> ```bash
-> # .env: GROQ_API_KEY=… GEMINI_API_KEY=… OPENROUTER_API_KEY=…
-> uv run python -m evals.run --suite all --skip-unavailable --update-baseline
-> ```
->
-> `latest.md` (comparison table + "which model for which feature" paragraph) is regenerated from the
-> measured numbers.
+> **Status:** one real model measured so far, `groq:openai/gpt-oss-20b`, on the CI subset (4 statements, one
+> per layout, plus 6 agent cases). It runs in GitHub Actions on every push. The full 40-statement run and the
+> multi-model comparison (Gemini, OpenRouter) are still pending. Every number below comes from
+> `evals/results/`; none is hand-written.
 
-### Current results
+### Current results (CI subset)
 
-| model | extraction F1 | cost / statement | categorization acc. | categ. acc. + memory | agent pass rate |
-|---|---|---|---|---|---|
-| regex baseline (no LLM) | 0.855 | $0 | — | — | — |
-| `fake:fake` (offline stand-in, not an LLM) | 0.855 | $0 | 0.614 | 0.676 | 0.00 |
+| model | eval set | extraction F1 | precision / recall | amount acc. | cost / statement | p95 / statement | agent pass rate | cost / agent case |
+|---|---|---|---|---|---|---|---|---|
+| `groq:openai/gpt-oss-20b` | 4 PDFs · 6 cases | **0.925** | 1.00 / 0.86 | 0.71 | US$ 0.0007 | 22.8 s | **6/6** | US$ 0.0003 |
+| regex baseline (no LLM) | same 4 PDFs | 0.867 | 1.00 / 0.76 | 0.77 | $0 | 0.1 s | — | — |
 
-The regex baseline scores **F1 1.00 on the layout it was written for, F1 1.00 on a second similar layout,
-F1 0.00 on the credit-card invoice** (dates like `12 MAR`, no year) and **gets the sign wrong on 81% of
-the layout with separate "Entradas/Saídas" columns** (amount accuracy 0.19). It shows why a hand-written
-parser per bank doesn't scale, and it sets the bar the LLM has to beat on accuracy *and* justify on cost.
+Per layout (F1):
+
+| | aurora (checking, signed column) | ipe (checking, `150,00-`, 2-line descriptions) | lume (card invoice, `12 MAR`, installments) | maré (checking, in/out columns) |
+|---|---|---|---|---|
+| `gpt-oss-20b` | 1.00 | 0.95 | 0.69 | 1.00 |
+| regex baseline | 1.00 | 1.00 | 0.00 | 1.00 |
+
+What the numbers say:
+
+- **The LLM reads layouts the regex can't:** the card invoice goes from F1 0.00 to 0.69. On the in/out-column
+  layout the regex finds every row but gets the sign wrong on 81% of them (full 40-PDF set); the LLM got every
+  sign right on that layout's subset statement.
+- **Its weak spot is the trailing minus sign:** on the `150,00-` layout only 13% of the amounts came out with
+  the right sign (amount accuracy 0.13), even though 91% of the rows were found. This is the first target
+  for `extraction.v2`.
+- **Invoice recall is the other gap:** 0.53 on the card invoice (precision 1.00: what it extracts is right,
+  but it misses rows).
+- **Runs vary:** the run before this one (no change to the extraction code) scored F1 0.958; this one 0.925. Single runs on 4
+  documents are noisy, which is why the full 40-statement set matters.
+- **Agent:** right tool, arguments and final state in every write case; it asked "qual conta?" in the
+  ambiguous case; nothing was written before confirmation; the spending answer (R$ 123,40) came from
+  `get_summary`.
+- **Getting there took four fixes**, all found by the evals and now covered by tests: echoing
+  output-only fields (`reasoning`) back to the API, Groq's 8k tokens/min free-tier limit (now honoring
+  `retry-after`), JSON-mode `json_validate_failed` errors, and empty answers from the reasoning model
+  (`reasoning_effort=low`).
+
+On the full 40-statement set the regex baseline scores F1 0.855 (1.00 / 1.00 / 0.00 / 1.00 by layout).
+
+To reproduce or extend:
+
+```bash
+# .env: GROQ_API_KEY=… GEMINI_API_KEY=… OPENROUTER_API_KEY=…
+uv run python -m evals.run --suite all --skip-unavailable --update-baseline   # full sets, every configured model
+```
 
 ### Methodology
 
@@ -99,7 +122,7 @@ when a `GROQ_API_KEY` secret is configured.
 
 **Prompt versions.** Every `LLMCall` stores its prompt version (`extraction.v1`, `assistant.v1`…). A prompt
 change means a new `vN.md` file, `--prompt-version vN` eval runs, and only then a new default. All prompts
-are still at **v1**; v1 → v2 comparisons will be recorded here once real-model runs exist.
+are still at **v1**; the first v1 → v2 comparison will be `extraction.v2` (trailing-minus signs).
 
 ## Engineering decisions
 
@@ -180,9 +203,9 @@ uv run python -m evals.run --suite extraction --models groq:openai/gpt-oss-20b,g
 
 ## Known limitations and next steps
 
-- **Real-model eval numbers are pending** (see Evaluation). Next: run the 6-model line-up in
-  `evals/config.yaml`, pick per-feature defaults from the data, then iterate prompts as `v2` with
-  before/after numbers.
+- **Only one model measured, on a 4-statement subset** (see Evaluation). Next: run the full 40-statement set
+  and the 6-model line-up in `evals/config.yaml`, pick per-feature defaults from the data, then write
+  `extraction.v2` for the trailing-minus sign errors and compare before/after.
 - No OCR: scanned PDFs are rejected with a clear message (out of scope).
 - The synthetic layouts are clean PDFs; real bank statements are messier. `evals/private/` exists so real
   statements with hand-made ground truth can be scored locally without being committed.

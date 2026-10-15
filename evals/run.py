@@ -133,6 +133,9 @@ def main(argv=None) -> int:
     )
     models = [ModelSpec.parse(n) for n in names]
     avail = available_providers()
+    suites = SUITES if args.suite == "all" else args.suite.split(",")
+    if set(suites) == {"baseline"}:
+        models = []  # the regex baseline calls no LLM, so no key is needed
     missing = [m for m in models if not avail.get(m.provider)]
     if missing:
         msg = "no API key for: " + ", ".join(m.label for m in missing)
@@ -144,7 +147,6 @@ def main(argv=None) -> int:
                 f"error: {msg}. Set the keys in .env or pass --skip-unavailable.", file=sys.stderr
             )
             return 2
-    suites = SUITES if args.suite == "all" else args.suite.split(",")
     flags = []
     for suite in suites:
         if suite != "baseline" and not models:

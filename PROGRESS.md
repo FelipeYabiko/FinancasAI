@@ -11,7 +11,7 @@ To resume in a new session: read this file, then continue with the first phase n
 | 3 — LLM providers, prompts, tracing, diagnostics | ✅ done |
 | 4 — PDF import pipeline + review screen | ✅ done |
 | 5 — Assistant with function calling | ✅ done |
-| 6 — Synthetic generator, eval suites, report | 🟡 harness done — real 3-model run needs API keys |
+| 6 — Synthetic generator, eval suites, report | 🟡 1 real model measured (Groq, CI subset); 3-model comparison pending |
 | 7 — Insights | ✅ done |
 | 8 — Docker | ✅ done |
 | 9 — MCP server | ✅ done |
@@ -162,3 +162,14 @@ To resume in a new session: read this file, then continue with the first phase n
 2. Choose per-feature defaults from the results; iterate prompts as `v2` with eval deltas in the README.
 3. Add `GROQ_API_KEY` as a GitHub Actions secret to enable the LLM eval smoke job.
 4. Alembic migrations before the schema evolves under real data.
+
+## First real-model results (Groq `gpt-oss-20b`, CI subset)
+- `GROQ_API_KEY` lives in the GitHub environment `GROQ_API_KEY`; the `evals-llm-smoke` job declares it and
+  uploads `evals/results/` as an artifact.
+- Four issues found only with the real API, all fixed and tested: output-only fields (`reasoning`) echoed back,
+  8k tokens/min free tier (retry-after honored, `EXTRACTION_CONCURRENCY=1` in CI), JSON-mode
+  `json_validate_failed` → corrective retry, empty answers from the reasoning model → `reasoning_effort=low`.
+- Results (4 statements / 6 agent cases): extraction F1 0.925 (previous run 0.958) vs regex 0.867 on the same
+  statements; agent 6/6. Weak spots: trailing-minus signs (`150,00-`, amount accuracy 0.13) and card-invoice
+  recall (0.53). Committed in `evals/results/` and `evals/baseline.json`.
+- Next: full 40-statement run, Gemini/OpenRouter keys for the comparison, `extraction.v2` for signs.

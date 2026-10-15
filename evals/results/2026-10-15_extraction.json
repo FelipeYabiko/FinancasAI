@@ -1,8 +1,8 @@
 {
  "meta": {
   "suite": "extraction",
-  "timestamp": "2026-10-15T14:00:50+00:00",
-  "git_sha": "9674aa6",
+  "timestamp": "2026-10-15T15:16:58+00:00",
+  "git_sha": "b55936d",
   "prompt_versions": {
    "extraction": "v1",
    "categorization": "v1",
@@ -10,25 +10,25 @@
    "insights": "v1",
    "ping": "v1"
   },
-  "subset": null,
+  "subset": "ci",
   "limit": null
  },
  "results": {
-  "fake:fake": {
-   "documents": 40,
+  "groq:openai/gpt-oss-20b": {
+   "documents": 4,
    "documents_failed": 0,
    "precision": 1.0,
-   "recall": 0.7469,
-   "f1": 0.8551,
+   "recall": 0.8603,
+   "f1": 0.9249,
    "acc_date": 1.0,
-   "acc_amount": 0.7315,
-   "acc_description": 0.9598,
-   "acc_type": 0.7443,
-   "acc_installment": null,
+   "acc_amount": 0.7094,
+   "acc_description": 1.0,
+   "acc_type": 1.0,
+   "acc_installment": 1.0,
    "parse_failure_rate": 0.0,
-   "cost_per_statement_usd": 0.0,
-   "latency_p50_ms": 3,
-   "latency_p95_ms": 5,
+   "cost_per_statement_usd": 0.000708,
+   "latency_p50_ms": 4279,
+   "latency_p95_ms": 22839,
    "validation_retries": 0,
    "per_layout": {
     "aurora": {
@@ -38,22 +38,22 @@
      "acc_amount": 1.0
     },
     "ipe": {
-     "f1": 1.0,
+     "f1": 0.9512,
      "precision": 1.0,
-     "recall": 1.0,
-     "acc_amount": 1.0
+     "recall": 0.907,
+     "acc_amount": 0.1282
     },
     "lume": {
-     "f1": 0.0,
-     "precision": null,
-     "recall": 0.0,
-     "acc_amount": null
+     "f1": 0.6938,
+     "precision": 1.0,
+     "recall": 0.5312,
+     "acc_amount": 1.0
     },
     "mare": {
      "f1": 1.0,
      "precision": 1.0,
      "recall": 1.0,
-     "acc_amount": 0.1878
+     "acc_amount": 1.0
     }
    },
    "per_document": [
@@ -72,510 +72,51 @@
      "installments": 0,
      "chunks": 2,
      "failed_chunks": 0,
-     "latency_ms": 18,
+     "latency_ms": 2965,
      "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "aurora_004",
-     "layout": "aurora",
-     "tp": 27,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 27,
-      "amount": 27,
-      "type": 27,
-      "description": 27
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 3,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "aurora_008",
-     "layout": "aurora",
-     "tp": 52,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 52,
-      "amount": 52,
-      "type": 52,
-      "description": 52
-     },
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 4,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "aurora_012",
-     "layout": "aurora",
-     "tp": 36,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 36,
-      "amount": 36,
-      "type": 36,
-      "description": 36
-     },
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 3,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "aurora_016",
-     "layout": "aurora",
-     "tp": 40,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 40,
-      "amount": 40,
-      "type": 40,
-      "description": 40
-     },
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 4,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "aurora_020",
-     "layout": "aurora",
-     "tp": 16,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 16,
-      "amount": 16,
-      "type": 16,
-      "description": 16
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 2,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "aurora_024",
-     "layout": "aurora",
-     "tp": 25,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 25,
-      "amount": 25,
-      "type": 25,
-      "description": 25
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 3,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "aurora_028",
-     "layout": "aurora",
-     "tp": 55,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 55,
-      "amount": 55,
-      "type": 55,
-      "description": 55
-     },
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 4,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "aurora_032",
-     "layout": "aurora",
-     "tp": 40,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 40,
-      "amount": 40,
-      "type": 40,
-      "description": 40
-     },
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 4,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "aurora_036",
-     "layout": "aurora",
-     "tp": 59,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 59,
-      "amount": 59,
-      "type": 59,
-      "description": 59
-     },
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 4,
-     "validation_retries": 0,
-     "cost_usd": 0.0
+     "warnings": [],
+     "cost_usd": 0.000761
     },
     {
      "id": "ipe_001",
      "layout": "ipe",
-     "tp": 43,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 43,
-      "amount": 43,
-      "type": 43,
-      "description": 40
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 3,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "ipe_005",
-     "layout": "ipe",
-     "tp": 45,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 45,
-      "amount": 45,
-      "type": 45,
-      "description": 38
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 3,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "ipe_009",
-     "layout": "ipe",
      "tp": 39,
      "fp": 0,
-     "fn": 0,
+     "fn": 4,
      "fields": {
       "date": 39,
-      "amount": 39,
+      "amount": 5,
       "type": 39,
-      "description": 34
+      "description": 39
      },
      "installments": 0,
      "chunks": 1,
      "failed_chunks": 0,
-     "latency_ms": 3,
+     "latency_ms": 4279,
      "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "ipe_013",
-     "layout": "ipe",
-     "tp": 38,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 38,
-      "amount": 38,
-      "type": 38,
-      "description": 34
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 4,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "ipe_017",
-     "layout": "ipe",
-     "tp": 22,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 22,
-      "amount": 22,
-      "type": 22,
-      "description": 19
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 2,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "ipe_021",
-     "layout": "ipe",
-     "tp": 48,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 48,
-      "amount": 48,
-      "type": 48,
-      "description": 43
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 3,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "ipe_025",
-     "layout": "ipe",
-     "tp": 40,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 40,
-      "amount": 40,
-      "type": 40,
-      "description": 34
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 2,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "ipe_029",
-     "layout": "ipe",
-     "tp": 39,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 39,
-      "amount": 39,
-      "type": 39,
-      "description": 32
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 2,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "ipe_033",
-     "layout": "ipe",
-     "tp": 20,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 20,
-      "amount": 20,
-      "type": 20,
-      "description": 18
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 2,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "ipe_037",
-     "layout": "ipe",
-     "tp": 17,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 17,
-      "amount": 17,
-      "type": 17,
-      "description": 15
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 3,
-     "validation_retries": 0,
-     "cost_usd": 0.0
+     "warnings": [],
+     "cost_usd": 0.000749
     },
     {
      "id": "lume_002",
      "layout": "lume",
-     "tp": 0,
+     "tp": 17,
      "fp": 0,
-     "fn": 32,
-     "fields": {},
-     "installments": 0,
+     "fn": 15,
+     "fields": {
+      "date": 17,
+      "amount": 17,
+      "type": 17,
+      "description": 17,
+      "installment": 3
+     },
+     "installments": 3,
      "chunks": 1,
      "failed_chunks": 0,
-     "latency_ms": 3,
+     "latency_ms": 22839,
      "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "lume_006",
-     "layout": "lume",
-     "tp": 0,
-     "fp": 0,
-     "fn": 56,
-     "fields": {},
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 5,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "lume_010",
-     "layout": "lume",
-     "tp": 0,
-     "fp": 0,
-     "fn": 17,
-     "fields": {},
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 2,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "lume_014",
-     "layout": "lume",
-     "tp": 0,
-     "fp": 0,
-     "fn": 52,
-     "fields": {},
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 3,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "lume_018",
-     "layout": "lume",
-     "tp": 0,
-     "fp": 0,
-     "fn": 16,
-     "fields": {},
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 2,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "lume_022",
-     "layout": "lume",
-     "tp": 0,
-     "fp": 0,
-     "fn": 46,
-     "fields": {},
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 3,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "lume_026",
-     "layout": "lume",
-     "tp": 0,
-     "fp": 0,
-     "fn": 32,
-     "fields": {},
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 2,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "lume_030",
-     "layout": "lume",
-     "tp": 0,
-     "fp": 0,
-     "fn": 24,
-     "fields": {},
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 2,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "lume_034",
-     "layout": "lume",
-     "tp": 0,
-     "fp": 0,
-     "fn": 55,
-     "fields": {},
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 5,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "lume_038",
-     "layout": "lume",
-     "tp": 0,
-     "fp": 0,
-     "fn": 41,
-     "fields": {},
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 2,
-     "validation_retries": 0,
-     "cost_usd": 0.0
+     "warnings": [],
+     "cost_usd": 0.000728
     },
     {
      "id": "mare_003",
@@ -585,187 +126,17 @@
      "fn": 0,
      "fields": {
       "date": 29,
-      "amount": 5,
-      "type": 5,
+      "amount": 29,
+      "type": 29,
       "description": 29
      },
      "installments": 0,
      "chunks": 1,
      "failed_chunks": 0,
-     "latency_ms": 2,
+     "latency_ms": 16235,
      "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "mare_007",
-     "layout": "mare",
-     "tp": 29,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 29,
-      "amount": 8,
-      "type": 10,
-      "description": 29
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 3,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "mare_011",
-     "layout": "mare",
-     "tp": 22,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 22,
-      "amount": 5,
-      "type": 7,
-      "description": 22
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 2,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "mare_015",
-     "layout": "mare",
-     "tp": 50,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 50,
-      "amount": 8,
-      "type": 11,
-      "description": 50
-     },
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 5,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "mare_019",
-     "layout": "mare",
-     "tp": 56,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 56,
-      "amount": 10,
-      "type": 10,
-      "description": 56
-     },
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 4,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "mare_023",
-     "layout": "mare",
-     "tp": 39,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 39,
-      "amount": 6,
-      "type": 6,
-      "description": 39
-     },
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 5,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "mare_027",
-     "layout": "mare",
-     "tp": 33,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 33,
-      "amount": 6,
-      "type": 9,
-      "description": 33
-     },
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 7,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "mare_031",
-     "layout": "mare",
-     "tp": 34,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 34,
-      "amount": 10,
-      "type": 11,
-      "description": 34
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 3,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "mare_035",
-     "layout": "mare",
-     "tp": 29,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 29,
-      "amount": 4,
-      "type": 5,
-      "description": 29
-     },
-     "installments": 0,
-     "chunks": 1,
-     "failed_chunks": 0,
-     "latency_ms": 2,
-     "validation_retries": 0,
-     "cost_usd": 0.0
-    },
-    {
-     "id": "mare_039",
-     "layout": "mare",
-     "tp": 41,
-     "fp": 0,
-     "fn": 0,
-     "fields": {
-      "date": 41,
-      "amount": 6,
-      "type": 8,
-      "description": 41
-     },
-     "installments": 0,
-     "chunks": 2,
-     "failed_chunks": 0,
-     "latency_ms": 4,
-     "validation_retries": 0,
-     "cost_usd": 0.0
+     "warnings": [],
+     "cost_usd": 0.000592
     }
    ]
   }
