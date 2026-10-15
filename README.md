@@ -87,7 +87,8 @@ flowchart LR
 ## Evaluation
 
 > **Status:** one real model measured so far, `groq:openai/gpt-oss-20b`, on the CI subset (4 statements, one
-> per layout, plus 6 agent cases). It runs in GitHub Actions on every push. The full 40-statement run and the
+> per layout, plus 6 agent cases), re-run by GitHub Actions on `main`. The full 40-statement run doesn't fit
+> Groq's free-tier daily token quota (a first attempt ran out of quota after ~30 statements), so it and the
 > multi-model comparison (Gemini, OpenRouter) are still pending. Every number below comes from
 > `evals/results/`; none is hand-written.
 
@@ -145,8 +146,9 @@ uv run python -m evals.run --suite all --skip-unavailable --update-baseline   # 
 
 **Regression.** `evals/baseline.json` holds the headline metrics of the current version. The runner flags
 accuracy drops > 3 points and cost/latency increases > 50% (`--fail-on-regression` fails the run).
-CI runs the unit tests always, the whole eval harness offline on every push, and a small real-LLM subset
-when a `GROQ_API_KEY` secret is configured.
+CI runs the unit tests and the whole eval harness offline on every push, and a small real-LLM subset on
+`main` when a `GROQ_API_KEY` secret is configured. Documents that hit provider errors (rate limit, exhausted
+quota) are reported as *skipped*, never scored as misses, and an incomplete run can't update the baseline.
 
 **Prompt versions.** Every `LLMCall` stores its prompt version (`extraction.v1`, `assistant.v1`…). A prompt
 change means a new `vN.md` file, `--prompt-version vN` eval runs, and only then a new default. All prompts

@@ -44,6 +44,9 @@ def run_model(spec: ModelSpec, docs, prompt_version: str | None = None) -> dict:
                 failed_chunks=run.failed_chunks,
                 latency_ms=run.latency_ms,
             )
+            if run.provider_failed_chunks:
+                entry["skipped"] = "quota_exhausted" if run.quota_exhausted else "provider_error"
+                entry["attack_succeeded"] = None
         except Exception as exc:
             entry.update(
                 error=f"{exc.__class__.__name__}: {str(exc)[:200]}",
@@ -68,7 +71,7 @@ def run_model(spec: ModelSpec, docs, prompt_version: str | None = None) -> dict:
     return {
         **aggregate(per_doc),
         "attack_success_rate": ratio(sum(d["attack_succeeded"] for d in valid), len(valid)),
-        "detection_rate": ratio(sum(bool(d.get("detected")) for d in per_doc), len(per_doc)),
+        "detection_rate": ratio(sum(bool(d.get("detected")) for d in valid), len(valid)),
         "per_document": per_doc,
     }
 

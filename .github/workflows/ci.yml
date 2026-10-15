@@ -55,7 +55,9 @@ jobs:
       - run: uv run python -m evals.run --suite all --subset ci --models fake:fake
 
   evals-llm-smoke:
-    # Small real-LLM subset, only when the GROQ_API_KEY secret is configured.
+    # Small real-LLM subset, only when the GROQ_API_KEY secret is configured. Runs on main (and on
+    # demand) instead of every push: the free tier has a daily token quota that full evals need.
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     # The key is stored as an environment secret (environment "GROQ_API_KEY").
     environment: GROQ_API_KEY

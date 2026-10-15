@@ -325,6 +325,28 @@ def test_rate_limit_honors_retry_after():
     assert len(sleeps) == 5
 
 
+def test_daily_quota_fails_fast_instead_of_retrying():
+    body = {
+        "error": {
+            "message": "Rate limit reached ... tokens per day (TPD) ... try again in 1h2m3.5s."
+        }
+    }
+    p = GroqProvider("k", http=httpx.Client(transport=_transport(429, body, [])))
+    with pytest.raises(ProviderError) as exc:
+        p.chat([{"role": "user", "content": "x"}], "m")
+    assert exc.value.retry_after == pytest.approx(3723.5)  # hours are not dropped
+
+    sleeps = []
+    register_provider(
+        "fake", FakeProvider(script=[ProviderError("429", 429, True, retry_after=3723.5), "ok"])
+    )
+    client = LLMClient(recorder=[].append, settings=Settings(), sleep=sleeps.append)
+    with pytest.raises(ProviderError) as exc:
+        call(client)
+    assert exc.value.quota_exhausted
+    assert sleeps == []  # no point waiting minutes for a daily window
+
+
 def test_groq_gpt_oss_gets_low_reasoning_effort():
     seen = []
     body = {"choices": [{"message": {"role": "assistant", "content": "ok"}}]}

@@ -8,7 +8,7 @@ from app.services.assistant.tools import get_summary, query_transactions
 from app.services.ledger import account_balances
 from evals.common import ModelSpec
 from evals.suites import agent
-from evals.suites.extraction import match, score_document
+from evals.suites.extraction import aggregate, match, score_document
 
 
 def test_match_tolerates_date_shift_and_reports_fields():
@@ -200,3 +200,29 @@ def test_report_with_single_llm_does_not_pick_a_winner():
     text = conclusion(ext, {}, {"groq:x": {"pass_rate": 1.0, "cases": 6}})
     assert "Only one LLM" in text
     assert "best" not in text
+
+
+def test_provider_errors_are_skipped_not_scored_as_misses():
+    scored = {
+        "tp": 9,
+        "fp": 1,
+        "fn": 1,
+        "fields": {"amount": 9},
+        "installments": 0,
+        "latency_ms": 100,
+        "cost_usd": 0.001,
+    }
+    rate_limited = {
+        "tp": 0,
+        "fp": 0,
+        "fn": 40,
+        "fields": {},
+        "installments": 0,
+        "latency_ms": 0,
+        "cost_usd": 0.0,
+        "skipped": "quota_exhausted",
+    }
+    agg = aggregate([scored, rate_limited])
+    assert agg["documents"] == 1
+    assert agg["documents_skipped"] == 1
+    assert agg["recall"] == 0.9  # the 40 rate-limited rows are not counted as misses

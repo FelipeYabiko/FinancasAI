@@ -130,3 +130,11 @@ consumer, work-queue semantics and a DLQ are what this needs; the outbox/idempot
 ## D26 — LLM text in alerts must quote only known numbers
 `LlmAlertWriter` asks for a one-sentence alert from the rule's facts and rejects the answer if it cites any
 `R$` value that isn't among them, falling back to the deterministic template. Same principle as D22.
+
+## D27 — Provider failures are not model failures
+The first full 40-statement run exhausted Groq's daily token quota: every later chunk got a 429 and was
+counted as missed transactions, which would have reported a recall collapse that never happened. Now a
+document with any provider-failed chunk is *skipped* (reported, not scored), a 429 asking to wait longer
+than a per-minute window (`try again in 1h…`) marks the quota as exhausted and fails fast instead of
+retrying, the eval stops calling the provider for the remaining documents, and an incomplete run can't
+update `baseline.json`. The real-LLM CI job moved to `main` so pushes don't drain the quota.

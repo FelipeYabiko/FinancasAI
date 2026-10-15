@@ -101,7 +101,9 @@ class LLMClient:
             except ProviderError as exc:
                 # Rate limits get a larger budget: waiting is cheap, failing a whole import isn't.
                 budget = max_retries + (3 if exc.status == 429 else 0)
-                if not exc.retryable or attempts > budget:
+                if exc.status == 429 and (exc.retry_after or 0) > MAX_RETRY_AFTER_SECONDS:
+                    exc.quota_exhausted = True  # e.g. tokens-per-day: waiting minutes won't help
+                if not exc.retryable or exc.quota_exhausted or attempts > budget:
                     exc.attempts = attempts
                     raise
                 delay = min(2 ** (attempts - 1), 20)

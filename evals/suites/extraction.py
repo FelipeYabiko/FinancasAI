@@ -37,6 +37,21 @@ def load_documents(
     return docs[:limit] if limit else docs
 
 
+def skipped_entry(pdf_path, gt: dict, private: bool, reason: str) -> dict:
+    return {
+        "id": "private" if private else Path(pdf_path).stem,
+        "layout": gt.get("layout", "private"),
+        "tp": 0,
+        "fp": 0,
+        "fn": len(gt["transactions"]),
+        "fields": {},
+        "installments": 0,
+        "skipped": reason,
+        "latency_ms": 0,
+        "cost_usd": 0.0,
+    }
+
+
 def match(pred: list[dict], gold: list[dict]) -> list[tuple[int, int]]:
     """Greedy matching by |amount| and date (± tolerance). Returns (gold_idx, pred_idx)."""
     used: set[int] = set()
@@ -90,7 +105,10 @@ def score_document(pred: list[dict], gold: list[dict]) -> dict:
     }
 
 
-def aggregate(docs: list[dict]) -> dict:
+def aggregate(all_docs: list[dict]) -> dict:
+    # Documents hit by provider errors (rate limits, quota) say nothing about the model: they are
+    # reported as skipped instead of being scored as misses.
+    docs = [d for d in all_docs if not d.get("skipped")]
     tp = sum(d["tp"] for d in docs)
     fp = sum(d["fp"] for d in docs)
     fn = sum(d["fn"] for d in docs)
@@ -109,6 +127,7 @@ def aggregate(docs: list[dict]) -> dict:
     costs = [d["cost_usd"] for d in docs]
     return {
         "documents": len(docs),
+        "documents_skipped": len(all_docs) - len(docs),
         "documents_failed": sum(1 for d in docs if d.get("error")),
         "precision": precision,
         "recall": recall,
@@ -130,7 +149,11 @@ def run_model(
     spec: ModelSpec, docs, prompt_version: str | None = None, chunk_tokens: int = 1500
 ) -> dict:
     per_doc = []
+    quota_exhausted = False
     for pdf_path, gt, private in docs:
+        if quota_exhausted:
+            per_doc.append(skipped_entry(pdf_path, gt, private, "quota_exhausted"))
+            continue
         log = CallLog()
         entry = {
             "id": "private" if private else pdf_path.stem,
@@ -160,6 +183,9 @@ def run_model(
                 validation_retries=run.validation_retries,
                 warnings=run.warnings,
             )
+            if run.provider_failed_chunks:
+                entry["skipped"] = "quota_exhausted" if run.quota_exhausted else "provider_error"
+                quota_exhausted = run.quota_exhausted
         except Exception as exc:  # a model blowing up on one document must not stop the run
             entry.update(
                 error=f"{exc.__class__.__name__}: {str(exc)[:200]}",
@@ -171,8 +197,10 @@ def run_model(
         per_doc.append(entry)
         print(
             f"  {spec.label:45} {entry['id']:14} tp={entry['tp']:3} fp={entry['fp']:3} fn={entry['fn']:3}"
-            f" {entry.get('error', '')}"
+            f" {entry.get('error', '')}{' SKIPPED (' + entry['skipped'] + ')' if entry.get('skipped') else ''}"
         )
+        if quota_exhausted:
+            print("  ⚠ provider quota exhausted: remaining documents are skipped, not scored")
         for w in entry.get("warnings", [])[:3]:
             print(f"      ⚠ {w[:300]}")
     by_layout = defaultdict(list)
@@ -183,6 +211,7 @@ def run_model(
         "per_layout": {
             k: {m: aggregate(v)[m] for m in ("f1", "precision", "recall", "acc_amount")}
             for k, v in sorted(by_layout.items())
+            if any(not d.get("skipped") for d in v)
         },
         "per_document": per_doc,
     }

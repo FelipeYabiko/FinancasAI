@@ -156,6 +156,7 @@ def main(argv=None) -> int:
         "--skip-unavailable", action="store_true", help="skip models whose provider has no key"
     )
     args = ap.parse_args(argv)
+    sys.stdout.reconfigure(line_buffering=True)  # progress shows up live in CI logs
     cfg = load_config()
     names = (
         args.models.split(",")
@@ -184,9 +185,17 @@ def main(argv=None) -> int:
             print(f"skipping {suite}: no models available")
             continue
         results = run_suite(suite, models, args)
+        incomplete = {
+            k: r["documents_skipped"] for k, r in results.items() if r.get("documents_skipped")
+        }
+        if incomplete:
+            print(f"\n⚠️  {suite}: documents not scored because of provider errors: {incomplete}")
         flags += compare(suite, results, cfg)
         if args.update_baseline:
-            update_baseline(suite, results)
+            if incomplete:
+                print(f"   baseline NOT updated for {suite}: the run is incomplete")
+            else:
+                update_baseline(suite, results)
     latest = build_latest(RESULTS)
     print(f"\nreport → {latest.relative_to(ROOT.parent)}")
     if flags:

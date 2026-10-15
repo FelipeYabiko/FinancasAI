@@ -32,6 +32,10 @@ class ExtractionRun:
     ungrounded: int = 0  # extracted amounts not present in the source text
     injection_markers: list[str] = field(default_factory=list)
     failed_chunks: int = 0
+    provider_failed_chunks: int = (
+        0  # failed for provider reasons (rate limit, outage), not the model
+    )
+    quota_exhausted: bool = False
     llm_calls: int = 0
     validation_retries: int = 0
     cost_usd: float = 0.0
@@ -116,6 +120,9 @@ def extract_transactions(
                 raise
             except (LLMValidationError, ProviderError) as exc:
                 run.failed_chunks += 1
+                if isinstance(exc, ProviderError):
+                    run.provider_failed_chunks += 1
+                    run.quota_exhausted |= exc.quota_exhausted
                 run.warnings.append(
                     f"bloco {idx + 1} não pôde ser extraído ({exc.__class__.__name__}): "
                     f"{str(exc)[:160]}"
@@ -136,6 +143,10 @@ def extract_transactions(
                     run.ungrounded += 1
             run.transactions.extend(res.parsed.transactions)
     run.latency_ms = int((time.perf_counter() - started) * 1000)
+    if run.quota_exhausted:
+        run.warnings.insert(
+            0, "limite de uso do provedor de IA esgotado; tente mais tarde ou troque o modelo"
+        )
     if run.ungrounded:
         run.warnings.append(
             f"{run.ungrounded} transação(ões) com valor que não aparece no documento "

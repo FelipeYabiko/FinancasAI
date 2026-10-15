@@ -128,7 +128,16 @@ def build_latest(results_dir: Path) -> Path:
         eval_set = " / ".join(
             x
             for x in (
-                f"{e['documents']} PDFs" if e else "",
+                (
+                    f"{e['documents']} PDFs"
+                    + (
+                        f" ({e['documents_skipped']} skipped: provider errors)"
+                        if e.get("documents_skipped")
+                        else ""
+                    )
+                )
+                if e
+                else "",
                 f"{a['cases']} cases" if a else "",
                 f"{len(c.get('without_memory', {}).get('per_category', {}))} categories"
                 if c

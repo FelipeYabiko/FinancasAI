@@ -5,6 +5,7 @@ import pytest
 from app.llm.client import LLMClient
 from app.llm.providers import register_provider
 from app.llm.providers.fake import FakeProvider
+from app.llm.types import ProviderError
 from app.services.importer.extraction import extract_transactions
 from app.services.importer.guards import amounts_in_text, find_injection_markers
 from app.services.importer.pdf_text import extract_pdf_text
@@ -64,3 +65,17 @@ def test_hallucinated_transaction_is_flagged_not_trusted():
     assert run.ungrounded >= 1
     assert any("não aparece no documento" in w for w in run.warnings)
     assert any("prompt injection" in w for w in run.warnings)
+
+
+def test_exhausted_quota_is_reported_as_provider_failure():
+    """A rate-limited chunk is the provider's failure, not the model's: evals must not score it."""
+    pdf = extract_pdf_text((ADV / "adversarial_aurora.pdf").read_bytes())
+
+    def handler(messages, tools, schema):
+        raise ProviderError("429 tokens per day", 429, True, retry_after=3600)
+
+    register_provider("fake", FakeProvider(handler=handler))
+    run = extract_transactions(pdf, LLMClient(), "fake", "fake")
+    assert run.provider_failed_chunks == run.failed_chunks == run.chunks
+    assert run.quota_exhausted
+    assert "limite de uso" in run.warnings[0]

@@ -40,6 +40,9 @@ class ProviderError(Exception):
         self.status = status
         self.retryable = retryable
         self.retry_after = retry_after  # seconds the provider asked us to wait (429)
+        # True when the provider asks for a wait far beyond a per-minute window (daily quota):
+        # retrying is pointless, so the client fails fast.
+        self.quota_exhausted = False
 
 
 class LLMConfigError(Exception):

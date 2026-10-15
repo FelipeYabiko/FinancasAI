@@ -33,7 +33,7 @@ def estimate_tokens(text: str) -> int:
     return max(1, len(text) // 4)
 
 
-_TRY_AGAIN = re.compile(r"try again in (?:(\d+)m)?([\d.]+)s", re.IGNORECASE)
+_TRY_AGAIN = re.compile(r"try again in (?:(\d+)h)?(?:(\d+)m)?([\d.]+)s", re.IGNORECASE)
 
 
 def parse_retry_after(resp: httpx.Response) -> float | None:
@@ -46,7 +46,7 @@ def parse_retry_after(resp: httpx.Response) -> float | None:
             pass
     m = _TRY_AGAIN.search(resp.text)
     if m:
-        return int(m.group(1) or 0) * 60 + float(m.group(2))
+        return int(m.group(1) or 0) * 3600 + int(m.group(2) or 0) * 60 + float(m.group(3))
     return None
 
 
