@@ -222,14 +222,14 @@ tr.row-low { background: color-mix(in srgb, var(--warning) 10%, transparent); }
 .toast.error { background: var(--expense); color: #fff; }
 
 /* ---------- assistant ---------- */
-.assistant {
+.assistant-panel {
   position: fixed; right: 0; top: 0; bottom: 0; width: min(420px, 100%);
   background: var(--surface); border-left: 1px solid var(--border);
   display: flex; flex-direction: column; z-index: 40; box-shadow: -8px 0 24px rgb(0 0 0 / 12%);
 }
-.assistant > header { display: flex; justify-content: space-between; align-items: center; padding: .75rem 1rem; border-bottom: 1px solid var(--border); }
-.assistant-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .6rem; }
-.msg { padding: .55rem .75rem; border-radius: 10px; max-width: 92%; white-space: pre-wrap; word-wrap: break-word; }
+.assistant-panel > header { display: flex; justify-content: space-between; align-items: center; padding: .75rem 1rem; border-bottom: 1px solid var(--border); }
+.assistant-messages { flex: 1; min-height: 0; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .6rem; }
+.msg { flex-shrink: 0; padding: .55rem .75rem; border-radius: 10px; max-width: 92%; white-space: pre-wrap; word-wrap: break-word; }
 .msg.user { background: var(--primary); color: var(--primary-contrast); align-self: flex-end; }
 .msg.assistant { background: var(--surface-2); border: 1px solid var(--border); align-self: flex-start; }
 .msg.system { font-size: .8rem; color: var(--muted); align-self: center; }

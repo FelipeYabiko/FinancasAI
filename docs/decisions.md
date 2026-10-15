@@ -75,3 +75,14 @@ arquivo") but not unchecked. DB duplicates and near-duplicates are unchecked by 
 ## D16 — Fake provider doubles as an offline demo
 Without API keys the `fake` provider runs the regex baseline for extraction and keyword rules for
 categorization. It is labelled as such and reported in evals as the deterministic floor, never as an LLM.
+
+## D17 — Writes are proposals, enforced by architecture
+The model never has a tool that writes. Write tools validate + build a preview and store a
+`PendingAction`; only `POST /api/assistant/actions/{id}/confirm` (a human click) executes it, after
+re-validating. "Asked for confirmation before writing" is therefore guaranteed, and the agent eval
+measures whether the *proposed* action is the right one.
+
+## D18 — Name resolution in Python, not in the prompt
+Tools accept "Nubank" or "3". Resolution is deterministic (exact → unique substring), and ambiguity
+returns an error telling the model to ask the user. This keeps ids out of the model's memory burden
+and makes ambiguous cases testable.

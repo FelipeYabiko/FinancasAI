@@ -45,7 +45,41 @@ def demo_handler(messages, tools, response_schema):
                     cat = name
             items.append({"index": int(m.group(1)), "category": cat})
         return {"items": items}
+    if tools:
+        return _demo_agent(messages)
     return "pong"
+
+
+def _demo_agent(messages):
+    """Tiny rule-based stand-in for the assistant (offline demo only)."""
+    import json
+    import re
+    from datetime import date
+
+    last = messages[-1]
+    if last["role"] == "tool":
+        result = json.loads(last["content"])
+        if "preview" in result:
+            return f"Preparei: {result['preview']}. Confirme abaixo."
+        if "expense_brl" in result:
+            return (f"(modo demonstração, sem IA) Em {result.get('month', 'período')}: receitas "
+                    f"{result['income_brl']}, despesas {result['expense_brl']}.")  # fmt: skip
+        return "(modo demonstração) " + str(result.get("error", "ok"))
+    text = last["content"].lower()
+    m = re.search(
+        r"gastei\s+(?:r\$\s*)?(\d+(?:[.,]\d{1,2})?)\s+(?:no|na|em|com)?\s*([\wçãéíóú ]+)", text
+    )
+    if m:
+        from app.domain.money import parse_brl
+
+        cents = abs(parse_brl(m.group(1).replace(".", ",")))
+        acc = re.search(r"\bno\s+(\w+)\s*$", text)
+        args = {"date": date.today().isoformat(), "description": m.group(2).strip().split(" ")[0].title(),
+                "amount_cents": cents, "type": "expense"}  # fmt: skip
+        if acc:
+            args["account"] = acc.group(1)
+        return {"tool_calls": [{"name": "create_transaction", "arguments": args}]}
+    return {"tool_calls": [{"name": "get_summary", "arguments": {}}]}
 
 
 Handler = Callable[[list[Message], list[dict] | None, dict | None], LLMResponse | str | dict]

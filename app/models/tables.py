@@ -141,3 +141,27 @@ class LLMCall(SQLModel, table=True):
 class AppSetting(SQLModel, table=True):
     key: str = Field(primary_key=True)
     value: str
+
+
+class AssistantConversation(SQLModel, table=True):
+    id: int | None = Field(default=None, primary_key=True)
+    user_id: int = Field(foreign_key="user.id", index=True)
+    # OpenAI-style messages (without the system prompt, which is rebuilt every turn)
+    messages: list[dict] = Field(default_factory=list, sa_column=Column(JSON, nullable=False))
+    created_at: datetime = Field(default_factory=utcnow)
+    updated_at: datetime = Field(default_factory=utcnow)
+
+
+class PendingAction(SQLModel, table=True):
+    """A write proposed by the assistant. Only executed after the user confirms."""
+
+    id: int | None = Field(default=None, primary_key=True)
+    conversation_id: int | None = Field(
+        default=None, foreign_key="assistantconversation.id", index=True
+    )
+    tool: str
+    arguments: dict = Field(default_factory=dict, sa_column=Column(JSON, nullable=False))
+    summary: str
+    status: str = "pending"  # pending | confirmed | cancelled | failed | expired
+    result: dict | None = Field(default=None, sa_column=Column(JSON))
+    created_at: datetime = Field(default_factory=utcnow)

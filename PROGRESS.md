@@ -10,8 +10,8 @@ To resume in a new session: read this file, then continue with the first phase n
 | 2 — Frontend + login | ✅ done |
 | 3 — LLM providers, prompts, tracing, diagnostics | ✅ done |
 | 4 — PDF import pipeline + review screen | ✅ done |
-| 5 — Assistant with function calling | ⏳ next |
-| 6 — Synthetic generator, eval suites, report | ⬜ |
+| 5 — Assistant with function calling | ✅ done |
+| 6 — Synthetic generator, eval suites, report | ⏳ next |
 | 7 — Insights | ⬜ |
 | 8 — Docker | ⬜ |
 | 9 — MCP server | ⬜ |
@@ -88,3 +88,17 @@ To resume in a new session: read this file, then continue with the first phase n
   so the app, tests and CI run without API keys.
 - Acceptance (`tests/test_import.py::test_import_flow_dedup_and_undo` + Playwright run): imports a
   synthetic PDF, re-importing flags every row as duplicate, undo removes the batch.
+
+## Phase 5
+- `app/services/assistant/tools.py`: 9 tools (`query_transactions`, `get_summary`, `create_transaction`,
+  `create_installment_purchase`, `create_transfer`, `set_budget`, `create_goal`, `update_goal`,
+  `delete_transaction`) with JSON schemas; accounts/categories/goals resolved by id or name
+  (accent/case-insensitive, ambiguous → error the model must turn into a question).
+- `agent.py`: compact context per turn (today, accounts+balances, categories, budgets, goals — never
+  transactions), tool loop capped at 6 iterations with a friendly message, read tools run immediately,
+  write tools become `PendingAction` rows with a human preview. Confirm re-validates against the current
+  state, executes with `origin=assistant` and appends a note to the conversation; cancel likewise.
+- Conversations persisted (`AssistantConversation`), prompt `assistant.v1`.
+- UI: side panel (Ctrl+/), tool activity hints, confirmation cards.
+- Acceptance: `tests/test_assistant.py` covers the three examples end to end (scripted model) incl.
+  "no write before confirmation". With a real key, the same flow runs against the configured model.
