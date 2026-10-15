@@ -114,7 +114,10 @@ def aggregate(all_docs: list[dict]) -> dict:
     fn = sum(d["fn"] for d in docs)
     precision = ratio(tp, tp + fp)
     recall = ratio(tp, tp + fn)
-    f1 = ratio(2 * precision * recall, precision + recall) if precision and recall else 0.0
+    if precision is None or recall is None:
+        f1 = None  # nothing scored (e.g. every document skipped)
+    else:
+        f1 = ratio(2 * precision * recall, precision + recall) if precision and recall else 0.0
     fields = defaultdict(int)
     inst = 0
     for d in docs:

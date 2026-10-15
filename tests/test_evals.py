@@ -226,3 +226,4 @@ def test_provider_errors_are_skipped_not_scored_as_misses():
     assert agg["documents"] == 1
     assert agg["documents_skipped"] == 1
     assert agg["recall"] == 0.9  # the 40 rate-limited rows are not counted as misses
+    assert aggregate([rate_limited])["f1"] is None  # nothing scored: no number, not 0
