@@ -43,7 +43,9 @@ def call(client, provider="fake", model="fake", **kw):
 
 
 def test_retry_on_rate_limit_then_success():
-    fake = FakeProvider(script=[ProviderError("429", 429, True), ProviderError("503", 503, True), "ok"])
+    fake = FakeProvider(
+        script=[ProviderError("429", 429, True), ProviderError("503", 503, True), "ok"]
+    )
     register_provider("fake", fake)
     records = []
     res = call(make_client(records))
@@ -110,7 +112,9 @@ def test_missing_key_is_config_error():
 
 
 def test_cost_estimate():
-    assert estimate_cost_usd("groq", "openai/gpt-oss-20b", 1_000_000, 1_000_000) == pytest.approx(0.375)
+    assert estimate_cost_usd("groq", "openai/gpt-oss-20b", 1_000_000, 1_000_000) == pytest.approx(
+        0.375
+    )
     assert estimate_cost_usd("groq", "unknown-model", 1000, 1000) == 0.0
 
 
@@ -146,9 +150,15 @@ def test_openai_compatible_parse_tool_calls_and_usage():
                     "role": "assistant",
                     "content": None,
                     "tool_calls": [
-                        {"id": "c1", "type": "function",
-                         "function": {"name": "get_summary", "arguments": '{"month": "2026-10"}'}}
-                    ],  # fmt: skip
+                        {
+                            "id": "c1",
+                            "type": "function",
+                            "function": {
+                                "name": "get_summary",
+                                "arguments": '{"month": "2026-10"}',
+                            },
+                        }
+                    ],
                     "extra_content": {"google": {"thought_signature": "sig"}},
                 },
             }
@@ -185,11 +195,17 @@ def test_missing_usage_is_estimated():
 # ---------- API: test call shows up in LLMCall + diagnostics ----------
 def test_ai_test_endpoint_records_llmcall(client, db):
     register_provider(
-        "fake", FakeProvider(script=[LLMResponse(text="pong", input_tokens=12, output_tokens=2, latency_ms=150)])
+        "fake",
+        FakeProvider(
+            script=[LLMResponse(text="pong", input_tokens=12, output_tokens=2, latency_ms=150)]
+        ),
     )
     client.put(
         "/api/ai/settings",
-        json={f: {"provider": "fake", "model": "fake"} for f in ("extraction", "categorization", "assistant", "insights")},
+        json={
+            f: {"provider": "fake", "model": "fake"}
+            for f in ("extraction", "categorization", "assistant", "insights")
+        },
     )
     r = client.post("/api/ai/test/extraction").json()
     assert r["ok"] and r["reply"] == "pong"
