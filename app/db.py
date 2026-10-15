@@ -52,6 +52,11 @@ def make_engine(url: str):
 
 engine = make_engine(get_settings().database_url)
 
+# Every new income/expense also writes an OutboxEvent in the same transaction.
+from app.services.events import register_outbox_hooks  # noqa: E402
+
+register_outbox_hooks()
+
 
 def init_db(eng=None) -> None:
     eng = eng or engine

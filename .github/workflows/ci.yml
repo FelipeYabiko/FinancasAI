@@ -18,6 +18,31 @@ jobs:
       - run: uv run ruff format --check .
       - run: uv run pytest
 
+  alerts-service:
+    # Java microservice: unit tests (JUnit 5 + Mockito), MVC slice, contract test and
+    # integration tests with real RabbitMQ + MongoDB (Testcontainers uses the runner's Docker).
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: alerts-service
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+      - run: ./mvnw -B -ntp verify
+
+  k8s-manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Kubernetes manifests (kubeconform)
+        run: >
+          docker run --rm -v "$PWD/k8s":/k8s ghcr.io/yannh/kubeconform:v0.6.7
+          -strict -summary -ignore-filename-pattern 'kustomization.yaml|README.md' /k8s
+
   evals-offline:
     # Exercises the whole eval harness with the offline provider (no cost, no keys).
     runs-on: ubuntu-latest

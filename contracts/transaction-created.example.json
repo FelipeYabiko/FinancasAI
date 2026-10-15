@@ -1,0 +1,21 @@
+{
+  "event_id": "5b0f3f1e-8d2a-4a6b-9a52-3c1e2f9a7d10",
+  "type": "transaction.created",
+  "occurred_at": "2026-10-14T12:00:00+00:00",
+  "transaction": {
+    "id": 42,
+    "date": "2026-10-14",
+    "description": "ELETRO CENTER ONLINE TV",
+    "description_normalized": "eletro center online tv",
+    "amount_cents": -329900,
+    "type": "expense",
+    "category": "Compras",
+    "account": "Nubank",
+    "origin": "assistant"
+  },
+  "context": {
+    "category_month_spent_cents": 340000,
+    "category_budget_cents": 300000,
+    "category_avg_month_cents": 80000
+  }
+}

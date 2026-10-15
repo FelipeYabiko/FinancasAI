@@ -1,3 +1,5 @@
+# Full stack: FinançasIA app (Python) + alerts-service (Java) + RabbitMQ + MongoDB.
+#   docker compose up --build        → app on http://localhost:8000, RabbitMQ UI on :15672
 services:
   app:
     build: .
@@ -10,9 +12,57 @@ services:
     environment:
       APP_ENV: production
       DATABASE_URL: sqlite:////app/data/financasia.db
+      RABBITMQ_URL: amqp://financasia:financasia@rabbitmq:5672/%2F
+      ALERTS_SERVICE_URL: http://alerts-service:8081
+      ALERTS_INTERNAL_TOKEN: ${ALERTS_INTERNAL_TOKEN:-change-me}
     volumes:
       - financasia-data:/app/data
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
     restart: unless-stopped
+
+  alerts-service:
+    build: ./alerts-service
+    image: financasia-alerts:latest
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/financasia_alerts
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_USER: financasia
+      RABBITMQ_PASSWORD: financasia
+      ALERTS_INTERNAL_TOKEN: ${ALERTS_INTERNAL_TOKEN:-change-me}
+      ALERTS_LLM_ENABLED: ${ALERTS_LLM_ENABLED:-false}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      mongodb:
+        condition: service_started
+    healthcheck:
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/8081 && printf 'GET /actuator/health HTTP/1.0\\r\\n\\r\\n' >&3 && grep -q UP <&3"]
+      interval: 15s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: financasia
+      RABBITMQ_DEFAULT_PASS: financasia
+    ports:
+      - "15672:15672"  # management UI (local only)
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  mongodb:
+    image: mongo:7.0
+    volumes:
+      - alerts-data:/data/db
 
 volumes:
   financasia-data:
+  alerts-data:

@@ -165,3 +165,18 @@ class PendingAction(SQLModel, table=True):
     status: str = "pending"  # pending | confirmed | cancelled | failed | expired
     result: dict | None = Field(default=None, sa_column=Column(JSON))
     created_at: datetime = Field(default_factory=utcnow)
+
+
+class OutboxEvent(SQLModel, table=True):
+    """Transactional outbox: written in the SAME database transaction as the change it describes,
+    then published to RabbitMQ by a background worker. If the broker is down nothing is lost —
+    the event just waits here (at-least-once delivery; consumers must be idempotent)."""
+
+    id: int | None = Field(default=None, primary_key=True)
+    event_id: str = Field(index=True, unique=True)
+    type: str
+    aggregate_id: int  # transaction id
+    created_at: datetime = Field(default_factory=utcnow)
+    published_at: datetime | None = Field(default=None, index=True)
+    attempts: int = 0
+    last_error: str | None = None

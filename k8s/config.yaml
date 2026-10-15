@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: financasia-config
+data:
+  APP_ENV: production
+  DATABASE_URL: sqlite:////app/data/financasia.db
+  ALERTS_SERVICE_URL: http://alerts-service:8081
+  MONGODB_URI: mongodb://mongodb:27017/financasia_alerts
+  RABBITMQ_HOST: rabbitmq
+  ALERTS_LLM_ENABLED: "true"
+---
+# Template only — never commit real values. Create the real secret with:
+#   kubectl -n financasia create secret generic financasia-secrets \
+#     --from-literal=GROQ_API_KEY=... --from-literal=ALERTS_INTERNAL_TOKEN=... \
+#     --from-literal=RABBITMQ_USER=financasia --from-literal=RABBITMQ_PASSWORD=... \
+#     --from-literal=RABBITMQ_URL=amqp://financasia:...@rabbitmq:5672/%2F
+apiVersion: v1
+kind: Secret
+metadata:
+  name: financasia-secrets
+type: Opaque
+stringData:
+  GROQ_API_KEY: ""
+  ALERTS_INTERNAL_TOKEN: "replace-me"
+  RABBITMQ_USER: financasia
+  RABBITMQ_PASSWORD: "replace-me"
+  RABBITMQ_URL: amqp://financasia:replace-me@rabbitmq:5672/%2F

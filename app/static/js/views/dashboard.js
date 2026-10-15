@@ -1,8 +1,39 @@
-import { get } from "../api.js";
+import { api, get } from "../api.js";
 import { chart, moneyTick, themeColors } from "../charts.js";
 import { date, money, monthLabel, monthShortLabel, pct } from "../fmt.js";
 import { state } from "../state.js";
-import { html } from "../ui.js";
+import { html, toastError } from "../ui.js";
+
+const SEVERITY = { DANGER: ["danger", "atenção"], WARNING: ["warn", "alerta"], INFO: ["", "info"] };
+
+/** Alerts produced by the Java alerts-service (via this app's proxy). Hidden when not configured. */
+async function renderAlerts(box) {
+  let data;
+  try {
+    data = await get("/api/alerts", { unread_only: true, size: 5 });
+  } catch (_) {
+    box.innerHTML = "";
+    return;
+  }
+  if (!data.enabled || !data.items.length) {
+    box.innerHTML = "";
+    return;
+  }
+  box.innerHTML = html`<div class="card"><h3>🔔 Alertas</h3><ul class="list">${data.items.map((a) => {
+    const [cls, label] = SEVERITY[a.severity] || SEVERITY.INFO;
+    return html`<li data-id="${a.id}"><span><span class="badge ${cls}">${label}</span> <b>${a.title}</b><br>
+      <span class="small">${a.message}</span>${a.llmWritten ? html` <span class="badge" title="Texto escrito pela IA">✨ IA</span>` : ""}</span>
+      <button class="btn ghost small" data-read title="Marcar como lida">✓</button></li>`;
+  })}</ul></div>`.toString();
+  box.querySelectorAll("[data-read]").forEach((b) => b.addEventListener("click", async () => {
+    try {
+      await api(`/api/alerts/${b.closest("li").dataset.id}/read`, { method: "PATCH" });
+      renderAlerts(box);
+    } catch (err) {
+      toastError(err);
+    }
+  }));
+}
 
 function deltaClass(v, goodWhenUp) {
   if (v === null || v === undefined) return "muted";
@@ -13,6 +44,7 @@ export async function render(root) {
   const d = await get("/api/dashboard", { month: state.month });
   const hasData = d.last_6_months.some((m) => m.income_cents || m.expense_cents);
   root.innerHTML = html`
+    <div id="alerts-box"></div>
     <div class="cards">
       <div class="card stat"><div class="label">Saldo total</div>
         <div class="value num ${d.total_balance_cents < 0 ? "expense" : ""}">${money(d.total_balance_cents)}</div>
@@ -71,6 +103,7 @@ export async function render(root) {
     ${hasData ? "" : html`<p class="muted small">Dica: use <span class="kbd">Ctrl</span>+<span class="kbd">N</span> para lançar, <span class="kbd">Ctrl</span>+<span class="kbd">I</span> para importar um extrato e <span class="kbd">Ctrl</span>+<span class="kbd">/</span> para falar com o assistente.</p>`}
   `;
 
+  renderAlerts(root.querySelector("#alerts-box"));
   const c = themeColors();
   chart(root.querySelector("#ch-months"), {
     type: "bar",

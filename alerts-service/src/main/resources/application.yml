@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: alerts-service
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/financasia_alerts}
+      auto-index-creation: true
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+    listener:
+      simple:
+        # transient failures (e.g. Mongo hiccup): 3 attempts with backoff, then dead-letter
+        default-requeue-rejected: false
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 500ms
+          multiplier: 2
+
+alerts:
+  internal-token: ${ALERTS_INTERNAL_TOKEN:}
+  llm:
+    enabled: ${ALERTS_LLM_ENABLED:false}
+    base-url: ${ALERTS_LLM_BASE_URL:https://api.groq.com/openai/v1}
+    model: ${ALERTS_LLM_MODEL:openai/gpt-oss-20b}
+    api-key: ${GROQ_API_KEY:}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+server:
+  port: ${PORT:8081}

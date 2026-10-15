@@ -46,6 +46,14 @@ class Settings(BaseSettings):
     # Chunks extracted in parallel. Lower it on low rate-limit tiers (e.g. Groq free: 8k tokens/min).
     extraction_concurrency: int = 4
 
+    # Event-driven integration with the Java alerts-service (both optional)
+    rabbitmq_url: str = (
+        ""  # e.g. amqp://guest:guest@localhost:5672/  (empty = events stay in the outbox)
+    )
+    events_exchange: str = "financasia.events"
+    alerts_service_url: str = ""  # e.g. http://localhost:8081
+    alerts_internal_token: str = ""
+
     # Rate limit for AI endpoints (requests per minute per user)
     ai_rate_limit_per_minute: int = 20
 

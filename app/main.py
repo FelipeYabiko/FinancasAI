@@ -9,6 +9,7 @@ from fastapi.staticfiles import StaticFiles
 from app.api import (
     accounts,
     ai,
+    alerts,
     assistant,
     auth,
     dashboard,
@@ -17,7 +18,7 @@ from app.api import (
     planning,
     transactions,
 )
-from app.config import BASE_DIR
+from app.config import BASE_DIR, get_settings
 from app.db import init_db
 from app.services.ledger import LedgerError
 
@@ -25,7 +26,17 @@ from app.services.ledger import LedgerError
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     init_db()
+    settings = get_settings()
+    relay = None
+    if settings.rabbitmq_url:
+        from app.db import engine
+        from app.services.events import OutboxRelay
+
+        relay = OutboxRelay(engine, settings.rabbitmq_url, settings.events_exchange)
+        relay.start()
     yield
+    if relay:
+        relay.stop()
 
 
 app = FastAPI(title="FinançasIA", lifespan=lifespan)
@@ -69,6 +80,7 @@ for r in (
     imports.router,
     assistant.router,
     insights.router,
+    alerts.router,
 ):
     app.include_router(r)
 

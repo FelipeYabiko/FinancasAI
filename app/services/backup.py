@@ -54,6 +54,7 @@ def import_json(session: Session, data: dict) -> dict[str, int]:
             parsed[key] = [model.model_validate(row) for row in data.get(key, [])]
         except Exception as exc:
             raise LedgerError(f"backup inválido em '{key}': {exc}") from exc
+    session.info["skip_outbox"] = True  # a restore is not new spending: don't emit events
     try:
         for _, model in reversed(TABLES):
             session.exec(delete(model))
@@ -64,6 +65,8 @@ def import_json(session: Session, data: dict) -> dict[str, int]:
     except Exception:
         session.rollback()
         raise
+    finally:
+        session.info.pop("skip_outbox", None)
     return {key: len(rows) for key, rows in parsed.items()}
 
 
