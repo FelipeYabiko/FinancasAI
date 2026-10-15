@@ -13,6 +13,7 @@ dependencies = [
     "python-multipart>=0.0.32",
     "pyyaml>=6.0.3",
     "sqlmodel>=0.0.48",
+    "tzdata>=2026.5",
     "uvicorn[standard]>=0.54.0",
 ]
 
@@ -35,3 +36,4 @@ ignore = ["RUF001", "RUF002", "RUF003", "B008"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning:fastapi.testclient", "ignore:Using `httpx`"]
