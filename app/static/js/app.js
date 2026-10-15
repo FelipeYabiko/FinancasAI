@@ -12,6 +12,7 @@ import * as budgets from "./views/budgets.js";
 import * as goals from "./views/goals.js";
 import * as recurring from "./views/recurring.js";
 import * as settings from "./views/settings.js";
+import "./views/ai.js";
 import * as importView from "./views/import.js";
 import * as insights from "./views/insights.js";
 import * as assistant from "./assistant.js";

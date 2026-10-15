@@ -28,11 +28,11 @@ class Settings(BaseSettings):
     extraction_provider: str = "groq"
     extraction_model: str = "openai/gpt-oss-20b"
     categorization_provider: str = "groq"
-    categorization_model: str = "llama-3.1-8b-instant"
+    categorization_model: str = "openai/gpt-oss-20b"
     assistant_provider: str = "groq"
     assistant_model: str = "openai/gpt-oss-120b"
     insights_provider: str = "groq"
-    insights_model: str = "llama-3.1-8b-instant"
+    insights_model: str = "openai/gpt-oss-20b"
 
     # LLM client behaviour
     llm_timeout_seconds: float = 60.0

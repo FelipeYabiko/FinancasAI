@@ -1,0 +1,22 @@
+# USD per 1M tokens (input / output). Checked against provider docs on 2026-10-15:
+#   Groq:       https://console.groq.com/docs/models
+#   Gemini:     https://ai.google.dev/gemini-api/docs/pricing
+#   OpenRouter: https://openrouter.ai/api/v1/models
+# Keys are "<provider>/<model>". Unknown models are recorded with cost = 0 and flagged.
+groq/openai/gpt-oss-20b: {input: 0.075, output: 0.30}
+groq/openai/gpt-oss-120b: {input: 0.15, output: 0.60}
+groq/qwen/qwen3.8-27b: {input: 0.80, output: 4.00}
+
+gemini/gemini-3.5-flash-lite: {input: 0.30, output: 2.50}
+gemini/gemini-3.1-flash-lite: {input: 0.25, output: 1.50}
+gemini/gemini-3.8-flash: {input: 0.75, output: 3.75}
+gemini/gemini-2.5-flash-lite: {input: 0.10, output: 0.40}
+
+openrouter/deepseek/deepseek-v4-flash: {input: 0.091, output: 0.182}
+openrouter/qwen/qwen3.7-flash: {input: 0.03, output: 0.13}
+openrouter/openai/gpt-oss-20b: {input: 0.018, output: 0.09}
+openrouter/openai/gpt-oss-120b: {input: 0.15, output: 0.60}
+openrouter/mistralai/mistral-small-3.2-24b-instruct: {input: 0.075, output: 0.20}
+openrouter/anthropic/claude-haiku-5.5: {input: 0.10, output: 0.50}
+
+fake/fake: {input: 0.0, output: 0.0}

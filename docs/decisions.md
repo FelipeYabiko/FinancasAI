@@ -40,3 +40,20 @@ entries already generated for later this month don't count yet).
 ## D9 — Frontend without a build step
 ES modules + a tiny tagged-template `html` helper that escapes every interpolation (XSS-safe by
 default). Chart.js is vendored instead of loaded from a CDN so the CSP can be `script-src 'self'`.
+
+## D10 — One OpenAI-compatible transport for all providers
+Groq, OpenRouter and Gemini (via its OpenAI compatibility endpoint) share the chat-completions wire
+format, so a single implementation handles tools, JSON output and usage. Provider classes only set
+base URL, auth headers and quirks (Groq gets `json_object` instead of `json_schema`). The raw
+assistant message is echoed back verbatim in tool loops, which preserves provider-specific fields
+such as Gemini thought signatures. No LangChain.
+
+## D11 — Validation retry is exactly one, and both attempts are traced
+If the output fails the Pydantic schema, the model gets its own answer plus the validation error and
+one more chance. Each provider response is a separate `LLMCall` row (`validation_error`, then
+`ok`/`validation_error`) so the cost of the retries is visible.
+
+## D12 — Groq Llama models out of the defaults
+Groq lists `llama-3.1-8b-instant`/`llama-3.3-70b-versatile` as "contact sales" pricing, so the
+defaults use `openai/gpt-oss-20b` (extraction, categorization, insights) and `openai/gpt-oss-120b`
+(assistant), which have public prices.

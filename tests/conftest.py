@@ -59,3 +59,14 @@ def accounts(client):
 @pytest.fixture
 def categories(client):
     return {c["name"]: c["id"] for c in client.get("/api/categories").json()}
+
+
+@pytest.fixture(autouse=True)
+def _reset_global_state():
+    from app.api.ratelimit import reset_rate_limits
+    from app.llm.providers import clear_provider_overrides
+
+    reset_rate_limits()
+    yield
+    clear_provider_overrides()
+    reset_rate_limits()
