@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Secrets & local data
+.env
+*.db
+*.sqlite
+*.sqlite3
+data/
+uploads/
+
+# Evals: real statements never leave the machine
+evals/private/*
+!evals/private/README.md
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

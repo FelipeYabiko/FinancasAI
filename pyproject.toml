@@ -1,0 +1,37 @@
+[project]
+name = "financasia"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "bcrypt>=5.0.0",
+    "fastapi>=0.143.1",
+    "httpx>=0.28.1",
+    "itsdangerous>=2.2.0",
+    "pdfplumber>=0.11.10",
+    "pydantic>=2",
+    "pydantic-settings>=2.16.0",
+    "python-multipart>=0.0.32",
+    "pyyaml>=6.0.3",
+    "sqlmodel>=0.0.48",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "reportlab>=5.0.1",
+    "ruff>=0.17.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003", "B008"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
