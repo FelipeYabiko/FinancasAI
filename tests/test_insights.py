@@ -60,8 +60,13 @@ def test_budget_projection():
 
 
 def test_forecast_balance():
-    f = forecast_balance(100000, [(date(2026, 10, 20), -180000), (date(2026, 10, 25), 500000)], [-5000], [120000],
-                         date(2026, 10, 31))  # fmt: skip
+    f = forecast_balance(
+        100000,
+        [(date(2026, 10, 20), -180000), (date(2026, 10, 25), 500000)],
+        [-5000],
+        [120000],
+        date(2026, 10, 31),
+    )
     assert f.projected_cents == 100000 + 500000 - 180000 - 5000 - 120000
 
 

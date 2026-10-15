@@ -14,8 +14,8 @@ To resume in a new session: read this file, then continue with the first phase n
 | 6 — Synthetic generator, eval suites, report | 🟡 harness done — real 3-model run needs API keys |
 | 7 — Insights | ✅ done |
 | 8 — Docker | ✅ done |
-| 9 — MCP server | ⏳ next |
-| 10 — README | ⬜ |
+| 9 — MCP server | ✅ done |
+| 10 — README | ⏳ next |
 
 ## Phase 0
 - `uv` project (Python 3.12), FastAPI skeleton with `/api/health`.
@@ -140,3 +140,11 @@ To resume in a new session: read this file, then continue with the first phase n
   data persisted across `docker compose restart`. (The sandbox needed its proxy CA injected through a
   scratch copy of the Dockerfile to download wheels; the committed Dockerfile is the clean one.)
 - In `APP_ENV=production` the offline `fake` provider is hidden; AI features need real keys in `.env`.
+
+## Phase 9
+- `mcp_server/server.py` on the official MCP Python SDK **v2** (`MCPServer`; v1's FastMCP was renamed).
+  Tools reuse the assistant's executors: `get_summary`, `query_transactions`, `create_transaction` (+
+  `confirm_action`). Confirmation via elicitation when supported, otherwise two-step.
+- `tests/test_mcp.py` spawns the server over stdio with the SDK client: lists tools, answers "quanto gastei
+  esse mês?" via `get_summary`, creates with elicitation accept, declines, and the two-step path.
+- Setup docs in `docs/mcp.md` (Claude Desktop/Code config, Docker).

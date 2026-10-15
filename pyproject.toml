@@ -7,6 +7,7 @@ dependencies = [
     "fastapi>=0.143.1",
     "httpx>=0.28.1",
     "itsdangerous>=2.2.0",
+    "mcp>=2.3.0",
     "pdfplumber>=0.11.10",
     "pydantic>=2",
     "pydantic-settings>=2.16.0",
@@ -32,6 +33,10 @@ target-version = "py312"
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
 ignore = ["RUF001", "RUF002", "RUF003", "B008", "E501"]  # E501: ruff format owns line length
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "evals", "mcp_server"]
+known-third-party = ["mcp", "mcp_types"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
