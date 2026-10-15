@@ -105,3 +105,28 @@ written by hand.
 Every number is computed in Python and pre-formatted (`R$ 1.234,56`) before the LLM sees it; the
 prompt forbids new numbers and the response must have one item per fact or it is discarded. Narration
 is on demand, so page loads cost nothing.
+
+## D23 — Prompt changes ship only with a side-by-side eval
+`extraction.v2` targets the two weak spots the v1 run exposed (trailing-minus signs, skipped invoice rows):
+explicit sign rules per document type, two worked examples, "extract every dated row", and a final
+self-check. `--prompt-version v1,v2` runs both versions on the same statements in one report; the default
+only changes when v2 wins on the full 40-statement set.
+
+## D24 — Prompt injection: defense in layers, measured
+No single filter stops injection, so each layer is cheap and independent: data delimited and labelled as
+data in the prompt, regex markers surfaced as an import warning (not silently dropped: a false positive
+must not lose a real transaction), grounding (an amount absent from its chunk is capped at confidence 0.3),
+"only user messages request actions" in `assistant.v2`, and the architectural backstop that the model can
+only propose writes. Adversarial PDFs and agent cases make the defense a number instead of a claim.
+
+## D25 — A separate Java service, integrated by events
+Alerts live in `alerts-service` (Spring Boot, MongoDB), not in the FastAPI app, to exercise a real service
+boundary: own database, contract-tested message, failure isolation (the app works with the service down).
+Events go through a transactional outbox (no dual write) and are delivered at-least-once; the consumer is
+idempotent by `(eventId, rule)`. The event carries the facts the rules need, computed as of the transaction
+(`id <= tx.id`), because the relay may publish after later transactions exist. RabbitMQ over Kafka: one
+consumer, work-queue semantics and a DLQ are what this needs; the outbox/idempotency design carries over.
+
+## D26 — LLM text in alerts must quote only known numbers
+`LlmAlertWriter` asks for a one-sentence alert from the rule's facts and rejects the answer if it cites any
+`R$` value that isn't among them, falling back to the deterministic template. Same principle as D22.

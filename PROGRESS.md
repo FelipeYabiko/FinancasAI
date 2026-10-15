@@ -173,3 +173,20 @@ To resume in a new session: read this file, then continue with the first phase n
   statements; agent 6/6. Weak spots: trailing-minus signs (`150,00-`, amount accuracy 0.13) and card-invoice
   recall (0.53). Committed in `evals/results/` and `evals/baseline.json`.
 - Next: full 40-statement run, Gemini/OpenRouter keys for the comparison, `extraction.v2` for signs.
+
+## Job-readiness round (Java microservice, injection defenses, extraction.v2)
+- `extraction.v2` prompt and `--prompt-version v1,v2` side-by-side runs (`evals.yml`, manual workflow with
+  suite/model/prompt-version/subset inputs).
+- Prompt-injection defenses: injection markers → import warning, grounding check per chunk,
+  `assistant.v2` rule on who may request actions; adversarial PDFs (`evals/suites/injection.py`) and two
+  agent injection cases (33 agent cases now).
+- `alerts-service/` (Spring Boot 3.5, Java 21, MongoDB): `@RabbitListener` consumer with retry + DLQ,
+  Strategy-based rules (budget 80%/100% crossing, large expense, duplicate charge), LLM-written alert text
+  checked against the facts with template fallback, REST API with `ProblemDetail`, internal-token filter.
+  Tests: JUnit 5, Mockito, `@WebMvcTest`, contract test, Testcontainers integration (redelivery + DLQ).
+- Python side: transactional outbox (`OutboxEvent`), `OutboxRelay` with publisher confirms, alerts proxy
+  and dashboard card. Bug found end to end: context computed at publish time hid the budget crossing →
+  computed as of the transaction, with a regression test.
+- `docker-compose.yml` runs app + alerts-service + RabbitMQ + MongoDB; `k8s/` manifests (Kustomize, probes,
+  StatefulSets, template Secret) validated by kubeconform in CI; CI builds and tests the Java service.
+- README: skills map, event-driven section, injection section, alerts screenshot.
