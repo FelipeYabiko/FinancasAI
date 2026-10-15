@@ -323,3 +323,22 @@ def test_rate_limit_honors_retry_after():
     assert res.response.text == "ok"  # 429s get a larger retry budget (3 + 3)
     assert all(s >= 17.1 for s in sleeps)
     assert len(sleeps) == 5
+
+
+def test_groq_gpt_oss_gets_low_reasoning_effort():
+    seen = []
+    body = {"choices": [{"message": {"role": "assistant", "content": "ok"}}]}
+    p = GroqProvider("k", http=httpx.Client(transport=_transport(200, body, seen)))
+    p.chat([{"role": "user", "content": "x"}], "openai/gpt-oss-20b")
+    p.chat([{"role": "user", "content": "x"}], "llama-3.1-8b-instant")
+    assert seen[0]["reasoning_effort"] == "low"
+    assert "reasoning_effort" not in seen[2]
+
+
+def test_empty_response_error_mentions_finish_reason():
+    register_provider(
+        "fake", FakeProvider(script=[LLMResponse(text="", finish_reason="length")] * 2)
+    )
+    records = []
+    with pytest.raises(LLMValidationError, match="finish_reason=length"):
+        call(make_client(records), response_model=Out)

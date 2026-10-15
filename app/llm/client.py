@@ -179,6 +179,8 @@ class LLMClient:
                 return result
             except ValidationError as exc:
                 err = _short_validation_error(exc)
+                if not (resp.text or "").strip():
+                    err = f"resposta vazia (finish_reason={resp.finish_reason}); {err}"
                 self._record(result, **common, status="validation_error", error_message=err)
                 if validation_round == 1:
                     raise LLMValidationError(err, resp.text) from exc

@@ -41,6 +41,8 @@ class Settings(BaseSettings):
     llm_timeout_seconds: float = 60.0
     llm_max_retries: int = 3
     llm_log_payloads: bool = False
+    # reasoning_effort for reasoning models that accept it (Groq gpt-oss): low | medium | high | ""
+    llm_reasoning_effort: str = "low"
     extraction_chunk_tokens: int = 1500
     # Chunks extracted in parallel. Lower it on low rate-limit tiers (e.g. Groq free: 8k tokens/min).
     extraction_concurrency: int = 4
