@@ -78,6 +78,15 @@ def update_baseline(suite: str, results: dict) -> None:
     BASELINE_FILE.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n")
 
 
+def _versions(args) -> list[str | None]:
+    """`--prompt-version v1,v2` compares versions side by side; default = the app's default."""
+    return args.prompt_version.split(",") if args.prompt_version else [None]
+
+
+def _label(m: ModelSpec, suite: str, version: str | None) -> str:
+    return m.label if version is None else f"{m.label} @{suite}.{version}"
+
+
 def run_suite(suite: str, models: list[ModelSpec], args) -> dict:
     print(f"\n=== {suite} ===")
     if suite == "baseline":
@@ -88,7 +97,11 @@ def run_suite(suite: str, models: list[ModelSpec], args) -> dict:
         )
     elif suite == "extraction":
         docs = extraction.load_documents(args.subset, args.limit)
-        results = {m.label: extraction.run_model(m, docs, args.prompt_version) for m in models}
+        results = {
+            _label(m, suite, v): extraction.run_model(m, docs, v)
+            for m in models
+            for v in _versions(args)
+        }
         md = extraction.markdown(results)
     elif suite == "categorization":
         items = categorization.load_items(args.subset, args.limit)
@@ -96,11 +109,17 @@ def run_suite(suite: str, models: list[ModelSpec], args) -> dict:
         md = categorization.markdown(results, len(items))
     elif suite == "agent":
         data = agent.load_cases(args.subset, args.limit)
-        results = {m.label: agent.run_model(m, data, args.prompt_version) for m in models}
+        results = {
+            _label(m, suite, v): agent.run_model(m, data, v)
+            for m in models
+            for v in _versions(args)
+        }
         md = agent.markdown(results)
     else:
         raise SystemExit(f"unknown suite {suite}")
     meta = {**run_metadata(suite), "subset": args.subset, "limit": args.limit}
+    if args.prompt_version:
+        meta["prompt_versions"] = {**meta["prompt_versions"], suite: args.prompt_version}
     if suite == "categorization":
         meta["items"] = len(items)
     payload = {"meta": meta, "results": results}
@@ -118,7 +137,9 @@ def main(argv=None) -> int:
     ap.add_argument("--models", help="comma-separated provider:model (default: evals/config.yaml)")
     ap.add_argument("--subset", choices=["ci"], help="small subset (CI)")
     ap.add_argument("--limit", type=int)
-    ap.add_argument("--prompt-version", help="e.g. v2 (default: the app default)")
+    ap.add_argument(
+        "--prompt-version", help="e.g. v2, or v1,v2 to compare side by side (default: app default)"
+    )
     ap.add_argument("--update-baseline", action="store_true")
     ap.add_argument("--fail-on-regression", action="store_true")
     ap.add_argument(

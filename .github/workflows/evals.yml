@@ -1,0 +1,53 @@
+name: Evals (manual)
+
+# Full eval runs against real models. Triggered by hand (Actions → Evals → Run workflow)
+# because they cost money and, on Groq's free tier (8k tokens/min), take tens of minutes.
+on:
+  workflow_dispatch:
+    inputs:
+      suites:
+        description: "Suites (comma-separated): extraction, categorization, agent, baseline, all"
+        default: "extraction"
+      models:
+        description: "provider:model list"
+        default: "groq:openai/gpt-oss-20b"
+      prompt_versions:
+        description: "Prompt versions to compare, e.g. v1,v2 (empty = app default)"
+        default: "v1,v2"
+      subset:
+        description: "'ci' for the small subset, 'full' for every document/case"
+        default: "full"
+
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    environment: GROQ_API_KEY
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      EXTRACTION_CONCURRENCY: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync --locked
+      - name: Run evals
+        # Inputs go through env vars, never interpolated into the script (avoids shell injection).
+        env:
+          SUITES: ${{ inputs.suites }}
+          MODELS: ${{ inputs.models }}
+          PROMPT_VERSIONS: ${{ inputs.prompt_versions }}
+          SUBSET: ${{ inputs.subset }}
+        run: |
+          args=(--suite "$SUITES" --models "$MODELS" --skip-unavailable)
+          if [ -n "$PROMPT_VERSIONS" ]; then args+=(--prompt-version "$PROMPT_VERSIONS"); fi
+          if [ "$SUBSET" = "ci" ]; then args+=(--subset ci); fi
+          uv run python -m evals.run "${args[@]}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-results-${{ github.run_id }}
+          path: evals/results/
