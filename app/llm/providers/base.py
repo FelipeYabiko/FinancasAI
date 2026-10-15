@@ -5,6 +5,7 @@ so they share one implementation and differ only in base URL, auth and small qui
 """
 
 import json
+import re
 import time
 from typing import Any, Protocol
 
@@ -30,6 +31,23 @@ class LLMProvider(Protocol):
 def estimate_tokens(text: str) -> int:
     """Rough token estimate (~4 chars/token) used for chunking and as a fallback."""
     return max(1, len(text) // 4)
+
+
+_TRY_AGAIN = re.compile(r"try again in (?:(\d+)m)?([\d.]+)s", re.IGNORECASE)
+
+
+def parse_retry_after(resp: httpx.Response) -> float | None:
+    """Seconds to wait on 429: `retry-after` header, else "try again in 1m2.5s" in the body."""
+    header = resp.headers.get("retry-after")
+    if header:
+        try:
+            return float(header)
+        except ValueError:
+            pass
+    m = _TRY_AGAIN.search(resp.text)
+    if m:
+        return int(m.group(1) or 0) * 60 + float(m.group(2))
+    return None
 
 
 ECHO_KEYS = {"role", "content", "tool_calls", "extra_content"}
@@ -112,6 +130,7 @@ class OpenAICompatibleProvider:
                 f"{self.name} HTTP {resp.status_code}: {resp.text[:300]}",
                 status=resp.status_code,
                 retryable=retryable,
+                retry_after=parse_retry_after(resp) if resp.status_code == 429 else None,
             )
         return self.parse_response(resp.json(), messages, latency_ms)
 

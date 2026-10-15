@@ -42,6 +42,8 @@ class Settings(BaseSettings):
     llm_max_retries: int = 3
     llm_log_payloads: bool = False
     extraction_chunk_tokens: int = 1500
+    # Chunks extracted in parallel. Lower it on low rate-limit tiers (e.g. Groq free: 8k tokens/min).
+    extraction_concurrency: int = 4
 
     # Rate limit for AI endpoints (requests per minute per user)
     ai_rate_limit_per_minute: int = 20

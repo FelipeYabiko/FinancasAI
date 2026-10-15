@@ -18,6 +18,7 @@ from app.llm.types import LLMConfigError, LLMResponse, Message, ProviderError
 from app.models import LLMCall
 
 Recorder = Callable[[LLMCall], None]
+MAX_RETRY_AFTER_SECONDS = 60.0
 
 
 class LLMValidationError(Exception):
@@ -98,11 +99,16 @@ class LLMClient:
                 )
                 return resp, attempts
             except ProviderError as exc:
-                if not exc.retryable or attempts > max_retries:
+                # Rate limits get a larger budget: waiting is cheap, failing a whole import isn't.
+                budget = max_retries + (3 if exc.status == 429 else 0)
+                if not exc.retryable or attempts > budget:
                     exc.attempts = attempts
                     raise
-                delay = min(2 ** (attempts - 1), 20) + random.uniform(0, 0.25)
-                self.sleep(delay)
+                delay = min(2 ** (attempts - 1), 20)
+                if exc.retry_after is not None:
+                    # Honor the provider's own wait time (Groq: "try again in 5.9s").
+                    delay = max(delay, min(exc.retry_after, MAX_RETRY_AFTER_SECONDS))
+                self.sleep(delay + random.uniform(0, 0.5))
 
     # ---- public API ----
     def call(

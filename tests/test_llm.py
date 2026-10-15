@@ -65,11 +65,16 @@ def test_non_retryable_error_is_recorded():
 
 
 def test_retries_exhausted():
-    register_provider("fake", FakeProvider(script=[ProviderError("429", 429, True)] * 5))
+    register_provider("fake", FakeProvider(script=[ProviderError("503", 503, True)] * 5))
     records = []
     with pytest.raises(ProviderError):
         call(make_client(records, llm_max_retries=2))
     assert records[0].attempts == 3
+    # rate limits get 3 extra attempts before giving up
+    register_provider("fake", FakeProvider(script=[ProviderError("429", 429, True)] * 9))
+    with pytest.raises(ProviderError):
+        call(make_client(records, llm_max_retries=2))
+    assert records[1].attempts == 6
 
 
 def test_validation_corrective_retry():
@@ -297,3 +302,24 @@ def test_json_validate_failed_goes_to_corrective_retry():
     )
     with pytest.raises(ProviderError):
         p.chat([{"role": "user", "content": "x"}], "m")
+
+
+def test_rate_limit_honors_retry_after():
+    body = {
+        "error": {"message": "Rate limit reached ... Please try again in 1m5.9s. Need more tokens?"}
+    }
+    p = GroqProvider("k", http=httpx.Client(transport=_transport(429, body, [])))
+    with pytest.raises(ProviderError) as exc:
+        p.chat([{"role": "user", "content": "x"}], "m")
+    assert exc.value.retry_after == pytest.approx(65.9)
+
+    sleeps = []
+    fake = FakeProvider(script=[ProviderError("429", 429, True, retry_after=17.1)] * 5 + ["ok"])
+    register_provider("fake", fake)
+    client = LLMClient(
+        recorder=[].append, settings=Settings(llm_max_retries=3), sleep=sleeps.append
+    )
+    res = call(client)
+    assert res.response.text == "ok"  # 429s get a larger retry budget (3 + 3)
+    assert all(s >= 17.1 for s in sleeps)
+    assert len(sleeps) == 5

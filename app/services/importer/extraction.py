@@ -5,6 +5,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from datetime import timedelta
 
+from app.config import get_settings
 from app.llm.client import LLMClient, LLMValidationError
 from app.llm.prompts import load_prompt
 from app.llm.types import LLMConfigError, ProviderError
@@ -61,7 +62,7 @@ def extract_transactions(
     model: str,
     prompt_version: str | None = None,
     chunk_tokens: int = 1500,
-    max_workers: int = 4,
+    max_workers: int | None = None,
 ) -> ExtractionRun:
     started = time.perf_counter()
     info = detect_document(pdf.lines)
@@ -95,7 +96,8 @@ def extract_transactions(
             response_model=ExtractionOutput,
         )
 
-    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+    workers = max(1, max_workers or get_settings().extraction_concurrency)
+    with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = [pool.submit(one, item) for item in enumerate(chunked.chunks)]
         for idx, fut in enumerate(futures):
             try:

@@ -36,6 +36,8 @@ jobs:
     environment: GROQ_API_KEY
     env:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      # Groq free tier: 8k tokens/min → one chunk at a time, rely on retry-after for the rest.
+      EXTRACTION_CONCURRENCY: "1"
     steps:
       - name: Secret check (prints only the length, never the value)
         run: echo "GROQ_API_KEY length = ${#GROQ_API_KEY}"
