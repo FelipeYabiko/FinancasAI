@@ -32,6 +32,8 @@ jobs:
   evals-llm-smoke:
     # Small real-LLM subset, only when a key is configured in the repository secrets.
     runs-on: ubuntu-latest
+    # The key is stored as an environment secret (environment "GROQ_API_KEY").
+    environment: GROQ_API_KEY
     env:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
     steps:
