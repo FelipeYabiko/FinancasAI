@@ -54,7 +54,7 @@ def compute_insights(db: Session, on: date | None = None) -> list[dict]:
                     "yearly_total": format_brl(total * 12),
                     "items": [
                         {
-                            "merchant": s.merchant,
+                            "merchant": s.display_name,
                             "amount": format_brl(s.amount_cents),
                             "next_expected": s.next_expected.isoformat(),
                             "charges": s.occurrences,
@@ -74,7 +74,9 @@ def compute_insights(db: Session, on: date | None = None) -> list[dict]:
         start, end = month_bounds(m)
         if m == month:
             end = on
-        for cid, v in summary.expenses_by_category(_txs_between(db, start, end)).items():
+        # planned installments are not "unusual spending"
+        regular = [t for t in _txs_between(db, start, end) if not t.installment_total]
+        for cid, v in summary.expenses_by_category(regular).items():
             spend.setdefault(cid, [0, 0, 0, 0])[i] = v
     for a in detect_anomalies(spend)[:3]:
         facts.append(

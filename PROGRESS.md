@@ -15,7 +15,7 @@ To resume in a new session: read this file, then continue with the first phase n
 | 7 — Insights | ✅ done |
 | 8 — Docker | ✅ done |
 | 9 — MCP server | ✅ done |
-| 10 — README | ⏳ next |
+| 10 — README | ✅ done |
 
 ## Phase 0
 - `uv` project (Python 3.12), FastAPI skeleton with `/api/health`.
@@ -148,3 +148,18 @@ To resume in a new session: read this file, then continue with the first phase n
 - `tests/test_mcp.py` spawns the server over stdio with the SDK client: lists tools, answers "quanto gastei
   esse mês?" via `get_summary`, creates with elicitation accept, declines, and the two-step path.
 - Setup docs in `docs/mcp.md` (Claude Desktop/Code config, Docker).
+
+## Phase 10
+- README (English): pitch + screenshots (`docs/screenshots/`, demo data from `scripts/seed_demo.py`),
+  Mermaid architecture, **Evaluation** section (methodology, current results, honest status of the
+  multi-model run), engineering decisions, features, how to run (local/Docker/tests/evals), limitations.
+- While preparing screenshots: subscription detection now excludes installments and charges above
+  R$ 500/month (rent), anomalies ignore planned installments, and `.env.example` copied verbatim no longer
+  breaks settings parsing (`env_ignore_empty`).
+
+## Next steps (open)
+1. Add provider keys to `.env` and run `uv run python -m evals.run --suite all --skip-unavailable
+   --update-baseline` → fills `evals/results/latest.md` with the ≥3-model comparison (phase 6 acceptance).
+2. Choose per-feature defaults from the results; iterate prompts as `v2` with eval deltas in the README.
+3. Add `GROQ_API_KEY` as a GitHub Actions secret to enable the LLM eval smoke job.
+4. Alembic migrations before the schema evolves under real data.

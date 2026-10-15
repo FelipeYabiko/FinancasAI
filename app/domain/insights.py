@@ -14,11 +14,18 @@ from app.domain.summary import TxLike
 MIN_OCCURRENCES = 3
 INTERVAL_DAYS = (25, 35)
 AMOUNT_TOLERANCE = 0.15
+# Rent, school fees etc. are monthly too, but they are commitments, not "subscriptions to review".
+MAX_SUBSCRIPTION_CENTS = 50_000
+
+
+def is_installment(t) -> bool:
+    return bool(getattr(t, "installment_total", None))
 
 
 @dataclass
 class Subscription:
     merchant: str
+    display_name: str
     amount_cents: int  # typical (median) charge
     occurrences: int
     last_date: date
@@ -27,10 +34,16 @@ class Subscription:
 
 def detect_subscriptions(txs: Iterable[TxLike], on: date) -> list[Subscription]:
     """Same merchant, similar amount (±15% of the median), roughly monthly (25–35 days apart),
-    at least 3 charges, and the latest one not older than ~45 days (still active)."""
+    at least 3 charges, the latest one not older than ~45 days (still active), up to R$ 500.
+    Installment purchases are excluded (they end by themselves)."""
     groups: dict[str, list[TxLike]] = defaultdict(list)
     for t in txs:
-        if t.type == "expense" and t.amount_cents < 0 and t.description_normalized:
+        if (
+            t.type == "expense"
+            and t.amount_cents < 0
+            and t.description_normalized
+            and not is_installment(t)
+        ):
             groups[t.description_normalized].append(t)
     out = []
     for merchant, items in groups.items():
@@ -47,6 +60,8 @@ def detect_subscriptions(txs: Iterable[TxLike], on: date) -> list[Subscription]:
             continue
         amounts = [-t.amount_cents for t in monthly]
         median = statistics.median(amounts)
+        if median > MAX_SUBSCRIPTION_CENTS:
+            continue
         if any(abs(a - median) > median * AMOUNT_TOLERANCE for a in amounts[-MIN_OCCURRENCES:]):
             continue
         gaps = [(b.date - a.date).days for a, b in itertools.pairwise(monthly)]
@@ -59,6 +74,7 @@ def detect_subscriptions(txs: Iterable[TxLike], on: date) -> list[Subscription]:
         out.append(
             Subscription(
                 merchant=merchant,
+                display_name=getattr(monthly[-1], "description", merchant),
                 amount_cents=int(median),
                 occurrences=len(monthly),
                 last_date=last,

@@ -13,6 +13,7 @@ from app.llm.providers.fake import FakeProvider
 
 class T:
     def __init__(self, d, amount, desc, type_="expense", cat=None):
+        self.description = desc
         self.date = d
         self.amount_cents = amount
         self.description_normalized = normalize_description(desc)
@@ -30,9 +31,15 @@ def test_subscriptions_detected():
     txs[-1].amount_cents = -12000  # varying amounts → not a subscription
     # stopped subscription (last charge long ago)
     txs += [T(date(2026, m, 1), -3000, "ACADEMIA") for m in (3, 4, 5)]
-    subs = detect_subscriptions(txs, on)
+    # rent: monthly but too big to be a "subscription"; installments end by themselves
+    txs += [T(date(2026, m, 10), -210000, "ALUGUEL") for m in (7, 8, 9, 10)]
+    inst = [T(date(2026, m, 14), -32990, "ELETRO CENTER TV") for m in (8, 9, 10)]
+    for t in inst:
+        t.installment_total = 10
+    subs = detect_subscriptions(txs + inst, on)
     assert [s.merchant for s in subs] == ["netflix com", "spotify brasil"]
     assert subs[0].amount_cents == 5590
+    assert subs[0].display_name == "NETFLIX.COM"
     assert subs[0].next_expected == date(2026, 11, 9)
 
 

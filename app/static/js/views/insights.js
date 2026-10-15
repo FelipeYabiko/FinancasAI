@@ -9,7 +9,7 @@ const BADGE = { info: "", warning: "warn", danger: "danger" };
 function detail(item) {
   const d = item.data;
   if (item.kind === "subscriptions") {
-    return html`<ul class="list small">${d.items.map((s) => html`<li><span style="text-transform:capitalize">${s.merchant}</span>
+    return html`<ul class="list small">${d.items.map((s) => html`<li><span>${s.merchant}</span>
       <span class="num">${s.amount} <span class="muted">· próx. ${date(s.next_expected)}</span></span></li>`)}</ul>`;
   }
   if (item.kind === "forecast") {
