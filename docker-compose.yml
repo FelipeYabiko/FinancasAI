@@ -1,0 +1,18 @@
+services:
+  app:
+    build: .
+    image: financasia:latest
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      APP_ENV: production
+      DATABASE_URL: sqlite:////app/data/financasia.db
+    volumes:
+      - financasia-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  financasia-data:

@@ -13,8 +13,8 @@ To resume in a new session: read this file, then continue with the first phase n
 | 5 — Assistant with function calling | ✅ done |
 | 6 — Synthetic generator, eval suites, report | 🟡 harness done — real 3-model run needs API keys |
 | 7 — Insights | ✅ done |
-| 8 — Docker | ⏳ next |
-| 9 — MCP server | ⬜ |
+| 8 — Docker | ✅ done |
+| 9 — MCP server | ⏳ next |
 | 10 — README | ⬜ |
 
 ## Phase 0
@@ -131,3 +131,12 @@ To resume in a new session: read this file, then continue with the first phase n
   asks the LLM (`insights.v1`) to rewrite only title/body from the formatted numbers, falling back to the
   default text on any failure or item-count mismatch.
 - Insights screen with "✨ Escrever com IA" (on demand, so no LLM cost on page load).
+
+## Phase 8
+- `Dockerfile`: python:3.12-slim + pinned `uv` binary, production deps only (`uv sync --locked --no-dev`),
+  non-root user, SQLite in the `/app/data` volume, healthcheck on `/api/health`.
+- `docker-compose.yml`: one service, port 8000, optional `.env`, named volume.
+- Verified: `docker compose up` → container healthy, first-run setup, account + transaction created,
+  data persisted across `docker compose restart`. (The sandbox needed its proxy CA injected through a
+  scratch copy of the Dockerfile to download wheels; the committed Dockerfile is the clean one.)
+- In `APP_ENV=production` the offline `fake` provider is hidden; AI features need real keys in `.env`.
