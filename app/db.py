@@ -46,7 +46,8 @@ def _sqlite_pragmas(dbapi_conn, _record) -> None:  # pragma: no cover - driver h
 def make_engine(url: str):
     if url.startswith("sqlite:///") and ":memory:" not in url:
         Path(url.removeprefix("sqlite:///")).parent.mkdir(parents=True, exist_ok=True)
-    return create_engine(url, connect_args={"check_same_thread": False})
+    # timeout: wait for SQLite write locks instead of failing with "database is locked"
+    return create_engine(url, connect_args={"check_same_thread": False, "timeout": 30})
 
 
 engine = make_engine(get_settings().database_url)

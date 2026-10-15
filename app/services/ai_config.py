@@ -1,5 +1,7 @@
 """Per-feature provider/model resolution: DB settings (settings screen) override `.env`."""
 
+import threading
+
 from sqlmodel import Session
 
 from app.config import get_settings
@@ -26,15 +28,19 @@ def set_feature_config(db: Session, feature: str, provider: str, model: str) -> 
     db.commit()
 
 
+# Extraction runs chunks in worker threads; SQLite connections must not be used concurrently
+# (an in-memory StaticPool DB shares ONE connection), so tracing writes are serialized.
+_record_lock = threading.Lock()
+
+
 def db_recorder(db: Session):
     """Write LLMCall rows in their own session so tracing survives business rollbacks."""
     bind = db.get_bind()
 
     def record(call: LLMCall) -> None:
-        with Session(bind) as s:
+        with _record_lock, Session(bind, expire_on_commit=False) as s:
             s.add(call)
             s.commit()
-            s.refresh(call)
 
     return record
 
