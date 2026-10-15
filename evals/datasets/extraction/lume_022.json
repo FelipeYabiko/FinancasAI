@@ -1,0 +1,428 @@
+{
+ "id": "lume_022",
+ "layout": "lume",
+ "bank": "Lume Card",
+ "document_type": "credit_card_invoice",
+ "period_start": "2025-02-26",
+ "period_end": "2025-03-25",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": 0,
+ "due_date": "2025-04-01",
+ "invoice_month": "2025-03",
+ "transactions": [
+  {
+   "date": "2024-07-14",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -20527,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 9,
+   "installment_total": 11
+  },
+  {
+   "date": "2024-09-02",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -60614,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 7,
+   "installment_total": 7
+  },
+  {
+   "date": "2024-10-10",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -23406,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 6,
+   "installment_total": 8
+  },
+  {
+   "date": "2024-11-28",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -6410,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 4,
+   "installment_total": 12
+  },
+  {
+   "date": "2025-01-01",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -8709,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 3,
+   "installment_total": 6
+  },
+  {
+   "date": "2025-02-26",
+   "description": "HORTIFRUTI VERDE VIDA",
+   "amount_cents": -11086,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-26",
+   "description": "ACADEMIA CORPO ATIVO",
+   "amount_cents": -10616,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-27",
+   "description": "PAGAMENTO RECEBIDO OBRIGADO",
+   "amount_cents": 213320,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-27",
+   "description": "ESTORNO LAB CLINICO EXAME",
+   "amount_cents": 33351,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-01",
+   "description": "TARIFA PACOTE SERVICOS",
+   "amount_cents": -4054,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-02",
+   "description": "UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -1845,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-03",
+   "description": "INTERNET FIBRA RAPIDA",
+   "amount_cents": -10526,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-04",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -3867,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-04",
+   "description": "AUTO POSTO ESTRELA",
+   "amount_cents": -11405,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-04",
+   "description": "MAGAZINE CASA TUDO",
+   "amount_cents": -45305,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-05",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -3271,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-06",
+   "description": "RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -12568,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-06",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -242029,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-07",
+   "description": "MAGAZINE CASA TUDO",
+   "amount_cents": -142030,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-07",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -1511,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-07",
+   "description": "ESTORNO AGUA E SANEAMENTO CIDADE",
+   "amount_cents": 14196,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-08",
+   "description": "RAPPI *BURGER HOUSE",
+   "amount_cents": -5601,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-09",
+   "description": "IFOOD *PIZZARIA FORNO",
+   "amount_cents": -10871,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-09",
+   "description": "NETFLIX.COM",
+   "amount_cents": -5387,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-10",
+   "description": "TARIFA PACOTE SERVICOS",
+   "amount_cents": -3110,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-10",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -4138,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-10",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -8424,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-12",
+   "description": "99 TECNOLOGIA CORRIDA",
+   "amount_cents": -1682,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-12",
+   "description": "ENERGIA LUZ FORTE SA",
+   "amount_cents": -41691,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-13",
+   "description": "UBER *TRIP",
+   "amount_cents": -1951,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-15",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -14025,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-15",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -5413,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-17",
+   "description": "ESTORNO RAPPI *BURGER HOUSE",
+   "amount_cents": 5266,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-18",
+   "description": "DROGARIA VIDA SAUDE",
+   "amount_cents": -20265,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-18",
+   "description": "ESTORNO ENERGIA LUZ FORTE SA",
+   "amount_cents": 15288,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-20",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -14582,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-20",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -31340,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-21",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -347287,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-21",
+   "description": "CINEMA ESTRELA SHOP",
+   "amount_cents": -6010,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-22",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -44524,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-22",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -169959,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-22",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -2789,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-23",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -78854,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-24",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -13359,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 1,
+   "installment_total": 11
+  },
+  {
+   "date": "2025-03-24",
+   "description": "SUPERMERCADO BOM PRECO",
+   "amount_cents": -47339,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-25",
+   "description": "ACADEMIA CORPO ATIVO",
+   "amount_cents": -11168,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

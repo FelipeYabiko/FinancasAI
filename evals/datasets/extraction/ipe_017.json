@@ -1,0 +1,212 @@
+{
+ "id": "ipe_017",
+ "layout": "ipe",
+ "bank": "Cooperativa Ipê",
+ "document_type": "checking_statement",
+ "period_start": "2025-03-01",
+ "period_end": "2025-03-31",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": 14664,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2025-03-01",
+   "description": "SALARIO EMPRESA ALFA TECNOLOGIA LTDA",
+   "amount_cents": 557757,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-01",
+   "description": "COMPRA DEBITO SUPERM BOM PRECO LTDA",
+   "amount_cents": -43747,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-02",
+   "description": "HORTIFRUTI VERDE VIDA",
+   "amount_cents": -10902,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-03",
+   "description": "PIX ENVIADO RAFAEL G PEREIRA",
+   "amount_cents": -54538,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-05",
+   "description": "PIX RECEBIDO CARLOS E SOUZA",
+   "amount_cents": 18059,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-06",
+   "description": "UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -3192,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-06",
+   "description": "COMPRA DEBITO IFOOD *RESTAURANTE SABOR",
+   "amount_cents": -6311,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-08",
+   "description": "COMPRA DEBITO AMAZON PRIME BR",
+   "amount_cents": -1881,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-08",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -14525,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-09",
+   "description": "COMPRA DEBITO LOJA MODA URBANA",
+   "amount_cents": -27058,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-10",
+   "description": "COMPRA DEBITO TELEFONIA CELULAR MAIS",
+   "amount_cents": -5489,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-11",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -1679,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-12",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -114141,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-13",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -93664,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-17",
+   "description": "COMPRA DEBITO IPTU PREFEITURA PARC",
+   "amount_cents": -25461,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-19",
+   "description": "COMPRA DEBITO CINEMA ESTRELA SHOP",
+   "amount_cents": -3923,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-21",
+   "description": "PAG BOLETO INTERNET FIBRA RAPIDA",
+   "amount_cents": -13123,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-26",
+   "description": "PIX ENVIADO ANA CAROLINA LIMA",
+   "amount_cents": -54087,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-27",
+   "description": "COMPRA DEBITO IFD*SABOR CASEIRO",
+   "amount_cents": -3728,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-27",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -90165,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-29",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -43920,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-31",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -22129,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

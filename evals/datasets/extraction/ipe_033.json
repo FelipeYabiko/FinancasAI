@@ -1,0 +1,194 @@
+{
+ "id": "ipe_033",
+ "layout": "ipe",
+ "bank": "Cooperativa Ipê",
+ "document_type": "checking_statement",
+ "period_start": "2026-08-01",
+ "period_end": "2026-08-31",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": 480155,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2026-08-01",
+   "description": "SALARIO COMERCIO BETA SA",
+   "amount_cents": 614294,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-02",
+   "description": "RAPPI *BURGER HOUSE",
+   "amount_cents": -4872,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-05",
+   "description": "COMPRA DEBITO AMAZON PRIME BR",
+   "amount_cents": -1497,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-06",
+   "description": "COMPRA DEBITO ATACADAO POVO SP",
+   "amount_cents": -13531,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-07",
+   "description": "PIX RECEBIDO JOAO P SANTOS",
+   "amount_cents": 9455,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-08",
+   "description": "CAFE GRAO NOBRE",
+   "amount_cents": -3266,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-10",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -370725,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-12",
+   "description": "PIX ENVIADO LUCIANA M ROCHA",
+   "amount_cents": -18008,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-13",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -129562,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-14",
+   "description": "PIX RECEBIDO JOAO P SANTOS",
+   "amount_cents": 60450,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-15",
+   "description": "UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -2834,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-16",
+   "description": "PIX ENVIADO FERNANDA ALVES",
+   "amount_cents": -2277,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-20",
+   "description": "PIX ENVIADO ANA CAROLINA LIMA",
+   "amount_cents": -44698,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-20",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -19531,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-22",
+   "description": "COMPRA DEBITO UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -5386,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-22",
+   "description": "PIX RECEBIDO JOAO P SANTOS",
+   "amount_cents": 3567,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-25",
+   "description": "NETFLIX.COM",
+   "amount_cents": -5054,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-26",
+   "description": "PIX RECEBIDO FERNANDA ALVES",
+   "amount_cents": 62438,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-31",
+   "description": "ATACADAO DO POVO",
+   "amount_cents": -42818,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-08-31",
+   "description": "AMAZON PRIME BR",
+   "amount_cents": -1628,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

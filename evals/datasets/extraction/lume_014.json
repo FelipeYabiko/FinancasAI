@@ -1,0 +1,482 @@
+{
+ "id": "lume_014",
+ "layout": "lume",
+ "bank": "Lume Card",
+ "document_type": "credit_card_invoice",
+ "period_start": "2025-10-26",
+ "period_end": "2025-11-25",
+ "holder": "CICRANO PEREIRA DIAS",
+ "opening_balance_cents": 0,
+ "due_date": "2025-12-02",
+ "invoice_month": "2025-11",
+ "transactions": [
+  {
+   "date": "2025-01-09",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -40448,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 11,
+   "installment_total": 11
+  },
+  {
+   "date": "2025-02-28",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -28157,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 9,
+   "installment_total": 11
+  },
+  {
+   "date": "2025-02-28",
+   "description": "LOJA MODA URBANA",
+   "amount_cents": -24479,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 9,
+   "installment_total": 11
+  },
+  {
+   "date": "2025-03-14",
+   "description": "MAGAZINE CASA TUDO",
+   "amount_cents": -15455,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 9,
+   "installment_total": 10
+  },
+  {
+   "date": "2025-04-29",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -20079,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 7,
+   "installment_total": 12
+  },
+  {
+   "date": "2025-05-14",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -42884,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 7,
+   "installment_total": 8
+  },
+  {
+   "date": "2025-07-06",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -34146,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 5,
+   "installment_total": 8
+  },
+  {
+   "date": "2025-08-10",
+   "description": "LOJA MODA URBANA",
+   "amount_cents": -30182,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 4,
+   "installment_total": 5
+  },
+  {
+   "date": "2025-09-13",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -16965,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 3,
+   "installment_total": 6
+  },
+  {
+   "date": "2025-10-04",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -4860,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 2,
+   "installment_total": 8
+  },
+  {
+   "date": "2025-10-10",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -47645,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 2,
+   "installment_total": 8
+  },
+  {
+   "date": "2025-10-26",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -2665,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-10-27",
+   "description": "PAGAMENTO RECEBIDO OBRIGADO",
+   "amount_cents": 234863,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-10-29",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -16220,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-10-29",
+   "description": "ESTORNO CANTINA DA NONNA",
+   "amount_cents": 19704,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-10-30",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -16376,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-10-31",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -32080,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-10-31",
+   "description": "MAGAZINE CASA TUDO",
+   "amount_cents": -65779,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-03",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -2580,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-03",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -124666,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-03",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -100012,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-03",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -4074,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-04",
+   "description": "IFOOD *RESTAURANTE SABOR",
+   "amount_cents": -5278,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-04",
+   "description": "LOJA MODA URBANA",
+   "amount_cents": -34556,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 1,
+   "installment_total": 12
+  },
+  {
+   "date": "2025-11-05",
+   "description": "99 TECNOLOGIA CORRIDA",
+   "amount_cents": -3373,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-05",
+   "description": "AUTO POSTO ESTRELA",
+   "amount_cents": -19413,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-05",
+   "description": "INGRESSOS SHOW E CIA",
+   "amount_cents": -19400,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-06",
+   "description": "UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -5933,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-07",
+   "description": "INGRESSOS SHOW E CIA",
+   "amount_cents": -11731,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-07",
+   "description": "LOJA MODA URBANA",
+   "amount_cents": -31910,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-07",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -37607,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-11",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -4099,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-12",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -35014,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 1,
+   "installment_total": 9
+  },
+  {
+   "date": "2025-11-13",
+   "description": "ESTAC CENTRO PARK",
+   "amount_cents": -2532,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-13",
+   "description": "SUPERMERCADO BOM PRECO",
+   "amount_cents": -16986,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-16",
+   "description": "RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -7933,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-16",
+   "description": "NETFLIX.COM",
+   "amount_cents": -5120,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-16",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -4882,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-17",
+   "description": "CONDOMINIO RES JARDINS",
+   "amount_cents": -87714,
+   "type": "expense",
+   "category": "Moradia",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-17",
+   "description": "UBER *TRIP",
+   "amount_cents": -4911,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-19",
+   "description": "PET SHOP AMIGO FIEL",
+   "amount_cents": -17367,
+   "type": "expense",
+   "category": "Pets",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-19",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -13600,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-20",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -1897,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-20",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -240766,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-20",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -3556,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-20",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -320263,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-20",
+   "description": "UBER *TRIP",
+   "amount_cents": -6146,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-21",
+   "description": "TARIFA PACOTE SERVICOS",
+   "amount_cents": -3220,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-22",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -31457,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-22",
+   "description": "SUPERM BOM PRECO LTDA",
+   "amount_cents": -12447,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-24",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -59676,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-11-25",
+   "description": "INTERNET FIBRA RAPIDA",
+   "amount_cents": -10885,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

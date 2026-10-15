@@ -1,0 +1,239 @@
+{
+ "id": "aurora_024",
+ "layout": "aurora",
+ "bank": "Banco Aurora",
+ "document_type": "checking_statement",
+ "period_start": "2025-03-01",
+ "period_end": "2025-03-31",
+ "holder": "BELTRANA SOUZA COSTA",
+ "opening_balance_cents": 581264,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2025-03-04",
+   "description": "PIX ENVIADO MARIA S OLIVEIRA",
+   "amount_cents": -59024,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-05",
+   "description": "COMPRA DEBITO ATACADAO DO POVO",
+   "amount_cents": -11664,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-06",
+   "description": "COMPRA DEBITO ACADEMIA CORPO ATIVO",
+   "amount_cents": -14786,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-06",
+   "description": "TELEFONIA CELULAR MAIS",
+   "amount_cents": -7068,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-07",
+   "description": "COMPRA DEBITO CIA AEREA VOE BEM",
+   "amount_cents": -74713,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-08",
+   "description": "ACADEMIA CORPO ATIVO",
+   "amount_cents": -13844,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-08",
+   "description": "COMPRA DEBITO RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -3271,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-09",
+   "description": "PAG BOLETO AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -14819,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-09",
+   "description": "ESTAC CENTRO PARK",
+   "amount_cents": -2160,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-09",
+   "description": "PIX ENVIADO MARIA S OLIVEIRA",
+   "amount_cents": -39378,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-09",
+   "description": "PIX ENVIADO FERNANDA ALVES",
+   "amount_cents": -38506,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-10",
+   "description": "SALARIO EMPRESA ALFA TECNOLOGIA LTDA",
+   "amount_cents": 1043223,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-12",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -8759,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-12",
+   "description": "PIX RECEBIDO FERNANDA ALVES",
+   "amount_cents": 78725,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-12",
+   "description": "INGRESSOS SHOW E CIA",
+   "amount_cents": -21540,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-16",
+   "description": "PIX ENVIADO ANA CAROLINA LIMA",
+   "amount_cents": -43918,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-17",
+   "description": "PAG BOLETO ENERGIA LUZ FORTE SA",
+   "amount_cents": -18801,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-17",
+   "description": "PIX RECEBIDO MARIA S OLIVEIRA",
+   "amount_cents": 51155,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-21",
+   "description": "PIX RECEBIDO LUCIANA M ROCHA",
+   "amount_cents": 13239,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-21",
+   "description": "PIX ENVIADO CARLOS E SOUZA",
+   "amount_cents": -28294,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-26",
+   "description": "COMPRA DEBITO RAPPI *BURGER HOUSE",
+   "amount_cents": -7450,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-26",
+   "description": "COMPRA DEBITO LIVRARIA LER MAIS",
+   "amount_cents": -9971,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-27",
+   "description": "COMPRA DEBITO NETFLIX.COM",
+   "amount_cents": -4251,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-27",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -22738,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-29",
+   "description": "SUPERM BOM PRECO LTDA",
+   "amount_cents": -37712,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

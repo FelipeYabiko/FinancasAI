@@ -1,0 +1,419 @@
+{
+ "id": "ipe_005",
+ "layout": "ipe",
+ "bank": "Cooperativa Ipê",
+ "document_type": "checking_statement",
+ "period_start": "2025-03-01",
+ "period_end": "2025-03-31",
+ "holder": "CICRANO PEREIRA DIAS",
+ "opening_balance_cents": 633157,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2025-03-01",
+   "description": "COMPRA DEBITO HORTIFRUTI VERDE VIDA",
+   "amount_cents": -6189,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-05",
+   "description": "SALARIO COMERCIO BETA SA",
+   "amount_cents": 540305,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-07",
+   "description": "COMPRA DEBITO HOTEL PRAIA AZUL",
+   "amount_cents": -139613,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-07",
+   "description": "PIX ENVIADO ANA CAROLINA LIMA",
+   "amount_cents": -20376,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-07",
+   "description": "ENERGIA LUZ FORTE SA",
+   "amount_cents": -13575,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-08",
+   "description": "LOJA MODA URBANA",
+   "amount_cents": -16426,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-08",
+   "description": "COMPRA DEBITO YOUTUBE PREMIUM",
+   "amount_cents": -4019,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-08",
+   "description": "COMPRA DEBITO SPOTIFY BRASIL",
+   "amount_cents": -2712,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-09",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 7122,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-10",
+   "description": "MAGAZINE CASA TUDO",
+   "amount_cents": -69014,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-10",
+   "description": "PIX RECEBIDO FERNANDA ALVES",
+   "amount_cents": 37976,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-11",
+   "description": "INGRESSOS SHOW E CIA",
+   "amount_cents": -35910,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-12",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 6680,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-13",
+   "description": "IFOOD *PIZZARIA FORNO",
+   "amount_cents": -10748,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-14",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 2213,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-14",
+   "description": "PIX RECEBIDO JOAO P SANTOS",
+   "amount_cents": 62482,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-14",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -21384,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-14",
+   "description": "IFD*PIZZARIA FORNO",
+   "amount_cents": -7225,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-15",
+   "description": "COMPRA DEBITO HOTEL PRAIA AZUL",
+   "amount_cents": -43783,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-15",
+   "description": "99APP *CORRIDA",
+   "amount_cents": -5484,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-16",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -289952,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-16",
+   "description": "PIX ENVIADO ANA CAROLINA LIMA",
+   "amount_cents": -26638,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-16",
+   "description": "COMPRA DEBITO RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -17249,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-19",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -101605,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-19",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -98529,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-19",
+   "description": "COMPRA DEBITO UBER *TRIP",
+   "amount_cents": -2334,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-19",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -446623,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-20",
+   "description": "COMPRA DEBITO NETFLIX.COM",
+   "amount_cents": -5184,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-20",
+   "description": "COMPRA DEBITO ESTAC CENTRO PARK",
+   "amount_cents": -2026,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-23",
+   "description": "PIX ENVIADO MARIA S OLIVEIRA",
+   "amount_cents": -37692,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-23",
+   "description": "COMPRA DEBITO CINEMA ESTRELA SHOP",
+   "amount_cents": -7936,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-23",
+   "description": "COMPRA DEBITO HOTEL PRAIA AZUL",
+   "amount_cents": -120931,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-23",
+   "description": "PIX ENVIADO LUCIANA M ROCHA",
+   "amount_cents": -14555,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-25",
+   "description": "LOJA MODA URBANA",
+   "amount_cents": -31811,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-27",
+   "description": "ATACADAO POVO SP",
+   "amount_cents": -13771,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-27",
+   "description": "PIX RECEBIDO LUCIANA M ROCHA",
+   "amount_cents": 78931,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-28",
+   "description": "PIX ENVIADO FERNANDA ALVES",
+   "amount_cents": -46960,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-28",
+   "description": "COMPRA DEBITO SUPERM BOM PRECO LTDA",
+   "amount_cents": -30582,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-28",
+   "description": "COMPRA DEBITO IFD*PIZZARIA FORNO",
+   "amount_cents": -4751,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-28",
+   "description": "PAG BOLETO INTERNET FIBRA RAPIDA",
+   "amount_cents": -12584,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-29",
+   "description": "PIX RECEBIDO CARLOS E SOUZA",
+   "amount_cents": 9355,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-29",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -2641,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-30",
+   "description": "ENERGIA LUZ FORTE SA",
+   "amount_cents": -36229,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-31",
+   "description": "PIX RECEBIDO ANA CAROLINA LIMA",
+   "amount_cents": 67323,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-31",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -56873,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

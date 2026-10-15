@@ -1,0 +1,374 @@
+{
+ "id": "aurora_032",
+ "layout": "aurora",
+ "bank": "Banco Aurora",
+ "document_type": "checking_statement",
+ "period_start": "2026-06-01",
+ "period_end": "2026-06-30",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": 683599,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2026-06-02",
+   "description": "PAG BOLETO TELEFONIA CELULAR MAIS",
+   "amount_cents": -4996,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-03",
+   "description": "ENERGIA LUZ FORTE SA",
+   "amount_cents": -17359,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-05",
+   "description": "COMPRA DEBITO HOTEL PRAIA AZUL",
+   "amount_cents": -57796,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-05",
+   "description": "LOJA MODA URBANA",
+   "amount_cents": -31851,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-07",
+   "description": "PAG BOLETO IPTU PREFEITURA PARC",
+   "amount_cents": -43531,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-08",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -47317,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-08",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -55974,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-10",
+   "description": "SALARIO COMERCIO BETA SA",
+   "amount_cents": 1177094,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-10",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -3607,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-10",
+   "description": "PIX ENVIADO LUCIANA M ROCHA",
+   "amount_cents": -49142,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-11",
+   "description": "COMPRA DEBITO HORTIFRUTI VERDE VIDA",
+   "amount_cents": -5065,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-15",
+   "description": "COMPRA DEBITO CINEMA ESTRELA SHOP",
+   "amount_cents": -4102,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-16",
+   "description": "PIX RECEBIDO RAFAEL G PEREIRA",
+   "amount_cents": 62455,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-16",
+   "description": "COMPRA DEBITO PADARIA PAO DOURADO",
+   "amount_cents": -3311,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-17",
+   "description": "PIX RECEBIDO JOAO P SANTOS",
+   "amount_cents": 34142,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-18",
+   "description": "PAG BOLETO IPTU PREFEITURA PARC",
+   "amount_cents": -30635,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-18",
+   "description": "COMPRA DEBITO LIVRARIA LER MAIS",
+   "amount_cents": -7623,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-18",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -30055,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-19",
+   "description": "PIX ENVIADO JOAO P SANTOS",
+   "amount_cents": -28087,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-19",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -44014,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-19",
+   "description": "LOJA MODA URBANA",
+   "amount_cents": -32156,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-19",
+   "description": "PIX RECEBIDO LUCIANA M ROCHA",
+   "amount_cents": 5578,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-20",
+   "description": "COMPRA DEBITO TELEFONIA CELULAR MAIS",
+   "amount_cents": -8637,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-20",
+   "description": "PIX ENVIADO FERNANDA ALVES",
+   "amount_cents": -37679,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-20",
+   "description": "PIX RECEBIDO RAFAEL G PEREIRA",
+   "amount_cents": 33031,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-22",
+   "description": "DROGARIA VIDA SAUDE",
+   "amount_cents": -15745,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-22",
+   "description": "PIX ENVIADO ANA CAROLINA LIMA",
+   "amount_cents": -13835,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-23",
+   "description": "COMPRA DEBITO CINEMA ESTRELA SHOP",
+   "amount_cents": -6965,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-23",
+   "description": "COMPRA DEBITO LOJA MODA URBANA",
+   "amount_cents": -7096,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-23",
+   "description": "PIX RECEBIDO LUCIANA M ROCHA",
+   "amount_cents": 62940,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-24",
+   "description": "PAG BOLETO CONDOMINIO RES JARDINS",
+   "amount_cents": -59984,
+   "type": "expense",
+   "category": "Moradia",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-26",
+   "description": "COMPRA DEBITO NETFLIX.COM",
+   "amount_cents": -5347,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-26",
+   "description": "COMPRA DEBITO HORTIFRUTI VERDE VIDA",
+   "amount_cents": -10972,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-27",
+   "description": "IFD*PIZZARIA FORNO",
+   "amount_cents": -5662,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-27",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -6044,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-28",
+   "description": "COMPRA DEBITO PET SHOP AMIGO FIEL",
+   "amount_cents": -3991,
+   "type": "expense",
+   "category": "Pets",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-28",
+   "description": "PIX ENVIADO CARLOS E SOUZA",
+   "amount_cents": -41112,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-28",
+   "description": "COMPRA DEBITO RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -4175,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-29",
+   "description": "COMPRA DEBITO SUPERMERCADO BOM PRECO",
+   "amount_cents": -46811,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-29",
+   "description": "SUPERM BOM PRECO LTDA",
+   "amount_cents": -33255,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

@@ -6,6 +6,48 @@ from collections.abc import Callable
 from app.llm.providers.base import estimate_tokens
 from app.llm.types import LLMResponse, Message, ToolCall
 
+KEYWORDS = {
+    "Delivery": ["ifood", "ifd*", "rappi"],
+    "Transporte": ["uber", "99app", "99 tecnologia", "posto", "estac"],
+    "Mercado": ["superm", "mercad", "atacadao", "hortifruti", "padaria"],
+    "Assinaturas": ["netflix", "spotify", "prime", "youtube"],
+    "Saúde": ["farmacia", "drogaria", "lab ", "academia"],
+    "Restaurantes": ["restaurante", "cantina", "cafe"],
+    "Contas e serviços": ["energia", "agua", "internet", "telefonia"],
+    "Salário": ["salario"],
+}
+
+
+def demo_handler(messages, tools, response_schema):
+    """Offline behaviour so the app and CI work without API keys: the extraction schema is
+    answered by the regex baseline parser, categorization by keywords, anything else by 'pong'.
+    It is NOT an LLM — evals report it as the deterministic floor."""
+    import re
+
+    from app.services.importer.baseline import parse_lines
+
+    props = (response_schema or {}).get("properties", {})
+    user = next((m["content"] for m in reversed(messages) if m["role"] == "user"), "")
+    if "transactions" in props:
+        m = re.search(r"Ano de referência para datas sem ano: (\d{4})", user)
+        body = user.split("<<<", 1)[-1].rsplit(">>>", 1)[0]
+        return {"transactions": parse_lines(body.splitlines(), int(m.group(1)) if m else None)}
+    if "items" in props:
+        items = []
+        for line in user.split("Transações:", 1)[-1].splitlines():
+            m = re.match(r"(\d+)\. \[(\w+)\] (.*)", line.strip())
+            if not m:
+                continue
+            desc = m.group(3).lower()
+            cat = "Outras receitas" if m.group(2) == "receita" else "Outros"
+            for name, kws in KEYWORDS.items():
+                if any(k in desc for k in kws):
+                    cat = name
+            items.append({"index": int(m.group(1)), "category": cat})
+        return {"items": items}
+    return "pong"
+
+
 Handler = Callable[[list[Message], list[dict] | None, dict | None], LLMResponse | str | dict]
 
 
@@ -26,7 +68,7 @@ class FakeProvider:
         elif self.handler:
             out = self.handler(messages, tools, response_schema)
         else:
-            out = "ok"
+            out = demo_handler(messages, tools, response_schema)
         if isinstance(out, Exception):
             raise out
         if isinstance(out, LLMResponse):

@@ -1,0 +1,167 @@
+{
+ "id": "lume_010",
+ "layout": "lume",
+ "bank": "Lume Card",
+ "document_type": "credit_card_invoice",
+ "period_start": "2024-12-16",
+ "period_end": "2025-01-15",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": 0,
+ "due_date": "2025-01-22",
+ "invoice_month": "2025-01",
+ "transactions": [
+  {
+   "date": "2024-05-07",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -26302,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 9,
+   "installment_total": 10
+  },
+  {
+   "date": "2024-07-30",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -15454,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 6,
+   "installment_total": 12
+  },
+  {
+   "date": "2024-09-11",
+   "description": "LOJA MODA URBANA",
+   "amount_cents": -14890,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 5,
+   "installment_total": 9
+  },
+  {
+   "date": "2024-12-16",
+   "description": "LOJA MODA URBANA",
+   "amount_cents": -19531,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2024-12-21",
+   "description": "DROGARIA VIDA SAUDE",
+   "amount_cents": -18123,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2024-12-23",
+   "description": "PAGAMENTO RECEBIDO OBRIGADO",
+   "amount_cents": 352279,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2024-12-26",
+   "description": "SPOTIFY BRASIL",
+   "amount_cents": -2583,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2024-12-28",
+   "description": "UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -5267,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-03",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -7421,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-07",
+   "description": "ESTORNO ENERGIA LUZ FORTE SA",
+   "amount_cents": 13081,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-07",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -19429,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-10",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -3375,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-11",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -102245,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-11",
+   "description": "ATACADAO DO POVO",
+   "amount_cents": -20503,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-15",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -18365,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-15",
+   "description": "TELEFONIA CELULAR MAIS",
+   "amount_cents": -6832,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-15",
+   "description": "DROGARIA VIDA SAUDE",
+   "amount_cents": -8292,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

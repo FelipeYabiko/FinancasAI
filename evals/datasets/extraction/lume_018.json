@@ -1,0 +1,158 @@
+{
+ "id": "lume_018",
+ "layout": "lume",
+ "bank": "Lume Card",
+ "document_type": "credit_card_invoice",
+ "period_start": "2025-12-09",
+ "period_end": "2026-01-08",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": 0,
+ "due_date": "2026-01-15",
+ "invoice_month": "2026-01",
+ "transactions": [
+  {
+   "date": "2025-12-09",
+   "description": "NETFLIX.COM",
+   "amount_cents": -4707,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-10",
+   "description": "PAGAMENTO RECEBIDO OBRIGADO",
+   "amount_cents": 355930,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-13",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -2220,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-17",
+   "description": "SUPERMERCADO BOM PRECO",
+   "amount_cents": -28792,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-18",
+   "description": "CAFE GRAO NOBRE",
+   "amount_cents": -4143,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-19",
+   "description": "ESTORNO IFD*SABOR CASEIRO",
+   "amount_cents": 9817,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-21",
+   "description": "CONDOMINIO RES JARDINS",
+   "amount_cents": -68865,
+   "type": "expense",
+   "category": "Moradia",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-23",
+   "description": "CAFE GRAO NOBRE",
+   "amount_cents": -2919,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-27",
+   "description": "CINEMA ESTRELA SHOP",
+   "amount_cents": -8512,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-28",
+   "description": "ESTAC CENTRO PARK",
+   "amount_cents": -3032,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-29",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -31172,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-31",
+   "description": "UBER *TRIP",
+   "amount_cents": -5592,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-05",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -3685,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-06",
+   "description": "INTERNET FIBRA RAPIDA",
+   "amount_cents": -10820,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-08",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -37056,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-08",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -13904,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

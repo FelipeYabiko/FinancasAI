@@ -1,0 +1,365 @@
+{
+ "id": "mare_023",
+ "layout": "mare",
+ "bank": "Banco Maré",
+ "document_type": "checking_statement",
+ "period_start": "2026-01-01",
+ "period_end": "2026-01-31",
+ "holder": "CICRANO PEREIRA DIAS",
+ "opening_balance_cents": 74052,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2026-01-02",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -11358,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-04",
+   "description": "PIX RECEBIDO FERNANDA ALVES",
+   "amount_cents": 72405,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-04",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -17155,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-08",
+   "description": "COMPRA DEBITO SPOTIFY BRASIL",
+   "amount_cents": -2424,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-08",
+   "description": "PIX RECEBIDO CARLOS E SOUZA",
+   "amount_cents": 32673,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-08",
+   "description": "PIX RECEBIDO LUCIANA M ROCHA",
+   "amount_cents": 29723,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-10",
+   "description": "SALARIO EMPRESA ALFA TECNOLOGIA LTDA",
+   "amount_cents": 1022580,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-10",
+   "description": "COMPRA DEBITO ELETRO CENTER ONLINE",
+   "amount_cents": -222153,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-10",
+   "description": "SPOTIFY BRASIL",
+   "amount_cents": -2594,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-11",
+   "description": "COMPRA DEBITO ACADEMIA CORPO ATIVO",
+   "amount_cents": -14685,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-11",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -48174,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-12",
+   "description": "COMPRA DEBITO PADARIA PAO DOURADO",
+   "amount_cents": -2341,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-13",
+   "description": "COMPRA DEBITO SUPERMERCADO BOM PRECO",
+   "amount_cents": -43741,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-14",
+   "description": "COMPRA DEBITO ENERGIA LUZ FORTE SA",
+   "amount_cents": -19548,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-16",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -10437,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-17",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -15986,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-18",
+   "description": "COMPRA DEBITO FARMACIA VIDA SAUDE",
+   "amount_cents": -12767,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-18",
+   "description": "PIX RECEBIDO JOAO P SANTOS",
+   "amount_cents": 38780,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-18",
+   "description": "PIX ENVIADO RAFAEL G PEREIRA",
+   "amount_cents": -44354,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-19",
+   "description": "COMPRA DEBITO LAB CLINICO EXAME",
+   "amount_cents": -13525,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-19",
+   "description": "UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -6254,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-22",
+   "description": "COMPRA DEBITO CURSO IDIOMAS FALA BEM",
+   "amount_cents": -43137,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-22",
+   "description": "COMPRA DEBITO HORTIFRUTI VERDE VIDA",
+   "amount_cents": -10505,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-22",
+   "description": "COMPRA DEBITO IFD*PIZZARIA FORNO",
+   "amount_cents": -5643,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-24",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -19757,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-24",
+   "description": "INTERNET FIBRA RAPIDA",
+   "amount_cents": -11170,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-24",
+   "description": "AMAZON PRIME BR",
+   "amount_cents": -1558,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-24",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -6585,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-25",
+   "description": "PIX ENVIADO FERNANDA ALVES",
+   "amount_cents": -16134,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-25",
+   "description": "COMPRA DEBITO ELETRO CENTER ONLINE",
+   "amount_cents": -108923,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-27",
+   "description": "COMPRA DEBITO INGRESSOS SHOW E CIA",
+   "amount_cents": -37697,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-28",
+   "description": "PAG BOLETO INTERNET FIBRA RAPIDA",
+   "amount_cents": -12146,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-29",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -175155,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-29",
+   "description": "COMPRA DEBITO PADARIA PAO DOURADO",
+   "amount_cents": -4279,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-29",
+   "description": "COMPRA DEBITO YOUTUBE PREMIUM",
+   "amount_cents": -3441,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-29",
+   "description": "COMPRA DEBITO ENERGIA LUZ FORTE SA",
+   "amount_cents": -37829,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-30",
+   "description": "COMPRA DEBITO YOUTUBE PREMIUM",
+   "amount_cents": -3732,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-30",
+   "description": "ATACADAO DO POVO",
+   "amount_cents": -50501,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-01-31",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 2600,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

@@ -1,0 +1,509 @@
+{
+ "id": "lume_034",
+ "layout": "lume",
+ "bank": "Lume Card",
+ "document_type": "credit_card_invoice",
+ "period_start": "2025-09-04",
+ "period_end": "2025-10-03",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": 0,
+ "due_date": "2025-10-10",
+ "invoice_month": "2025-10",
+ "transactions": [
+  {
+   "date": "2024-12-20",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -31305,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 10,
+   "installment_total": 12
+  },
+  {
+   "date": "2025-02-26",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -22756,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 8,
+   "installment_total": 11
+  },
+  {
+   "date": "2025-03-03",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -26215,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 8,
+   "installment_total": 9
+  },
+  {
+   "date": "2025-03-24",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -13002,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 7,
+   "installment_total": 7
+  },
+  {
+   "date": "2025-04-21",
+   "description": "MAGAZINE CASA TUDO",
+   "amount_cents": -27526,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 6,
+   "installment_total": 7
+  },
+  {
+   "date": "2025-06-03",
+   "description": "MAGAZINE CASA TUDO",
+   "amount_cents": -32982,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 5,
+   "installment_total": 8
+  },
+  {
+   "date": "2025-07-06",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -77296,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 3,
+   "installment_total": 5
+  },
+  {
+   "date": "2025-07-10",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -39700,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 3,
+   "installment_total": 10
+  },
+  {
+   "date": "2025-08-10",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -28826,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 2,
+   "installment_total": 9
+  },
+  {
+   "date": "2025-08-17",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -8081,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 2,
+   "installment_total": 11
+  },
+  {
+   "date": "2025-08-27",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -35833,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 2,
+   "installment_total": 3
+  },
+  {
+   "date": "2025-09-04",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -97154,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-05",
+   "description": "PAGAMENTO RECEBIDO OBRIGADO",
+   "amount_cents": 397029,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-05",
+   "description": "ATACADAO POVO SP",
+   "amount_cents": -15745,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-05",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -101763,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-06",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -2851,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-07",
+   "description": "CINEMA ESTRELA SHOP",
+   "amount_cents": -2628,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-07",
+   "description": "IFOOD *PIZZARIA FORNO",
+   "amount_cents": -11259,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-08",
+   "description": "CONDOMINIO RES JARDINS",
+   "amount_cents": -59528,
+   "type": "expense",
+   "category": "Moradia",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-08",
+   "description": "SUPERMERCADO BOM PRECO",
+   "amount_cents": -47055,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-09",
+   "description": "AMAZON PRIME BR",
+   "amount_cents": -1685,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-09",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -119993,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-09",
+   "description": "IFD*SABOR CASEIRO",
+   "amount_cents": -8199,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-09",
+   "description": "ATACADAO DO POVO",
+   "amount_cents": -50261,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-10",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -16109,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-13",
+   "description": "IFD*SABOR CASEIRO",
+   "amount_cents": -8071,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-14",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -33525,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-15",
+   "description": "MAGAZINE CASA TUDO",
+   "amount_cents": -92633,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-16",
+   "description": "HORTIFRUTI VERDE VIDA",
+   "amount_cents": -5836,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-16",
+   "description": "ESTORNO HOTEL PRAIA AZUL",
+   "amount_cents": 58857,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-16",
+   "description": "ACADEMIA CORPO ATIVO",
+   "amount_cents": -14607,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-16",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -813,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-16",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -178699,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-16",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -4390,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-17",
+   "description": "INGRESSOS SHOW E CIA",
+   "amount_cents": -11958,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-17",
+   "description": "UBER *TRIP",
+   "amount_cents": -5784,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-19",
+   "description": "ESTAC CENTRO PARK",
+   "amount_cents": -1830,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-21",
+   "description": "POSTO ESTRELA COMBUSTIVEIS",
+   "amount_cents": -22469,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-21",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -14171,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-21",
+   "description": "ESTORNO NETFLIX.COM",
+   "amount_cents": 4263,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-22",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -275938,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-23",
+   "description": "INTERNET FIBRA RAPIDA",
+   "amount_cents": -13792,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-23",
+   "description": "PET SHOP AMIGO FIEL",
+   "amount_cents": -6421,
+   "type": "expense",
+   "category": "Pets",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-25",
+   "description": "RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -16704,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-26",
+   "description": "ESTORNO YOUTUBE PREMIUM",
+   "amount_cents": 3842,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-26",
+   "description": "ATACADAO DO POVO",
+   "amount_cents": -12614,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-28",
+   "description": "AUTO POSTO ESTRELA",
+   "amount_cents": -9738,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-29",
+   "description": "DROGARIA VIDA SAUDE",
+   "amount_cents": -18996,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-29",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -16084,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 1,
+   "installment_total": 4
+  },
+  {
+   "date": "2025-09-29",
+   "description": "ESTORNO ATACADAO DO POVO",
+   "amount_cents": 29987,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-30",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -3979,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-10-01",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -8360,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-10-02",
+   "description": "99APP *CORRIDA",
+   "amount_cents": -1092,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-10-02",
+   "description": "SUPERMERCADO BOM PRECO",
+   "amount_cents": -15258,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-10-03",
+   "description": "ATACADAO DO POVO",
+   "amount_cents": -53960,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

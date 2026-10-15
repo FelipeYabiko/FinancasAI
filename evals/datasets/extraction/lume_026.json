@@ -1,0 +1,302 @@
+{
+ "id": "lume_026",
+ "layout": "lume",
+ "bank": "Lume Card",
+ "document_type": "credit_card_invoice",
+ "period_start": "2025-01-26",
+ "period_end": "2025-02-25",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": 0,
+ "due_date": "2025-03-04",
+ "invoice_month": "2025-02",
+ "transactions": [
+  {
+   "date": "2025-01-07",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -25581,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 2,
+   "installment_total": 3
+  },
+  {
+   "date": "2025-01-23",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -56627,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 2,
+   "installment_total": 5
+  },
+  {
+   "date": "2025-01-26",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -12451,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-26",
+   "description": "RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -7698,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-29",
+   "description": "HORTIFRUTI VERDE VIDA",
+   "amount_cents": -5666,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-30",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -6319,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-31",
+   "description": "RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -15866,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-01-31",
+   "description": "ESTORNO MERCADINHO DA ESQUINA",
+   "amount_cents": 7161,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-01",
+   "description": "PAGAMENTO RECEBIDO OBRIGADO",
+   "amount_cents": 182793,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-02",
+   "description": "IFOOD *RESTAURANTE SABOR",
+   "amount_cents": -5234,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-02",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -83827,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-03",
+   "description": "TELEFONIA CELULAR MAIS",
+   "amount_cents": -7809,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-03",
+   "description": "INGRESSOS SHOW E CIA",
+   "amount_cents": -37087,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-05",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -31279,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-06",
+   "description": "ENERGIA LUZ FORTE SA",
+   "amount_cents": -38290,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-06",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -23308,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-06",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -6345,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-07",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -1463,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-09",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -38565,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-10",
+   "description": "TELEFONIA CELULAR MAIS",
+   "amount_cents": -8253,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-10",
+   "description": "IFD*PIZZARIA FORNO",
+   "amount_cents": -9983,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-10",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -79270,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-11",
+   "description": "IFOOD *RESTAURANTE SABOR",
+   "amount_cents": -6800,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-11",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -6635,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-12",
+   "description": "IFD*SABOR CASEIRO",
+   "amount_cents": -7544,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-13",
+   "description": "INTERNET FIBRA RAPIDA",
+   "amount_cents": -12321,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-14",
+   "description": "ESTORNO CINEMA ESTRELA SHOP",
+   "amount_cents": 4378,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-15",
+   "description": "ACADEMIA CORPO ATIVO",
+   "amount_cents": -14582,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-15",
+   "description": "DROGARIA VIDA SAUDE",
+   "amount_cents": -17282,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-18",
+   "description": "CONDOMINIO RES JARDINS",
+   "amount_cents": -113610,
+   "type": "expense",
+   "category": "Moradia",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-22",
+   "description": "AMAZON PRIME BR",
+   "amount_cents": -1559,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-25",
+   "description": "UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -6069,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

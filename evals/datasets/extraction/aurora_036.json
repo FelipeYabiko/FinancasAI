@@ -1,0 +1,545 @@
+{
+ "id": "aurora_036",
+ "layout": "aurora",
+ "bank": "Banco Aurora",
+ "document_type": "checking_statement",
+ "period_start": "2026-11-01",
+ "period_end": "2026-11-30",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": 147503,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2026-11-01",
+   "description": "ESTAC CENTRO PARK",
+   "amount_cents": -2686,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-01",
+   "description": "INTERNET FIBRA RAPIDA",
+   "amount_cents": -12411,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-01",
+   "description": "PIX RECEBIDO RAFAEL G PEREIRA",
+   "amount_cents": 13452,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-02",
+   "description": "CONDOMINIO RES JARDINS",
+   "amount_cents": -102788,
+   "type": "expense",
+   "category": "Moradia",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-02",
+   "description": "COMPRA DEBITO 99APP *CORRIDA",
+   "amount_cents": -3076,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-05",
+   "description": "SALARIO EMPRESA ALFA TECNOLOGIA LTDA",
+   "amount_cents": 434064,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-05",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -9803,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-05",
+   "description": "RAPPI *BURGER HOUSE",
+   "amount_cents": -3703,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-05",
+   "description": "PIX ENVIADO RAFAEL G PEREIRA",
+   "amount_cents": -58354,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-05",
+   "description": "PIX ENVIADO RAFAEL G PEREIRA",
+   "amount_cents": -9638,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-05",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 2719,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-05",
+   "description": "COMPRA DEBITO MAGAZINE CASA TUDO",
+   "amount_cents": -25377,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-06",
+   "description": "COMPRA DEBITO MERCADINHO DA ESQUINA",
+   "amount_cents": -3021,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-07",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -55998,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-07",
+   "description": "TELEFONIA CELULAR MAIS",
+   "amount_cents": -8408,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-09",
+   "description": "PIX RECEBIDO ANA CAROLINA LIMA",
+   "amount_cents": 67054,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-10",
+   "description": "PAG BOLETO TELEFONIA CELULAR MAIS",
+   "amount_cents": -6756,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-10",
+   "description": "ATACADAO POVO SP",
+   "amount_cents": -62695,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-11",
+   "description": "COMPRA DEBITO CANTINA DA NONNA",
+   "amount_cents": -20694,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-11",
+   "description": "COMPRA DEBITO DROGARIA VIDA SAUDE",
+   "amount_cents": -13379,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-12",
+   "description": "HORTIFRUTI VERDE VIDA",
+   "amount_cents": -7285,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-12",
+   "description": "PIX ENVIADO MARIA S OLIVEIRA",
+   "amount_cents": -45117,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-12",
+   "description": "SUPERM BOM PRECO LTDA",
+   "amount_cents": -26104,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-12",
+   "description": "PIX ENVIADO LUCIANA M ROCHA",
+   "amount_cents": -25169,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-12",
+   "description": "COMPRA DEBITO LOJA MODA URBANA",
+   "amount_cents": -11342,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-13",
+   "description": "COMPRA DEBITO YOUTUBE PREMIUM",
+   "amount_cents": -2713,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-13",
+   "description": "COMPRA DEBITO CANTINA DA NONNA",
+   "amount_cents": -16492,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-14",
+   "description": "AMAZON PRIME BR",
+   "amount_cents": -1579,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-14",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -7749,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-15",
+   "description": "COMPRA DEBITO MERCADINHO DA ESQUINA",
+   "amount_cents": -2748,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-15",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -149182,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-15",
+   "description": "COMPRA DEBITO CAFE GRAO NOBRE",
+   "amount_cents": -1646,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-16",
+   "description": "COMPRA DEBITO PET SHOP AMIGO FIEL",
+   "amount_cents": -3879,
+   "type": "expense",
+   "category": "Pets",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-16",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -3180,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-16",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -39481,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-17",
+   "description": "COMPRA DEBITO HOTEL PRAIA AZUL",
+   "amount_cents": -119058,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-17",
+   "description": "COMPRA DEBITO PADARIA PAO DOURADO",
+   "amount_cents": -1162,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-17",
+   "description": "COMPRA DEBITO MERCADINHO DA ESQUINA",
+   "amount_cents": -2534,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-17",
+   "description": "COMPRA DEBITO PADARIA PAO DOURADO",
+   "amount_cents": -3939,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-18",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -93067,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-18",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -10487,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-19",
+   "description": "SPOTIFY BRASIL",
+   "amount_cents": -2434,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-20",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -63486,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-21",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -27443,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-21",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -2857,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-22",
+   "description": "RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -8680,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-22",
+   "description": "PIX ENVIADO RAFAEL G PEREIRA",
+   "amount_cents": -23696,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-23",
+   "description": "PIX RECEBIDO RAFAEL G PEREIRA",
+   "amount_cents": 7253,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-23",
+   "description": "RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -6047,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-25",
+   "description": "PIX RECEBIDO ANA CAROLINA LIMA",
+   "amount_cents": 73265,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-26",
+   "description": "COMPRA DEBITO MAGAZINE CASA TUDO",
+   "amount_cents": -41586,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-27",
+   "description": "COMPRA DEBITO CANTINA DA NONNA",
+   "amount_cents": -13795,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-28",
+   "description": "COMPRA DEBITO ESTAC CENTRO PARK",
+   "amount_cents": -1513,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-29",
+   "description": "CAFE GRAO NOBRE",
+   "amount_cents": -1828,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-29",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -380798,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-29",
+   "description": "COMPRA DEBITO LOJA MODA URBANA",
+   "amount_cents": -15457,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-30",
+   "description": "INGRESSOS SHOW E CIA",
+   "amount_cents": -31460,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-30",
+   "description": "NETFLIX.COM",
+   "amount_cents": -4234,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-11-30",
+   "description": "PIX RECEBIDO ANA CAROLINA LIMA",
+   "amount_cents": 4277,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

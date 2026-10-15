@@ -1,0 +1,374 @@
+{
+ "id": "ipe_025",
+ "layout": "ipe",
+ "bank": "Cooperativa Ipê",
+ "document_type": "checking_statement",
+ "period_start": "2026-12-01",
+ "period_end": "2026-12-31",
+ "holder": "CICRANO PEREIRA DIAS",
+ "opening_balance_cents": 94775,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2026-12-02",
+   "description": "COMPRA DEBITO UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -4496,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-02",
+   "description": "COMPRA DEBITO MAGAZINE CASA TUDO",
+   "amount_cents": -146759,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-06",
+   "description": "SUPERMERCADO BOM PRECO",
+   "amount_cents": -13024,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-06",
+   "description": "PIX RECEBIDO LUCIANA M ROCHA",
+   "amount_cents": 54354,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-06",
+   "description": "AUTO POSTO ESTRELA",
+   "amount_cents": -30960,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-07",
+   "description": "COMPRA DEBITO AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -8190,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-08",
+   "description": "CAFE GRAO NOBRE",
+   "amount_cents": -1778,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-08",
+   "description": "COMPRA DEBITO SPOTIFY BRASIL",
+   "amount_cents": -2659,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-08",
+   "description": "PIX ENVIADO CARLOS E SOUZA",
+   "amount_cents": -25481,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-09",
+   "description": "PIX RECEBIDO PEDRO H COSTA",
+   "amount_cents": 32137,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-10",
+   "description": "SALARIO EMPRESA ALFA TECNOLOGIA LTDA",
+   "amount_cents": 1134140,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-10",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 2417,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-11",
+   "description": "COMPRA DEBITO SUPERMERCADO BOM PRECO",
+   "amount_cents": -28366,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-11",
+   "description": "SPOTIFY BRASIL",
+   "amount_cents": -3313,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-12",
+   "description": "PIX RECEBIDO MARIA S OLIVEIRA",
+   "amount_cents": 52374,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-12",
+   "description": "COMPRA DEBITO INGRESSOS SHOW E CIA",
+   "amount_cents": -24965,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-12",
+   "description": "COMPRA DEBITO HOTEL PRAIA AZUL",
+   "amount_cents": -104330,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-12",
+   "description": "COMPRA DEBITO AMAZON PRIME BR",
+   "amount_cents": -1582,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-13",
+   "description": "COMPRA DEBITO ACADEMIA CORPO ATIVO",
+   "amount_cents": -14442,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-16",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 4080,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-17",
+   "description": "PIX RECEBIDO JOAO P SANTOS",
+   "amount_cents": 67951,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-17",
+   "description": "COMPRA DEBITO SPOTIFY BRASIL",
+   "amount_cents": -2778,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-17",
+   "description": "UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -1886,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-19",
+   "description": "PIX RECEBIDO ANA CAROLINA LIMA",
+   "amount_cents": 55363,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-19",
+   "description": "NETFLIX.COM",
+   "amount_cents": -5578,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-20",
+   "description": "PIX RECEBIDO MARIA S OLIVEIRA",
+   "amount_cents": 65214,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-22",
+   "description": "PIX RECEBIDO PEDRO H COSTA",
+   "amount_cents": 2037,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-22",
+   "description": "COMPRA DEBITO IPTU PREFEITURA PARC",
+   "amount_cents": -46586,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-24",
+   "description": "IFD*SABOR CASEIRO",
+   "amount_cents": -8203,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-25",
+   "description": "PIX RECEBIDO JOAO P SANTOS",
+   "amount_cents": 66574,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-25",
+   "description": "COMPRA DEBITO AMAZON PRIME BR",
+   "amount_cents": -1603,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-26",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 1352,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-26",
+   "description": "COMPRA DEBITO AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -15079,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-26",
+   "description": "SPOTIFY BRASIL",
+   "amount_cents": -3096,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-26",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 6285,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-27",
+   "description": "PIX ENVIADO CARLOS E SOUZA",
+   "amount_cents": -11723,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-29",
+   "description": "COMPRA DEBITO UBER *TRIP",
+   "amount_cents": -4987,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-30",
+   "description": "COMPRA DEBITO IFOOD *RESTAURANTE SABOR",
+   "amount_cents": -6810,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-30",
+   "description": "PAG BOLETO AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -16658,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-12-31",
+   "description": "ESTAC CENTRO PARK",
+   "amount_cents": -2862,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

@@ -1,0 +1,446 @@
+{
+ "id": "ipe_021",
+ "layout": "ipe",
+ "bank": "Cooperativa Ipê",
+ "document_type": "checking_statement",
+ "period_start": "2025-06-01",
+ "period_end": "2025-06-30",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": -31214,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2025-06-01",
+   "description": "COMPRA DEBITO YOUTUBE PREMIUM",
+   "amount_cents": -3927,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-02",
+   "description": "SUPERMERCADO BOM PRECO",
+   "amount_cents": -43097,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-03",
+   "description": "DROGARIA VIDA SAUDE",
+   "amount_cents": -16439,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-04",
+   "description": "COMPRA DEBITO CIA AEREA VOE BEM",
+   "amount_cents": -83869,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-04",
+   "description": "COMPRA DEBITO ATACADAO DO POVO",
+   "amount_cents": -63836,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-04",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -48206,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-04",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -4504,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-05",
+   "description": "PIX RECEBIDO LUCIANA M ROCHA",
+   "amount_cents": 23891,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-08",
+   "description": "COMPRA DEBITO RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -15027,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-08",
+   "description": "PIX RECEBIDO JOAO P SANTOS",
+   "amount_cents": 16474,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-09",
+   "description": "IFOOD *PIZZARIA FORNO",
+   "amount_cents": -5146,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-10",
+   "description": "SALARIO EMPRESA ALFA TECNOLOGIA LTDA",
+   "amount_cents": 1007128,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-10",
+   "description": "IFD*PIZZARIA FORNO",
+   "amount_cents": -6747,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-11",
+   "description": "PIX ENVIADO LUCIANA M ROCHA",
+   "amount_cents": -4799,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-11",
+   "description": "PAG BOLETO TARIFA PACOTE SERVICOS",
+   "amount_cents": -4925,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-12",
+   "description": "COMPRA DEBITO CAFE GRAO NOBRE",
+   "amount_cents": -978,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-12",
+   "description": "COMPRA DEBITO LAB CLINICO EXAME",
+   "amount_cents": -32200,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-12",
+   "description": "COMPRA DEBITO RAPPI *BURGER HOUSE",
+   "amount_cents": -8897,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-13",
+   "description": "COMPRA DEBITO SPOTIFY BRASIL",
+   "amount_cents": -3406,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-13",
+   "description": "PET SHOP AMIGO FIEL",
+   "amount_cents": -15639,
+   "type": "expense",
+   "category": "Pets",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-14",
+   "description": "RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -17768,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-16",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -335509,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-17",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -49812,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-17",
+   "description": "PIX ENVIADO FERNANDA ALVES",
+   "amount_cents": -27929,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-19",
+   "description": "COMPRA DEBITO RAPPI *BURGER HOUSE",
+   "amount_cents": -8829,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-21",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 4169,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-22",
+   "description": "PIX RECEBIDO MARIA S OLIVEIRA",
+   "amount_cents": 8322,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-22",
+   "description": "ACADEMIA CORPO ATIVO",
+   "amount_cents": -13485,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-22",
+   "description": "PAG BOLETO AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -12091,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-22",
+   "description": "COMPRA DEBITO CANTINA DA NONNA",
+   "amount_cents": -6381,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-23",
+   "description": "PIX RECEBIDO RAFAEL G PEREIRA",
+   "amount_cents": 51840,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-23",
+   "description": "CAFE GRAO NOBRE",
+   "amount_cents": -3145,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-24",
+   "description": "PIX ENVIADO CARLOS E SOUZA",
+   "amount_cents": -21953,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-24",
+   "description": "SPOTIFY BRASIL",
+   "amount_cents": -3125,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-24",
+   "description": "PIX ENVIADO CARLOS E SOUZA",
+   "amount_cents": -44996,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-25",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -24956,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-25",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -5157,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-26",
+   "description": "PIX RECEBIDO PEDRO H COSTA",
+   "amount_cents": 28181,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-26",
+   "description": "COMPRA DEBITO CAFE GRAO NOBRE",
+   "amount_cents": -1442,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-26",
+   "description": "IFD*SABOR CASEIRO",
+   "amount_cents": -9824,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-27",
+   "description": "COMPRA DEBITO ENERGIA LUZ FORTE SA",
+   "amount_cents": -27527,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-27",
+   "description": "COMPRA DEBITO HOTEL PRAIA AZUL",
+   "amount_cents": -51807,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-27",
+   "description": "PIX ENVIADO RAFAEL G PEREIRA",
+   "amount_cents": -30610,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-27",
+   "description": "PIX RECEBIDO PEDRO H COSTA",
+   "amount_cents": 61566,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-28",
+   "description": "PIX ENVIADO FERNANDA ALVES",
+   "amount_cents": -40215,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-29",
+   "description": "COMPRA DEBITO CURSO IDIOMAS FALA BEM",
+   "amount_cents": -30992,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-29",
+   "description": "AUTO POSTO ESTRELA",
+   "amount_cents": -19169,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-06-30",
+   "description": "PIX ENVIADO RAFAEL G PEREIRA",
+   "amount_cents": -23166,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

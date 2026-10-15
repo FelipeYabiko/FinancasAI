@@ -1,0 +1,338 @@
+{
+ "id": "aurora_012",
+ "layout": "aurora",
+ "bank": "Banco Aurora",
+ "document_type": "checking_statement",
+ "period_start": "2026-05-01",
+ "period_end": "2026-05-31",
+ "holder": "BELTRANA SOUZA COSTA",
+ "opening_balance_cents": 560754,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2026-05-01",
+   "description": "COMPRA DEBITO SUPERMERCADO BOM PRECO",
+   "amount_cents": -41400,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-01",
+   "description": "DROGARIA VIDA SAUDE",
+   "amount_cents": -19340,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-02",
+   "description": "COMPRA DEBITO PADARIA PAO DOURADO",
+   "amount_cents": -4462,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-02",
+   "description": "COMPRA DEBITO LOJA MODA URBANA",
+   "amount_cents": -13886,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-02",
+   "description": "CINEMA ESTRELA SHOP",
+   "amount_cents": -8204,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-03",
+   "description": "PIX RECEBIDO MARIA S OLIVEIRA",
+   "amount_cents": 60515,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-04",
+   "description": "PAG BOLETO IPTU PREFEITURA PARC",
+   "amount_cents": -20959,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-05",
+   "description": "PAG BOLETO TARIFA PACOTE SERVICOS",
+   "amount_cents": -3693,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-05",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -139163,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-06",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 7739,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-09",
+   "description": "COMPRA DEBITO NETFLIX.COM",
+   "amount_cents": -5357,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-10",
+   "description": "SALARIO INSTITUTO GAMA",
+   "amount_cents": 361991,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-13",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -23144,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-14",
+   "description": "PIX ENVIADO FERNANDA ALVES",
+   "amount_cents": -13550,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-15",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -292555,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-15",
+   "description": "PET SHOP AMIGO FIEL",
+   "amount_cents": -19818,
+   "type": "expense",
+   "category": "Pets",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-15",
+   "description": "PAG BOLETO TELEFONIA CELULAR MAIS",
+   "amount_cents": -7514,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-15",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -50939,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-17",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -56210,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-18",
+   "description": "PAG BOLETO INTERNET FIBRA RAPIDA",
+   "amount_cents": -12017,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-18",
+   "description": "ESTAC CENTRO PARK",
+   "amount_cents": -2886,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-18",
+   "description": "UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -5453,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-19",
+   "description": "COMPRA DEBITO LAB CLINICO EXAME",
+   "amount_cents": -17888,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-20",
+   "description": "PIX ENVIADO ANA CAROLINA LIMA",
+   "amount_cents": -32838,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-20",
+   "description": "HORTIFRUTI VERDE VIDA",
+   "amount_cents": -2224,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-21",
+   "description": "RAPPI *BURGER HOUSE",
+   "amount_cents": -7901,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-22",
+   "description": "FARMACIA VIDA SAUDE",
+   "amount_cents": -11167,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-22",
+   "description": "COMPRA DEBITO LOJA MODA URBANA",
+   "amount_cents": -15016,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-25",
+   "description": "COMPRA DEBITO IFD*SABOR CASEIRO",
+   "amount_cents": -8427,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-25",
+   "description": "LOJA MODA URBANA",
+   "amount_cents": -18533,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-25",
+   "description": "COMPRA DEBITO NETFLIX.COM",
+   "amount_cents": -4605,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-26",
+   "description": "COMPRA DEBITO HORTIFRUTI VERDE VIDA",
+   "amount_cents": -8324,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-28",
+   "description": "COMPRA DEBITO CINEMA ESTRELA SHOP",
+   "amount_cents": -3157,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-28",
+   "description": "RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -6836,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-30",
+   "description": "COMPRA DEBITO HORTIFRUTI VERDE VIDA",
+   "amount_cents": -10883,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-30",
+   "description": "COMPRA DEBITO YOUTUBE PREMIUM",
+   "amount_cents": -2858,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

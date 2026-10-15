@@ -1,0 +1,383 @@
+{
+ "id": "lume_038",
+ "layout": "lume",
+ "bank": "Lume Card",
+ "document_type": "credit_card_invoice",
+ "period_start": "2025-08-26",
+ "period_end": "2025-09-25",
+ "holder": "BELTRANA SOUZA COSTA",
+ "opening_balance_cents": 0,
+ "due_date": "2025-10-02",
+ "invoice_month": "2025-09",
+ "transactions": [
+  {
+   "date": "2025-01-10",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -18911,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 9,
+   "installment_total": 10
+  },
+  {
+   "date": "2025-06-03",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -40163,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 4,
+   "installment_total": 9
+  },
+  {
+   "date": "2025-06-08",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -83126,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 4,
+   "installment_total": 4
+  },
+  {
+   "date": "2025-08-26",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -91952,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-26",
+   "description": "CINEMA ESTRELA SHOP",
+   "amount_cents": -3751,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-26",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -35743,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-27",
+   "description": "ESTORNO FARMACIA VIDA SAUDE",
+   "amount_cents": 17604,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-27",
+   "description": "CONDOMINIO RES JARDINS",
+   "amount_cents": -74607,
+   "type": "expense",
+   "category": "Moradia",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-28",
+   "description": "99 TECNOLOGIA CORRIDA",
+   "amount_cents": -2440,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-29",
+   "description": "PAGAMENTO RECEBIDO OBRIGADO",
+   "amount_cents": 116495,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-29",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -3577,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-29",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -1506,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-03",
+   "description": "ESTAC CENTRO PARK",
+   "amount_cents": -1121,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-03",
+   "description": "CINEMA ESTRELA SHOP",
+   "amount_cents": -8778,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-04",
+   "description": "IFOOD *PIZZARIA FORNO",
+   "amount_cents": -12564,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-04",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -2250,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-05",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -33864,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-05",
+   "description": "MAGAZINE CASA TUDO",
+   "amount_cents": -98681,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-06",
+   "description": "99 TECNOLOGIA CORRIDA",
+   "amount_cents": -1417,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-06",
+   "description": "DROGARIA VIDA SAUDE",
+   "amount_cents": -15685,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-07",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -26057,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-07",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -34487,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-08",
+   "description": "RAPPI *BURGER HOUSE",
+   "amount_cents": -7187,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-08",
+   "description": "NETFLIX.COM",
+   "amount_cents": -4470,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-09",
+   "description": "IFOOD *RESTAURANTE SABOR",
+   "amount_cents": -4848,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-09",
+   "description": "MAGAZINE CASA TUDO",
+   "amount_cents": -74892,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-11",
+   "description": "PET SHOP AMIGO FIEL",
+   "amount_cents": -7003,
+   "type": "expense",
+   "category": "Pets",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-11",
+   "description": "ACADEMIA CORPO ATIVO",
+   "amount_cents": -10158,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-12",
+   "description": "ENERGIA LUZ FORTE SA",
+   "amount_cents": -34649,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-14",
+   "description": "INGRESSOS SHOW E CIA",
+   "amount_cents": -15630,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-14",
+   "description": "IFOOD *RESTAURANTE SABOR",
+   "amount_cents": -8018,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-15",
+   "description": "IFOOD *RESTAURANTE SABOR",
+   "amount_cents": -7495,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-16",
+   "description": "INTERNET FIBRA RAPIDA",
+   "amount_cents": -13888,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-17",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -57194,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-20",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -3494,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-20",
+   "description": "ACADEMIA CORPO ATIVO",
+   "amount_cents": -12353,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-21",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -140246,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-21",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -55970,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-21",
+   "description": "AUTO POSTO ESTRELA",
+   "amount_cents": -16688,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-23",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -77001,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-09-25",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -157017,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

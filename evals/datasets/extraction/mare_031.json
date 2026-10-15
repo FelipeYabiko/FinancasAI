@@ -1,0 +1,320 @@
+{
+ "id": "mare_031",
+ "layout": "mare",
+ "bank": "Banco Maré",
+ "document_type": "checking_statement",
+ "period_start": "2026-02-01",
+ "period_end": "2026-02-28",
+ "holder": "BELTRANA SOUZA COSTA",
+ "opening_balance_cents": 481302,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2026-02-01",
+   "description": "PIX RECEBIDO CARLOS E SOUZA",
+   "amount_cents": 46742,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-01",
+   "description": "PIX ENVIADO CARLOS E SOUZA",
+   "amount_cents": -53898,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-01",
+   "description": "COMPRA DEBITO HORTIFRUTI VERDE VIDA",
+   "amount_cents": -7784,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-02",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -5067,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-02",
+   "description": "TARIFA PACOTE SERVICOS",
+   "amount_cents": -3355,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-02",
+   "description": "PIX RECEBIDO LUCIANA M ROCHA",
+   "amount_cents": 4946,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-03",
+   "description": "COMPRA DEBITO MERCADINHO DA ESQUINA",
+   "amount_cents": -8613,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-03",
+   "description": "UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -5948,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-05",
+   "description": "PIX RECEBIDO RAFAEL G PEREIRA",
+   "amount_cents": 14748,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-06",
+   "description": "PIX RECEBIDO MARIA S OLIVEIRA",
+   "amount_cents": 28489,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-07",
+   "description": "COMPRA DEBITO CIA AEREA VOE BEM",
+   "amount_cents": -115809,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-09",
+   "description": "PIX RECEBIDO JOAO P SANTOS",
+   "amount_cents": 29076,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-10",
+   "description": "SALARIO COMERCIO BETA SA",
+   "amount_cents": 1154291,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-10",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -247326,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-10",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 3746,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-13",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -2789,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-13",
+   "description": "COMPRA DEBITO CAFE GRAO NOBRE",
+   "amount_cents": -1667,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-14",
+   "description": "PIX RECEBIDO PEDRO H COSTA",
+   "amount_cents": 50704,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-15",
+   "description": "FARMACIA VIDA SAUDE",
+   "amount_cents": -18706,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-15",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 8125,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-16",
+   "description": "RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -5545,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-16",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -10918,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-18",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -12638,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-19",
+   "description": "COMPRA DEBITO AUTO POSTO ESTRELA",
+   "amount_cents": -14571,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-19",
+   "description": "PIX ENVIADO JOAO P SANTOS",
+   "amount_cents": -21906,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-20",
+   "description": "COMPRA DEBITO INTERNET FIBRA RAPIDA",
+   "amount_cents": -10405,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-23",
+   "description": "PAG BOLETO INTERNET FIBRA RAPIDA",
+   "amount_cents": -13804,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-25",
+   "description": "PAG BOLETO AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -8361,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-25",
+   "description": "COMPRA DEBITO RAPPI *BURGER HOUSE",
+   "amount_cents": -4723,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-26",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -7021,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-27",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 8349,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-27",
+   "description": "PAG BOLETO CONDOMINIO RES JARDINS",
+   "amount_cents": -117768,
+   "type": "expense",
+   "category": "Moradia",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-28",
+   "description": "COMPRA DEBITO ACADEMIA CORPO ATIVO",
+   "amount_cents": -13291,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-02-28",
+   "description": "DROGARIA VIDA SAUDE",
+   "amount_cents": -2536,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

@@ -57,3 +57,21 @@ one more chance. Each provider response is a separate `LLMCall` row (`validation
 Groq lists `llama-3.1-8b-instant`/`llama-3.3-70b-versatile` as "contact sales" pricing, so the
 defaults use `openai/gpt-oss-20b` (extraction, categorization, insights) and `openai/gpt-oss-120b`
 (assistant), which have public prices.
+
+## D13 — Stateless review between preview and commit
+The preview response carries the extracted rows; the client sends the (edited) rows back on commit.
+Nothing extracted is persisted before confirmation except the `ImportBatch` metadata, and the PDF
+bytes never touch the disk.
+
+## D14 — Header/footer stripping by position, not by text alone
+Lines are boilerplate only if they repeat at the same position (top/bottom zone) on several pages.
+Lines with a money amount must repeat verbatim; otherwise digits are masked (page numbers). This keeps
+a "SALDO DO DIA" or a recurring purchase from being mistaken for a header.
+
+## D15 — Same-file duplicates stay selected
+Two identical lines in one statement are usually two real purchases, so they are flagged ("repetida no
+arquivo") but not unchecked. DB duplicates and near-duplicates are unchecked by default.
+
+## D16 — Fake provider doubles as an offline demo
+Without API keys the `fake` provider runs the regex baseline for extraction and keyword rules for
+categorization. It is labelled as such and reported in evals as the deterministic floor, never as an LLM.

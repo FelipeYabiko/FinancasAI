@@ -74,6 +74,7 @@ export async function render(root) {
           <button class="btn ${filters.scope === "all" ? "active" : ""}" data-scope="all">Todo o período</button>
         </div>
         <span class="spacer"></span>
+        ${filters.import_batch_id ? html`<span class="badge">importação #${filters.import_batch_id}</span>` : ""}
         <button class="btn small" id="clear-filters">Limpar filtros</button>
       </div>
       <form class="filters" id="filters" autocomplete="off">

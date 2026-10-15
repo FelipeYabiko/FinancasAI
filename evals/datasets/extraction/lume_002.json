@@ -1,0 +1,302 @@
+{
+ "id": "lume_002",
+ "layout": "lume",
+ "bank": "Lume Card",
+ "document_type": "credit_card_invoice",
+ "period_start": "2026-05-16",
+ "period_end": "2026-06-15",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": 0,
+ "due_date": "2026-06-22",
+ "invoice_month": "2026-06",
+ "transactions": [
+  {
+   "date": "2025-11-29",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -22390,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 7,
+   "installment_total": 8
+  },
+  {
+   "date": "2026-04-01",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -50617,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 3,
+   "installment_total": 3
+  },
+  {
+   "date": "2026-05-06",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -74156,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 2,
+   "installment_total": 4
+  },
+  {
+   "date": "2026-05-16",
+   "description": "DROGARIA VIDA SAUDE",
+   "amount_cents": -15230,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-17",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -149384,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-17",
+   "description": "ESTORNO LOJA MODA URBANA",
+   "amount_cents": 31224,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-18",
+   "description": "ACADEMIA CORPO ATIVO",
+   "amount_cents": -10920,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-19",
+   "description": "SPOTIFY BRASIL",
+   "amount_cents": -3379,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-20",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -8104,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-21",
+   "description": "PAGAMENTO RECEBIDO OBRIGADO",
+   "amount_cents": 347075,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-23",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -1760,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-24",
+   "description": "INTERNET FIBRA RAPIDA",
+   "amount_cents": -11123,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-25",
+   "description": "ESTORNO IPTU PREFEITURA PARC",
+   "amount_cents": 45473,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-26",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -2882,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-28",
+   "description": "INTERNET FIBRA RAPIDA",
+   "amount_cents": -10216,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-29",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -27864,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-29",
+   "description": "CINEMA ESTRELA SHOP",
+   "amount_cents": -7542,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-29",
+   "description": "CONDOMINIO RES JARDINS",
+   "amount_cents": -95328,
+   "type": "expense",
+   "category": "Moradia",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-29",
+   "description": "INTERNET FIBRA RAPIDA",
+   "amount_cents": -13396,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-30",
+   "description": "AUTO POSTO ESTRELA",
+   "amount_cents": -13560,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-31",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -9492,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-02",
+   "description": "RAPPI *BURGER HOUSE",
+   "amount_cents": -4592,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-03",
+   "description": "TELEFONIA CELULAR MAIS",
+   "amount_cents": -7479,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-03",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -5107,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-06",
+   "description": "99APP *CORRIDA",
+   "amount_cents": -1000,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-08",
+   "description": "ENERGIA LUZ FORTE SA",
+   "amount_cents": -35764,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-09",
+   "description": "UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -1311,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-09",
+   "description": "AMAZON PRIME BR",
+   "amount_cents": -1810,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-10",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -17374,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-13",
+   "description": "ENERGIA LUZ FORTE SA",
+   "amount_cents": -38223,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-13",
+   "description": "ESTORNO CIA AEREA VOE BEM",
+   "amount_cents": 97945,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-06-15",
+   "description": "ATACADAO DO POVO",
+   "amount_cents": -47096,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

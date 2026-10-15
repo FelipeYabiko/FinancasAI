@@ -1,0 +1,167 @@
+{
+ "id": "ipe_037",
+ "layout": "ipe",
+ "bank": "Cooperativa Ipê",
+ "document_type": "checking_statement",
+ "period_start": "2026-07-01",
+ "period_end": "2026-07-31",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": 63054,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2026-07-01",
+   "description": "SALARIO INSTITUTO GAMA",
+   "amount_cents": 888421,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-02",
+   "description": "PIX RECEBIDO MARIA S OLIVEIRA",
+   "amount_cents": 14648,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-03",
+   "description": "PIX ENVIADO LUCIANA M ROCHA",
+   "amount_cents": -39494,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-03",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 2395,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-04",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -13123,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-06",
+   "description": "COMPRA DEBITO INTERNET FIBRA RAPIDA",
+   "amount_cents": -10798,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-07",
+   "description": "LOJA MODA URBANA",
+   "amount_cents": -30949,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-12",
+   "description": "COMPRA DEBITO ENERGIA LUZ FORTE SA",
+   "amount_cents": -13478,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-13",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -394777,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-19",
+   "description": "PIX RECEBIDO JOAO P SANTOS",
+   "amount_cents": 35162,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-22",
+   "description": "UBER *TRIP HELP.UBER.COM",
+   "amount_cents": -4009,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-23",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -101290,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-24",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 7773,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-26",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -40009,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-27",
+   "description": "SUPERMERCADO BOM PRECO",
+   "amount_cents": -16053,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-29",
+   "description": "PIX ENVIADO CARLOS E SOUZA",
+   "amount_cents": -3417,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-07-30",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -78529,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

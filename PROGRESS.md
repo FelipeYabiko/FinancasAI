@@ -9,8 +9,8 @@ To resume in a new session: read this file, then continue with the first phase n
 | 1 — Domain + API | ✅ done |
 | 2 — Frontend + login | ✅ done |
 | 3 — LLM providers, prompts, tracing, diagnostics | ✅ done |
-| 4 — PDF import pipeline + review screen | ⏳ next |
-| 5 — Assistant with function calling | ⬜ |
+| 4 — PDF import pipeline + review screen | ✅ done |
+| 5 — Assistant with function calling | ⏳ next |
 | 6 — Synthetic generator, eval suites, report | ⬜ |
 | 7 — Insights | ⬜ |
 | 8 — Docker | ⬜ |
@@ -63,3 +63,28 @@ To resume in a new session: read this file, then continue with the first phase n
 - Acceptance: `test_ai_test_endpoint_records_llmcall` shows a test call in `LLMCall` with tokens,
   cost and latency. No real API keys are configured in this environment, so real-provider calls
   record a clear "chave não configurada" error (visible in the diagnostics page).
+
+## Phase 4
+- Synthetic generator moved forward from phase 6 (needed for acceptance): `evals/generators/statements.py`
+  creates 40 PDFs in 4 fictional layouts (Banco Aurora, Cooperativa Ipê, Lume Card invoice, Banco Maré)
+  with JSON ground truth → `evals/datasets/extraction/`.
+- Pipeline in `app/services/importer/`, each step testable on its own:
+  1. `pdf_text` — pdfplumber words → lines by vertical position, columns re-anchored by x position;
+     clear error for text-less (scanned) PDFs.
+  2. `detect` — bank, document type, period, closing/due date (deterministic).
+  3. `chunking` — line-boundary chunks sized in estimated tokens, prefers breaking before a dated line;
+     repeated page headers/footers removed by position; every drop/limit is a warning.
+  4. `extraction` — `extraction.v1` prompt + `ExtractionOutput` schema, chunks in parallel, out-of-period
+     dates flagged as low confidence.
+  5. `categorize` — `CategoryMemory` first (zero cost), LLM (`categorization.v1`) only for the rest;
+     unknown/wrong-kind categories left blank.
+  6. dedup — `dedup_hash` vs DB, within file, and near-duplicates (same date+amount, similar text).
+- Review screen: edit date/description/category, uncheck rows, duplicate/low-confidence/installment
+  badges, cost/latency of the run. Commit navigates to the latest month of the statement.
+  Category corrections at review update `CategoryMemory`. History with undo.
+- Card invoices: installments keep the printed (original) purchase date, so the statement's invoice
+  month is used for `invoice_month`.
+- Offline `fake` provider answers extraction with the regex baseline and categorization with keywords,
+  so the app, tests and CI run without API keys.
+- Acceptance (`tests/test_import.py::test_import_flow_dedup_and_undo` + Playwright run): imports a
+  synthetic PDF, re-importing flags every row as duplicate, undo removes the batch.

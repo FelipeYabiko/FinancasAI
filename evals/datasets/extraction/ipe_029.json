@@ -1,0 +1,365 @@
+{
+ "id": "ipe_029",
+ "layout": "ipe",
+ "bank": "Cooperativa Ipê",
+ "document_type": "checking_statement",
+ "period_start": "2026-04-01",
+ "period_end": "2026-04-30",
+ "holder": "CICRANO PEREIRA DIAS",
+ "opening_balance_cents": 694162,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2026-04-01",
+   "description": "SALARIO COMERCIO BETA SA",
+   "amount_cents": 858205,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-02",
+   "description": "COMPRA DEBITO SUPERM BOM PRECO LTDA",
+   "amount_cents": -30569,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-03",
+   "description": "COMPRA DEBITO RAPPI *BURGER HOUSE",
+   "amount_cents": -8295,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-05",
+   "description": "PIX ENVIADO ANA CAROLINA LIMA",
+   "amount_cents": -39578,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-05",
+   "description": "PAG BOLETO TARIFA PACOTE SERVICOS",
+   "amount_cents": -4906,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-06",
+   "description": "PIX RECEBIDO LUCIANA M ROCHA",
+   "amount_cents": 76323,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-10",
+   "description": "HORTIFRUTI VERDE VIDA",
+   "amount_cents": -9095,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-11",
+   "description": "CAFE GRAO NOBRE",
+   "amount_cents": -2320,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-11",
+   "description": "RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -14958,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-11",
+   "description": "COMPRA DEBITO CAFE GRAO NOBRE",
+   "amount_cents": -1273,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-12",
+   "description": "NETFLIX.COM",
+   "amount_cents": -4116,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-12",
+   "description": "PIX ENVIADO FERNANDA ALVES",
+   "amount_cents": -33707,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-13",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -2830,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-13",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -108783,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-13",
+   "description": "PIX RECEBIDO ANA CAROLINA LIMA",
+   "amount_cents": 45934,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-14",
+   "description": "PAG BOLETO TARIFA PACOTE SERVICOS",
+   "amount_cents": -3829,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-14",
+   "description": "COMPRA DEBITO CANTINA DA NONNA",
+   "amount_cents": -16403,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-14",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -413891,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-16",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -16329,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-17",
+   "description": "COMPRA DEBITO ESTAC CENTRO PARK",
+   "amount_cents": -1984,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-17",
+   "description": "PIX RECEBIDO RAFAEL G PEREIRA",
+   "amount_cents": 7559,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-18",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -3226,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-18",
+   "description": "COMPRA DEBITO 99APP *CORRIDA",
+   "amount_cents": -3331,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-18",
+   "description": "COMPRA DEBITO RAPPI *BURGER HOUSE",
+   "amount_cents": -6101,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-18",
+   "description": "HORTIFRUTI VERDE VIDA",
+   "amount_cents": -6270,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-19",
+   "description": "99 TECNOLOGIA CORRIDA",
+   "amount_cents": -1538,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-20",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -16633,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-20",
+   "description": "COMPRA DEBITO CINEMA ESTRELA SHOP",
+   "amount_cents": -5728,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-22",
+   "description": "PIX RECEBIDO JOAO P SANTOS",
+   "amount_cents": 64469,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-23",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -42164,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-24",
+   "description": "PIX RECEBIDO CARLOS E SOUZA",
+   "amount_cents": 56269,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-24",
+   "description": "COMPRA DEBITO 99APP *CORRIDA",
+   "amount_cents": -1341,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-24",
+   "description": "PAG BOLETO ENERGIA LUZ FORTE SA",
+   "amount_cents": -33817,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-28",
+   "description": "IFOOD *RESTAURANTE SABOR",
+   "amount_cents": -5758,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-28",
+   "description": "COMPRA DEBITO NETFLIX.COM",
+   "amount_cents": -4819,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-29",
+   "description": "COMPRA DEBITO MERCADINHO DA ESQUINA",
+   "amount_cents": -3047,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-29",
+   "description": "COMPRA DEBITO AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -17045,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-30",
+   "description": "COMPRA DEBITO CANTINA DA NONNA",
+   "amount_cents": -9498,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-04-30",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -375638,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

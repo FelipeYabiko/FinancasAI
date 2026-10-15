@@ -1,0 +1,230 @@
+{
+ "id": "lume_030",
+ "layout": "lume",
+ "bank": "Lume Card",
+ "document_type": "credit_card_invoice",
+ "period_start": "2025-02-04",
+ "period_end": "2025-03-03",
+ "holder": "FULANO DE TAL SILVA",
+ "opening_balance_cents": 0,
+ "due_date": "2025-03-10",
+ "invoice_month": "2025-03",
+ "transactions": [
+  {
+   "date": "2024-08-08",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -19327,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 7,
+   "installment_total": 11
+  },
+  {
+   "date": "2024-10-04",
+   "description": "MAGAZINE CASA TUDO",
+   "amount_cents": -23334,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 5,
+   "installment_total": 6
+  },
+  {
+   "date": "2024-10-06",
+   "description": "MAGAZINE CASA TUDO",
+   "amount_cents": -15573,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": 5,
+   "installment_total": 7
+  },
+  {
+   "date": "2024-10-09",
+   "description": "CURSO IDIOMAS FALA BEM",
+   "amount_cents": -3051,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": 5,
+   "installment_total": 12
+  },
+  {
+   "date": "2025-02-04",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -119689,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-09",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -11849,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": 1,
+   "installment_total": 5
+  },
+  {
+   "date": "2025-02-10",
+   "description": "PAGAMENTO RECEBIDO OBRIGADO",
+   "amount_cents": 241513,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-13",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -343441,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-13",
+   "description": "CINEMA ESTRELA SHOP",
+   "amount_cents": -8713,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-17",
+   "description": "TARIFA PACOTE SERVICOS",
+   "amount_cents": -2992,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-17",
+   "description": "PADARIA PAO DOURADO",
+   "amount_cents": -2728,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-17",
+   "description": "ACADEMIA CORPO ATIVO",
+   "amount_cents": -14490,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-19",
+   "description": "IPTU PREFEITURA PARC",
+   "amount_cents": -44736,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-20",
+   "description": "ESTORNO POSTO ESTRELA COMBUSTIVEIS",
+   "amount_cents": 11581,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-21",
+   "description": "TELEFONIA CELULAR MAIS",
+   "amount_cents": -5390,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-22",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -12924,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-23",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -13069,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-25",
+   "description": "TARIFA PACOTE SERVICOS",
+   "amount_cents": -3346,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-25",
+   "description": "TARIFA PACOTE SERVICOS",
+   "amount_cents": -3855,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-27",
+   "description": "ATACADAO DO POVO",
+   "amount_cents": -58365,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-02-27",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -3736,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-01",
+   "description": "ESTORNO ESTAC CENTRO PARK",
+   "amount_cents": 1792,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-01",
+   "description": "SUPERMERCADO BOM PRECO",
+   "amount_cents": -21956,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-03-03",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -7125,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

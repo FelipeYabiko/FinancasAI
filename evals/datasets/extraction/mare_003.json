@@ -1,0 +1,275 @@
+{
+ "id": "mare_003",
+ "layout": "mare",
+ "bank": "Banco Maré",
+ "document_type": "checking_statement",
+ "period_start": "2025-08-01",
+ "period_end": "2025-08-31",
+ "holder": "BELTRANA SOUZA COSTA",
+ "opening_balance_cents": 407007,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2025-08-03",
+   "description": "NETFLIX.COM",
+   "amount_cents": -5417,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-04",
+   "description": "COMPRA DEBITO DROGARIA VIDA SAUDE",
+   "amount_cents": -14497,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-05",
+   "description": "SALARIO EMPRESA ALFA TECNOLOGIA LTDA",
+   "amount_cents": 757746,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-05",
+   "description": "UBER *TRIP",
+   "amount_cents": -3031,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-05",
+   "description": "RAPPI *BURGER HOUSE",
+   "amount_cents": -7309,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-07",
+   "description": "SPOTIFY BRASIL",
+   "amount_cents": -2762,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-08",
+   "description": "COMPRA DEBITO ATACADAO DO POVO",
+   "amount_cents": -24205,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-08",
+   "description": "HOTEL PRAIA AZUL",
+   "amount_cents": -130519,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-08",
+   "description": "NETFLIX.COM",
+   "amount_cents": -5349,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-11",
+   "description": "INGRESSOS SHOW E CIA",
+   "amount_cents": -35541,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-11",
+   "description": "PIX ENVIADO CARLOS E SOUZA",
+   "amount_cents": -23618,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-11",
+   "description": "COMPRA DEBITO IFD*SABOR CASEIRO",
+   "amount_cents": -9885,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-12",
+   "description": "COMPRA DEBITO AMAZON PRIME BR",
+   "amount_cents": -1618,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-14",
+   "description": "PIX ENVIADO LUCIANA M ROCHA",
+   "amount_cents": -41864,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-16",
+   "description": "PIX RECEBIDO MARIA S OLIVEIRA",
+   "amount_cents": 47870,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-16",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -15221,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-18",
+   "description": "PIX RECEBIDO PEDRO H COSTA",
+   "amount_cents": 13221,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-19",
+   "description": "MERCADINHO DA ESQUINA",
+   "amount_cents": -6465,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-21",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -63786,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-22",
+   "description": "ENERGIA LUZ FORTE SA",
+   "amount_cents": -9829,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-25",
+   "description": "COMPRA DEBITO AMAZON PRIME BR",
+   "amount_cents": -1619,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-25",
+   "description": "TARIFA PACOTE SERVICOS",
+   "amount_cents": -2660,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-25",
+   "description": "CINEMA ESTRELA SHOP",
+   "amount_cents": -2735,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-26",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -144183,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-27",
+   "description": "PIX RECEBIDO ANA CAROLINA LIMA",
+   "amount_cents": 33266,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-27",
+   "description": "COMPRA DEBITO MAGAZINE CASA TUDO",
+   "amount_cents": -125517,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-28",
+   "description": "RAPPI *BURGER HOUSE",
+   "amount_cents": -6344,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-28",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 8488,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-08-30",
+   "description": "PIX ENVIADO MARIA S OLIVEIRA",
+   "amount_cents": -27322,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

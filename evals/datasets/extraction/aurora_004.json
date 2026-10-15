@@ -1,0 +1,257 @@
+{
+ "id": "aurora_004",
+ "layout": "aurora",
+ "bank": "Banco Aurora",
+ "document_type": "checking_statement",
+ "period_start": "2025-12-01",
+ "period_end": "2025-12-31",
+ "holder": "BELTRANA SOUZA COSTA",
+ "opening_balance_cents": 75362,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2025-12-01",
+   "description": "PIX RECEBIDO MARIA S OLIVEIRA",
+   "amount_cents": 37325,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-03",
+   "description": "COMPRA DEBITO RAPPI *BURGER HOUSE",
+   "amount_cents": -8466,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-06",
+   "description": "PIX RECEBIDO RAFAEL G PEREIRA",
+   "amount_cents": 79832,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-08",
+   "description": "COMPRA DEBITO FARMACIA VIDA SAUDE",
+   "amount_cents": -19002,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-09",
+   "description": "PIX RECEBIDO MARIA S OLIVEIRA",
+   "amount_cents": 74529,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-09",
+   "description": "COMPRA DEBITO CAFE GRAO NOBRE",
+   "amount_cents": -1611,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-10",
+   "description": "SALARIO INSTITUTO GAMA",
+   "amount_cents": 1149213,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-10",
+   "description": "COMPRA DEBITO RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -4680,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-10",
+   "description": "COMPRA DEBITO HORTIFRUTI VERDE VIDA",
+   "amount_cents": -4904,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-10",
+   "description": "PET SHOP AMIGO FIEL",
+   "amount_cents": -10648,
+   "type": "expense",
+   "category": "Pets",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-15",
+   "description": "COMPRA DEBITO HORTIFRUTI VERDE VIDA",
+   "amount_cents": -9327,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-15",
+   "description": "INGRESSOS SHOW E CIA",
+   "amount_cents": -24399,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-15",
+   "description": "PIX RECEBIDO MARIA S OLIVEIRA",
+   "amount_cents": 58626,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-16",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -389113,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-16",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -201360,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-18",
+   "description": "PIX ENVIADO ANA CAROLINA LIMA",
+   "amount_cents": -18908,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-19",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -330984,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-19",
+   "description": "HORTIFRUTI VERDE VIDA",
+   "amount_cents": -3944,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-23",
+   "description": "PIX ENVIADO PEDRO H COSTA",
+   "amount_cents": -49905,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-24",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 4602,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-25",
+   "description": "YOUTUBE PREMIUM",
+   "amount_cents": -2887,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-25",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -170898,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-26",
+   "description": "COMPRA DEBITO IPTU PREFEITURA PARC",
+   "amount_cents": -42861,
+   "type": "expense",
+   "category": "Impostos e taxas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-26",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -378428,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-27",
+   "description": "PIX RECEBIDO RAFAEL G PEREIRA",
+   "amount_cents": 11710,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-27",
+   "description": "PIX ENVIADO MARIA S OLIVEIRA",
+   "amount_cents": -12373,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-12-30",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -145197,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

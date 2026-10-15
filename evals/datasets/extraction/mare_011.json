@@ -1,0 +1,212 @@
+{
+ "id": "mare_011",
+ "layout": "mare",
+ "bank": "Banco Maré",
+ "document_type": "checking_statement",
+ "period_start": "2026-05-01",
+ "period_end": "2026-05-31",
+ "holder": "CICRANO PEREIRA DIAS",
+ "opening_balance_cents": 659489,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2026-05-02",
+   "description": "COMPRA DEBITO AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -15452,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-02",
+   "description": "PIX RECEBIDO CARLOS E SOUZA",
+   "amount_cents": 63918,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-03",
+   "description": "IFOOD *PIZZARIA FORNO",
+   "amount_cents": -6803,
+   "type": "expense",
+   "category": "Delivery",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-04",
+   "description": "COMPRA DEBITO RESTAURANTE SABOR DE MINAS",
+   "amount_cents": -12016,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-05",
+   "description": "PIX RECEBIDO PEDRO H COSTA",
+   "amount_cents": 33779,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-06",
+   "description": "INGRESSOS SHOW E CIA",
+   "amount_cents": -24884,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-09",
+   "description": "COMPRA DEBITO SUPERM BOM PRECO LTDA",
+   "amount_cents": -22834,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-10",
+   "description": "SALARIO COMERCIO BETA SA",
+   "amount_cents": 763697,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-11",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -111018,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-11",
+   "description": "PIX ENVIADO RAFAEL G PEREIRA",
+   "amount_cents": -43986,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-11",
+   "description": "COMPRA DEBITO SUPERM BOM PRECO LTDA",
+   "amount_cents": -28637,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-14",
+   "description": "CIA AEREA VOE BEM",
+   "amount_cents": -82286,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-15",
+   "description": "PAG BOLETO INTERNET FIBRA RAPIDA",
+   "amount_cents": -11089,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-15",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -139059,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-20",
+   "description": "PIX RECEBIDO CARLOS E SOUZA",
+   "amount_cents": 39298,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-24",
+   "description": "99 TECNOLOGIA CORRIDA",
+   "amount_cents": -5404,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-24",
+   "description": "COMPRA DEBITO ATACADAO DO POVO",
+   "amount_cents": -35386,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-27",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -7378,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-29",
+   "description": "PIX RECEBIDO LUCIANA M ROCHA",
+   "amount_cents": 76443,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-30",
+   "description": "PAG BOLETO CONDOMINIO RES JARDINS",
+   "amount_cents": -115143,
+   "type": "expense",
+   "category": "Moradia",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-30",
+   "description": "INGRESSOS SHOW E CIA",
+   "amount_cents": -14105,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2026-05-31",
+   "description": "LIVRARIA LER MAIS",
+   "amount_cents": -13747,
+   "type": "expense",
+   "category": "Educação",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}

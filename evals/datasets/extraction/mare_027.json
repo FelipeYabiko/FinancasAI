@@ -1,0 +1,311 @@
+{
+ "id": "mare_027",
+ "layout": "mare",
+ "bank": "Banco Maré",
+ "document_type": "checking_statement",
+ "period_start": "2025-07-01",
+ "period_end": "2025-07-31",
+ "holder": "CICRANO PEREIRA DIAS",
+ "opening_balance_cents": 192446,
+ "due_date": null,
+ "invoice_month": null,
+ "transactions": [
+  {
+   "date": "2025-07-01",
+   "description": "SALARIO INSTITUTO GAMA",
+   "amount_cents": 741794,
+   "type": "income",
+   "category": "Salário",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-01",
+   "description": "PIX ENVIADO MARIA S OLIVEIRA",
+   "amount_cents": -13685,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-01",
+   "description": "ACADEMIA CORPO ATIVO",
+   "amount_cents": -12452,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-02",
+   "description": "PIX ENVIADO FERNANDA ALVES",
+   "amount_cents": -6178,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-02",
+   "description": "COMPRA DEBITO CIA AEREA VOE BEM",
+   "amount_cents": -127359,
+   "type": "expense",
+   "category": "Viagem",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-02",
+   "description": "CANTINA DA NONNA",
+   "amount_cents": -10123,
+   "type": "expense",
+   "category": "Restaurantes",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-03",
+   "description": "NETFLIX.COM",
+   "amount_cents": -4573,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-03",
+   "description": "ELETRO CENTER ONLINE",
+   "amount_cents": -153070,
+   "type": "expense",
+   "category": "Compras",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-04",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -145556,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-04",
+   "description": "NETFLIX.COM",
+   "amount_cents": -5569,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-05",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -413915,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-06",
+   "description": "CINEMA ESTRELA SHOP",
+   "amount_cents": -4307,
+   "type": "expense",
+   "category": "Lazer",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-07",
+   "description": "COMPRA DEBITO TELEFONIA CELULAR MAIS",
+   "amount_cents": -8223,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-08",
+   "description": "COMPRA DEBITO ATACADAO DO POVO",
+   "amount_cents": -38201,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-08",
+   "description": "LAB CLINICO EXAME",
+   "amount_cents": -13484,
+   "type": "expense",
+   "category": "Saúde",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-08",
+   "description": "PIX ENVIADO JOAO P SANTOS",
+   "amount_cents": -46454,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-08",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 6190,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-12",
+   "description": "COMPRA DEBITO ATACADAO POVO SP",
+   "amount_cents": -13257,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-14",
+   "description": "PIX ENVIADO JOAO P SANTOS",
+   "amount_cents": -13454,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-15",
+   "description": "AMAZON PRIME BR",
+   "amount_cents": -1586,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-17",
+   "description": "AUTO POSTO ESTRELA",
+   "amount_cents": -20750,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-18",
+   "description": "COMPRA DEBITO 99 TECNOLOGIA CORRIDA",
+   "amount_cents": -3925,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-18",
+   "description": "COMPRA DEBITO PET SHOP AMIGO FIEL",
+   "amount_cents": -22617,
+   "type": "expense",
+   "category": "Pets",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-19",
+   "description": "PIX RECEBIDO PEDRO H COSTA",
+   "amount_cents": 3170,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-20",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 1483,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-21",
+   "description": "PAGAMENTO FATURA CARTAO",
+   "amount_cents": -268967,
+   "type": "transfer",
+   "category": null,
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-23",
+   "description": "COMPRA DEBITO SUPERMERCADO BOM PRECO",
+   "amount_cents": -9411,
+   "type": "expense",
+   "category": "Mercado",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-23",
+   "description": "COMPRA DEBITO YOUTUBE PREMIUM",
+   "amount_cents": -2878,
+   "type": "expense",
+   "category": "Assinaturas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-24",
+   "description": "AGUA E SANEAMENTO CIDADE",
+   "amount_cents": -9150,
+   "type": "expense",
+   "category": "Contas e serviços",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-24",
+   "description": "PIX ENVIADO MARIA S OLIVEIRA",
+   "amount_cents": -33304,
+   "type": "expense",
+   "category": "Outros",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-26",
+   "description": "99APP *CORRIDA",
+   "amount_cents": -3894,
+   "type": "expense",
+   "category": "Transporte",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-29",
+   "description": "PIX RECEBIDO PEDRO H COSTA",
+   "amount_cents": 16801,
+   "type": "income",
+   "category": "Outras receitas",
+   "installment_number": null,
+   "installment_total": null
+  },
+  {
+   "date": "2025-07-30",
+   "description": "RENDIMENTO APLICACAO",
+   "amount_cents": 1191,
+   "type": "income",
+   "category": "Investimentos",
+   "installment_number": null,
+   "installment_total": null
+  }
+ ]
+}
