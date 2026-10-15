@@ -30,7 +30,7 @@ jobs:
       - run: uv run python -m evals.run --suite all --subset ci --models fake:fake
 
   evals-llm-smoke:
-    # Small real-LLM subset, only when a key is configured in the repository secrets.
+    # Small real-LLM subset, only when the GROQ_API_KEY secret is configured.
     runs-on: ubuntu-latest
     # The key is stored as an environment secret (environment "GROQ_API_KEY").
     environment: GROQ_API_KEY
@@ -39,8 +39,6 @@ jobs:
       # Groq free tier: 8k tokens/min → one chunk at a time, rely on retry-after for the rest.
       EXTRACTION_CONCURRENCY: "1"
     steps:
-      - name: Secret check (prints only the length, never the value)
-        run: echo "GROQ_API_KEY length = ${#GROQ_API_KEY}"
       - uses: actions/checkout@v4
         if: env.GROQ_API_KEY != ''
       - uses: astral-sh/setup-uv@v6

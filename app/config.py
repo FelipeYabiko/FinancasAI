@@ -17,7 +17,6 @@ class Settings(BaseSettings):
     # Core
     app_env: str = "development"
     database_url: str = f"sqlite:///{BASE_DIR / 'data' / 'financasia.db'}"
-    secret_key: str = "change-me-in-production"
     session_max_age_days: int = 30
     cookie_secure: bool = False
     timezone: str = "America/Sao_Paulo"

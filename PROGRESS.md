@@ -137,8 +137,7 @@ To resume in a new session: read this file, then continue with the first phase n
   non-root user, SQLite in the `/app/data` volume, healthcheck on `/api/health`.
 - `docker-compose.yml`: one service, port 8000, optional `.env`, named volume.
 - Verified: `docker compose up` → container healthy, first-run setup, account + transaction created,
-  data persisted across `docker compose restart`. (The sandbox needed its proxy CA injected through a
-  scratch copy of the Dockerfile to download wheels; the committed Dockerfile is the clean one.)
+  data persisted across `docker compose restart`.
 - In `APP_ENV=production` the offline `fake` provider is hidden; AI features need real keys in `.env`.
 
 ## Phase 9
