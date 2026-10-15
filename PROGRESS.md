@@ -7,8 +7,8 @@ To resume in a new session: read this file, then continue with the first phase n
 |---|---|
 | 0 — Repo, tooling, CI | ✅ done |
 | 1 — Domain + API | ✅ done |
-| 2 — Frontend + login | ⏳ next |
-| 3 — LLM providers, prompts, tracing, diagnostics | ⬜ |
+| 2 — Frontend + login | ✅ done |
+| 3 — LLM providers, prompts, tracing, diagnostics | ⏳ next |
 | 4 — PDF import pipeline + review screen | ⬜ |
 | 5 — Assistant with function calling | ⬜ |
 | 6 — Synthetic generator, eval suites, report | ⬜ |
@@ -34,3 +34,15 @@ To resume in a new session: read this file, then continue with the first phase n
 - Auth: bcrypt, server-side session table, HTTP-only cookie + double-submit CSRF header.
 - API routers for auth/users, accounts, categories, category memory, transactions,
   budgets, goals, recurring, dashboard and backup. 102 tests passing.
+
+## Phase 2
+- Vanilla JS ES modules in `app/static/js` (no build step), served by FastAPI; Chart.js vendored
+  (`app/static/vendor`, pinned 4.4.7) so the app works offline and under a strict CSP (`script-src 'self'`).
+- Login / first-run setup screen; hash router; month picker; global search; theme (auto/light/dark).
+- Views: dashboard (balances, open invoices, 6-month bars, category doughnut, MoM %, top merchants,
+  weekday chart, budgets), transactions (filters, month/all scope with stats, inline edit of
+  description/category, modal edit, installment-aware delete), budgets (80%/100% alerts, inline limit,
+  copy from previous month), goals (inline add/withdraw/set — no `prompt()`), recurring rules, settings
+  (accounts, categories, users, category memory, backup JSON/CSV, appearance/shortcuts).
+- Shortcuts: Ctrl+N, Ctrl+I, Ctrl+/. Responsive layout with bottom nav on phones.
+- Verified with a Playwright smoke run (desktop 1366px + mobile 390px): full flow without console errors.

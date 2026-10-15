@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4f46e5">
+  <title>FinançasIA</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💸</text></svg>">
+  <link rel="stylesheet" href="/static/css/app.css">
+  <script src="/static/js/theme-init.js"></script>
+  <script src="/static/vendor/chart.umd.min.js" defer></script>
+  <script type="module" src="/static/js/app.js"></script>
+</head>
+<body>
+  <!-- Auth screen -->
+  <section id="auth-screen" class="auth hidden" aria-live="polite">
+    <form id="auth-form" class="card auth-card">
+      <h1>💸 FinançasIA</h1>
+      <p class="muted" id="auth-subtitle">Entre para continuar</p>
+      <label class="field hidden" id="auth-name-field">Nome
+        <input name="name" autocomplete="name">
+      </label>
+      <label class="field">Usuário
+        <input name="username" autocomplete="username" required>
+      </label>
+      <label class="field">Senha
+        <input name="password" type="password" autocomplete="current-password" required minlength="6">
+      </label>
+      <p class="error" id="auth-error"></p>
+      <button class="btn primary block" type="submit" id="auth-submit">Entrar</button>
+    </form>
+  </section>
+
+  <!-- App shell -->
+  <div id="app" class="shell hidden">
+    <aside class="sidebar">
+      <div class="brand">💸 <span>FinançasIA</span></div>
+      <nav id="nav">
+        <a href="#/dashboard" data-route="dashboard"><span>📊</span><b>Dashboard</b></a>
+        <a href="#/transactions" data-route="transactions"><span>💳</span><b>Transações</b></a>
+        <a href="#/budgets" data-route="budgets"><span>🎯</span><b>Orçamentos</b></a>
+        <a href="#/goals" data-route="goals"><span>🏁</span><b>Metas</b></a>
+        <a href="#/recurring" data-route="recurring"><span>🔁</span><b>Recorrentes</b></a>
+        <a href="#/import" data-route="import"><span>📄</span><b>Importar</b></a>
+        <a href="#/insights" data-route="insights"><span>💡</span><b>Insights</b></a>
+        <a href="#/settings" data-route="settings"><span>⚙️</span><b>Config.</b></a>
+      </nav>
+      <div class="sidebar-foot">
+        <span id="whoami" class="muted"></span>
+        <button class="btn ghost small" id="logout-btn" type="button">Sair</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="month-picker" id="month-picker">
+          <button class="btn icon" data-step="-1" type="button" aria-label="Mês anterior">‹</button>
+          <strong id="month-label"></strong>
+          <button class="btn icon" data-step="1" type="button" aria-label="Próximo mês">›</button>
+        </div>
+        <input id="global-search" type="search" placeholder="Buscar transações…" aria-label="Busca global">
+        <div class="topbar-actions">
+          <button class="btn primary" id="new-tx-btn" type="button" title="Nova transação (Ctrl+N)">＋ <span class="hide-sm">Nova</span></button>
+          <button class="btn" id="assistant-btn" type="button" title="Assistente (Ctrl+/)">🤖 <span class="hide-sm">Assistente</span></button>
+          <button class="btn icon" id="theme-btn" type="button" title="Tema claro/escuro" aria-label="Alternar tema">🌓</button>
+        </div>
+      </header>
+      <div id="view" class="view"></div>
+    </main>
+
+    <aside id="assistant-panel" class="assistant hidden" aria-label="Assistente">
+      <header>
+        <strong>🤖 Assistente</strong>
+        <div>
+          <button class="btn ghost small" id="assistant-reset" type="button">Nova conversa</button>
+          <button class="btn icon" id="assistant-close" type="button" aria-label="Fechar">✕</button>
+        </div>
+      </header>
+      <div id="assistant-messages" class="assistant-messages"></div>
+      <form id="assistant-form" class="assistant-form">
+        <textarea name="message" rows="2" placeholder="Ex.: gastei 45 no mercado ontem no Nubank" required></textarea>
+        <button class="btn primary" type="submit">Enviar</button>
+      </form>
+    </aside>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+</body>
+</html>

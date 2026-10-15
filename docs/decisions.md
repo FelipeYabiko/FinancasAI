@@ -36,3 +36,7 @@ listed next step if the schema starts changing under real data.
 ## D8 — Balances up to today
 Account balances only include transactions dated up to today (future installments and recurring
 entries already generated for later this month don't count yet).
+
+## D9 — Frontend without a build step
+ES modules + a tiny tagged-template `html` helper that escapes every interpolation (XSS-safe by
+default). Chart.js is vendored instead of loaded from a CDN so the CSP can be `script-src 'self'`.

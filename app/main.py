@@ -3,9 +3,11 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 
 from app.api import accounts, auth, dashboard, planning, transactions
+from app.config import BASE_DIR
 from app.db import init_db
 from app.services.ledger import LedgerError
 
@@ -17,6 +19,23 @@ async def lifespan(_: FastAPI):
 
 
 app = FastAPI(title="FinançasIA", lifespan=lifespan)
+STATIC_DIR = BASE_DIR / "app" / "static"
+
+CSP = (
+    "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; "
+    "script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'"
+)
+
+
+@app.middleware("http")
+async def security_headers(request: Request, call_next):
+    response = await call_next(request)
+    response.headers.setdefault("Content-Security-Policy", CSP)
+    response.headers.setdefault("X-Content-Type-Options", "nosniff")
+    response.headers.setdefault("Referrer-Policy", "same-origin")
+    if request.url.path.startswith("/api/"):
+        response.headers.setdefault("Cache-Control", "no-store")
+    return response
 
 
 @app.exception_handler(LedgerError)
@@ -38,3 +57,11 @@ for r in (
     dashboard.router,
 ):
     app.include_router(r)
+
+
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+
+@app.get("/", include_in_schema=False)
+def index() -> FileResponse:
+    return FileResponse(STATIC_DIR / "index.html")
