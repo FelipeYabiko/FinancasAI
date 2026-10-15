@@ -35,6 +35,8 @@ jobs:
     env:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
     steps:
+      - name: Secret check (prints only the length, never the value)
+        run: echo "GROQ_API_KEY length = ${#GROQ_API_KEY}"
       - uses: actions/checkout@v4
         if: env.GROQ_API_KEY != ''
       - uses: astral-sh/setup-uv@v6
