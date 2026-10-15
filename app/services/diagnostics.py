@@ -21,9 +21,16 @@ def diagnostics(db: Session, days: int = 30) -> dict:
     since = datetime.now(UTC) - timedelta(days=days)
     rows = list(db.exec(select(LLMCall).where(LLMCall.created_at >= since)))
     ok_lat = [r.latency_ms for r in rows if r.status == "ok"]
-    by_feature: dict[str, dict] = defaultdict(lambda: {"calls": 0, "cost_usd": 0.0, "errors": 0,
-                                                       "input_tokens": 0, "output_tokens": 0,
-                                                       "latencies": []})  # fmt: skip
+    by_feature: dict[str, dict] = defaultdict(
+        lambda: {
+            "calls": 0,
+            "cost_usd": 0.0,
+            "errors": 0,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "latencies": [],
+        }
+    )
     per_day: dict[str, dict] = defaultdict(lambda: {"calls": 0, "errors": 0, "cost_usd": 0.0})
     for r in rows:
         f = by_feature[r.feature]
@@ -43,8 +50,15 @@ def diagnostics(db: Session, days: int = 30) -> dict:
     features = []
     for name, f in sorted(by_feature.items()):
         lat = f.pop("latencies")
-        features.append({"feature": name, **f, "cost_usd": round(f["cost_usd"], 6),
-                         "p50_ms": percentile(lat, 50), "p95_ms": percentile(lat, 95)})  # fmt: skip
+        features.append(
+            {
+                "feature": name,
+                **f,
+                "cost_usd": round(f["cost_usd"], 6),
+                "p50_ms": percentile(lat, 50),
+                "p95_ms": percentile(lat, 95),
+            }
+        )
     failures = db.exec(
         select(LLMCall)
         .where(LLMCall.status != "ok")

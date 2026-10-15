@@ -139,9 +139,13 @@ class LLMClient:
                 )
             except ProviderError as exc:
                 self._record(
-                    result, **base, status="error", attempts=getattr(exc, "attempts", 1),
-                    error_message=str(exc)[:1000], request_payload=self._payload(convo),
-                )  # fmt: skip
+                    result,
+                    **base,
+                    status="error",
+                    attempts=getattr(exc, "attempts", 1),
+                    error_message=str(exc)[:1000],
+                    request_payload=self._payload(convo),
+                )
                 raise
             cost = estimate_cost_usd(provider, model, resp.input_tokens, resp.output_tokens)
             result.response = resp

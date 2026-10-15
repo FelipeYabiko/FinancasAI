@@ -3,6 +3,7 @@ name: CI
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
@@ -16,3 +17,35 @@ jobs:
       - run: uv run ruff check .
       - run: uv run ruff format --check .
       - run: uv run pytest
+
+  evals-offline:
+    # Exercises the whole eval harness with the offline provider (no cost, no keys).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync --locked
+      - run: uv run python -m evals.run --suite all --subset ci --models fake:fake
+
+  evals-llm-smoke:
+    # Small real-LLM subset, only when a key is configured in the repository secrets.
+    runs-on: ubuntu-latest
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        if: env.GROQ_API_KEY != ''
+      - uses: astral-sh/setup-uv@v6
+        if: env.GROQ_API_KEY != ''
+        with:
+          python-version: "3.12"
+      - run: uv sync --locked
+        if: env.GROQ_API_KEY != ''
+      - name: LLM eval subset (extraction + agent, ~cents)
+        if: env.GROQ_API_KEY != ''
+        run: uv run python -m evals.run --suite extraction,agent --subset ci --fail-on-regression
+      - name: Skip notice
+        if: env.GROQ_API_KEY == ''
+        run: echo "GROQ_API_KEY secret not set; skipping LLM evals."

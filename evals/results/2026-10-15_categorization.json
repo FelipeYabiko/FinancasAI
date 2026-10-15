@@ -1,0 +1,81 @@
+{
+ "meta": {
+  "suite": "categorization",
+  "timestamp": "2026-10-15T14:00:50+00:00",
+  "git_sha": "9674aa6",
+  "prompt_versions": {
+   "extraction": "v1",
+   "categorization": "v1",
+   "assistant": "v1",
+   "insights": "v1",
+   "ping": "v1"
+  },
+  "subset": null,
+  "limit": null,
+  "items": 145
+ },
+ "results": {
+  "fake:fake": {
+   "without_memory": {
+    "accuracy": 0.6138,
+    "per_category": {
+     "Assinaturas": 0.7,
+     "Compras": 0.0,
+     "Contas e serviços": 0.9,
+     "Delivery": 0.7273,
+     "Educação": 0.0,
+     "Freelance": 0.0,
+     "Impostos e taxas": 0.0,
+     "Investimentos": 0.0,
+     "Lazer": 0.0,
+     "Mercado": 1.0,
+     "Moradia": 0.0,
+     "Outras receitas": 1.0,
+     "Outros": 1.0,
+     "Pets": 0.0,
+     "Restaurantes": 0.75,
+     "Salário": 1.0,
+     "Saúde": 0.8,
+     "Transporte": 0.875,
+     "Viagem": 0.0
+    },
+    "from_memory": 0,
+    "from_llm": 145,
+    "llm_calls": 3,
+    "cost_usd": 0.0,
+    "latency_ms": 3,
+    "failures": 0
+   },
+   "with_memory": {
+    "accuracy": 0.6759,
+    "per_category": {
+     "Assinaturas": 0.7,
+     "Compras": 0.5,
+     "Contas e serviços": 0.9,
+     "Delivery": 0.8182,
+     "Educação": 0.4,
+     "Freelance": 0.0,
+     "Impostos e taxas": 0.0,
+     "Investimentos": 0.0,
+     "Lazer": 0.0,
+     "Mercado": 1.0,
+     "Moradia": 0.0,
+     "Outras receitas": 1.0,
+     "Outros": 1.0,
+     "Pets": 0.25,
+     "Restaurantes": 0.75,
+     "Salário": 1.0,
+     "Saúde": 0.8,
+     "Transporte": 0.875,
+     "Viagem": 0.1667
+    },
+    "from_memory": 33,
+    "from_llm": 112,
+    "llm_calls": 2,
+    "cost_usd": 0.0,
+    "latency_ms": 2,
+    "failures": 0
+   }
+  }
+ }
+}

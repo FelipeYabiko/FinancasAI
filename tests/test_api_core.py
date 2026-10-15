@@ -97,9 +97,15 @@ def test_filters_and_stats(client, accounts, categories):
     ]:
         client.post(
             "/api/transactions",
-            json={"date": d, "description": desc, "amount_cents": amt, "type": t, "account_id": acc,
-                  "tags": ["casa"] if "Uber" in desc else []},
-        )  # fmt: skip
+            json={
+                "date": d,
+                "description": desc,
+                "amount_cents": amt,
+                "type": t,
+                "account_id": acc,
+                "tags": ["casa"] if "Uber" in desc else [],
+            },
+        )
     page = client.get("/api/transactions", params={"month": "2026-05"}).json()
     assert page["total"] == 3
     assert page["stats"]["income_cents"] == 500000
@@ -116,9 +122,14 @@ def test_installments_exact_and_group_delete(client, accounts):
     card = accounts["card"]["id"]
     r = client.post(
         "/api/transactions/installments",
-        json={"date": "2026-11-28", "description": "TV", "total_cents": 299999,
-              "installments": 10, "account_id": card},
-    )  # fmt: skip
+        json={
+            "date": "2026-11-28",
+            "description": "TV",
+            "total_cents": 299999,
+            "installments": 10,
+            "account_id": card,
+        },
+    )
     assert r.status_code == 201
     items = r.json()
     assert len(items) == 10
@@ -140,9 +151,14 @@ def test_transfers_out_of_totals(client, accounts):
     d = today().isoformat()
     client.post(
         "/api/transactions",
-        json={"date": d, "description": "Salário", "amount_cents": 300000, "type": "income",
-              "account_id": checking},
-    )  # fmt: skip
+        json={
+            "date": d,
+            "description": "Salário",
+            "amount_cents": 300000,
+            "type": "income",
+            "account_id": checking,
+        },
+    )
     r = client.post(
         "/api/transactions/transfers",
         json={"date": d, "from_account_id": checking, "to_account_id": card, "amount_cents": 50000},
@@ -173,10 +189,16 @@ def test_recurring_no_duplicates(client, accounts, db, categories):
     acc = accounts["checking"]["id"]
     r = client.post(
         "/api/recurring",
-        json={"description": "Aluguel", "amount_cents": 180000, "type": "expense",
-              "account_id": acc, "category_id": categories["Moradia"], "day_of_month": 31,
-              "start_month": "2026-01"},
-    )  # fmt: skip
+        json={
+            "description": "Aluguel",
+            "amount_cents": 180000,
+            "type": "expense",
+            "account_id": acc,
+            "category_id": categories["Moradia"],
+            "day_of_month": 31,
+            "start_month": "2026-01",
+        },
+    )
     assert r.status_code == 201
     on = date(2026, 4, 15)
     run_recurring(db, on=on)
@@ -211,9 +233,15 @@ def test_budget_status(client, accounts, categories):
     )
     client.post(
         "/api/transactions",
-        json={"date": "2026-05-10", "description": "iFood", "amount_cents": 8500,
-              "type": "expense", "account_id": acc, "category_id": categories["Delivery"]},
-    )  # fmt: skip
+        json={
+            "date": "2026-05-10",
+            "description": "iFood",
+            "amount_cents": 8500,
+            "type": "expense",
+            "account_id": acc,
+            "category_id": categories["Delivery"],
+        },
+    )
     b = client.get("/api/budgets", params={"month": month}).json()[0]
     assert b["spent_cents"] == 8500
     assert b["status"] == "warning"
@@ -241,9 +269,14 @@ def test_dashboard_open_invoices(client, accounts):
     d = today()
     client.post(
         "/api/transactions",
-        json={"date": d.isoformat(), "description": "Livraria", "amount_cents": 8000,
-              "type": "expense", "account_id": card},
-    )  # fmt: skip
+        json={
+            "date": d.isoformat(),
+            "description": "Livraria",
+            "amount_cents": 8000,
+            "type": "expense",
+            "account_id": card,
+        },
+    )
     dash = client.get("/api/dashboard").json()
     assert len(dash["last_6_months"]) == 6
     assert dash["open_invoices"][0]["amount_cents"] == 8000
@@ -256,10 +289,16 @@ def test_backup_roundtrip(client, accounts, categories, db):
     acc = accounts["checking"]["id"]
     client.post(
         "/api/transactions",
-        json={"date": "2026-05-10", "description": "Padaria", "amount_cents": 1250,
-              "type": "expense", "account_id": acc, "category_id": categories["Mercado"],
-              "tags": ["café"]},
-    )  # fmt: skip
+        json={
+            "date": "2026-05-10",
+            "description": "Padaria",
+            "amount_cents": 1250,
+            "type": "expense",
+            "account_id": acc,
+            "category_id": categories["Mercado"],
+            "tags": ["café"],
+        },
+    )
     db.add(CategoryMemory(description_normalized="padaria", category_id=categories["Mercado"]))
     db.commit()
     dump = client.get("/api/backup/json")
@@ -291,9 +330,15 @@ def test_delete_category_uncategorizes(client, accounts):
     cat = client.post("/api/categories", json={"name": "Temp", "kind": "expense"}).json()
     tx = client.post(
         "/api/transactions",
-        json={"date": "2026-05-10", "description": "x", "amount_cents": 100, "type": "expense",
-              "account_id": accounts["checking"]["id"], "category_id": cat["id"]},
-    ).json()  # fmt: skip
+        json={
+            "date": "2026-05-10",
+            "description": "x",
+            "amount_cents": 100,
+            "type": "expense",
+            "account_id": accounts["checking"]["id"],
+            "category_id": cat["id"],
+        },
+    ).json()
     assert client.delete(f"/api/categories/{cat['id']}").status_code == 200
     assert client.get(f"/api/transactions/{tx['id']}").json()["category_id"] is None
     # accounts with transactions can't be deleted

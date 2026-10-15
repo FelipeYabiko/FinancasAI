@@ -201,14 +201,31 @@ def make_statement(idx: int, layout: str, rng: random.Random) -> Statement:
         end = clamp_day(year, month, closing_day)
         start = add_months(end, -1) + timedelta(days=1)
         due = end + timedelta(days=7)
-        st = Statement(sid, layout, bank, doc_type, start.isoformat(), end.isoformat(), holder,
-                       due_date=due.isoformat(), invoice_month=f"{end.year:04d}-{end.month:02d}")  # fmt: skip
+        st = Statement(
+            sid,
+            layout,
+            bank,
+            doc_type,
+            start.isoformat(),
+            end.isoformat(),
+            holder,
+            due_date=due.isoformat(),
+            invoice_month=f"{end.year:04d}-{end.month:02d}",
+        )
         st.transactions = card_transactions(rng, start, end, n)
     else:
         start = date(year, month, 1)
         end = clamp_day(year, month, 31)
-        st = Statement(sid, layout, bank, doc_type, start.isoformat(), end.isoformat(), holder,
-                       opening_balance_cents=rng.randint(-50000, 900000))  # fmt: skip
+        st = Statement(
+            sid,
+            layout,
+            bank,
+            doc_type,
+            start.isoformat(),
+            end.isoformat(),
+            holder,
+            opening_balance_cents=rng.randint(-50000, 900000),
+        )
         st.transactions = checking_transactions(rng, start, end, n)
     return st
 

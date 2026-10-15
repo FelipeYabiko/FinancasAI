@@ -67,8 +67,12 @@ def extract_transactions(
     info = detect_document(pdf.lines)
     pages, removed = strip_repeated_boilerplate(pdf.pages)
     chunked = chunk_lines([ln for p in pages for ln in p], chunk_tokens)
-    run = ExtractionRun(info=info, warnings=list(chunked.warnings), chunks=len(chunked.chunks),
-                        boilerplate_lines_removed=removed)  # fmt: skip
+    run = ExtractionRun(
+        info=info,
+        warnings=list(chunked.warnings),
+        chunks=len(chunked.chunks),
+        boilerplate_lines_removed=removed,
+    )
     if info.document_type == "unknown":
         run.warnings.append("tipo de documento não identificado; confira o resultado com atenção")
     system, version = load_prompt(
@@ -100,8 +104,10 @@ def extract_transactions(
                 raise
             except (LLMValidationError, ProviderError) as exc:
                 run.failed_chunks += 1
-                run.warnings.append(f"bloco {idx + 1} não pôde ser extraído ({exc.__class__.__name__}): "
-                                    f"{str(exc)[:160]}")  # fmt: skip
+                run.warnings.append(
+                    f"bloco {idx + 1} não pôde ser extraído ({exc.__class__.__name__}): "
+                    f"{str(exc)[:160]}"
+                )
                 for rec in getattr(exc, "records", []):
                     run.cost_usd += rec.cost_usd
                 continue

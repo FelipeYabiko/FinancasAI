@@ -35,11 +35,20 @@ def chat(client, message, conversation_id=None):
 
 def test_create_expense_requires_confirmation(client, setup):
     yesterday = (today() - timedelta(days=1)).isoformat()
-    fake = FakeProvider(script=[
-        call("create_transaction", date=yesterday, description="Mercado", amount_cents=4500,
-             type="expense", account="nubank", category="mercado"),
-        "Vou lançar R$ 45,00 no Nubank. Confirma?",
-    ])  # fmt: skip
+    fake = FakeProvider(
+        script=[
+            call(
+                "create_transaction",
+                date=yesterday,
+                description="Mercado",
+                amount_cents=4500,
+                type="expense",
+                account="nubank",
+                category="mercado",
+            ),
+            "Vou lançar R$ 45,00 no Nubank. Confirma?",
+        ]
+    )
     register_provider("fake", fake)
     res = chat(client, "gastei 45 no mercado ontem no Nubank")
     assert len(res["pending_actions"]) == 1
@@ -67,11 +76,23 @@ def test_create_expense_requires_confirmation(client, setup):
 def test_question_answered_from_tools(client, setup):
     acc = setup["checking"]["id"]
     for amt in (4590, 3210):
-        client.post("/api/transactions", json={
-            "date": today().isoformat(), "description": "iFood", "amount_cents": amt, "type": "expense",
-            "account_id": acc, "category_id": setup["cats"]["Delivery"]})  # fmt: skip
-    fake = FakeProvider(script=[call("get_summary", month=month_key(today()), category="Delivery"),
-                                "Você gastou R$ 78,00 com delivery este mês."])  # fmt: skip
+        client.post(
+            "/api/transactions",
+            json={
+                "date": today().isoformat(),
+                "description": "iFood",
+                "amount_cents": amt,
+                "type": "expense",
+                "account_id": acc,
+                "category_id": setup["cats"]["Delivery"],
+            },
+        )
+    fake = FakeProvider(
+        script=[
+            call("get_summary", month=month_key(today()), category="Delivery"),
+            "Você gastou R$ 78,00 com delivery este mês.",
+        ]
+    )
     register_provider("fake", fake)
     res = chat(client, "quanto gastei com delivery esse mês?")
     assert res["steps"][0]["tool"] == "get_summary"
@@ -85,11 +106,20 @@ def test_question_answered_from_tools(client, setup):
 
 
 def test_installment_purchase_on_card(client, setup):
-    fake = FakeProvider(script=[
-        call("create_installment_purchase", date=today().isoformat(), description="TV",
-             total_cents=300000, installments=10, account="Nubank", category="Compras"),
-        "Confirma a compra da TV em 10x?",
-    ])  # fmt: skip
+    fake = FakeProvider(
+        script=[
+            call(
+                "create_installment_purchase",
+                date=today().isoformat(),
+                description="TV",
+                total_cents=300000,
+                installments=10,
+                account="Nubank",
+                category="Compras",
+            ),
+            "Confirma a compra da TV em 10x?",
+        ]
+    )
     register_provider("fake", fake)
     res = chat(client, "comprei uma TV de 3 mil em 10x no cartão")
     action = res["pending_actions"][0]
@@ -105,19 +135,38 @@ def test_card_inferred_when_only_one_card(client, accounts, categories):
     client.put(
         "/api/ai/settings", json={f: {"provider": "fake", "model": "fake"} for f in FEATURES}
     )
-    register_provider("fake", FakeProvider(script=[
-        call("create_installment_purchase", date=today().isoformat(), description="TV",
-             total_cents=300000, installments=10), "ok"]))  # fmt: skip
+    register_provider(
+        "fake",
+        FakeProvider(
+            script=[
+                call(
+                    "create_installment_purchase",
+                    date=today().isoformat(),
+                    description="TV",
+                    total_cents=300000,
+                    installments=10,
+                ),
+                "ok",
+            ]
+        ),
+    )
     res = chat(client, "comprei uma TV de 3 mil em 10x no cartão")
     assert "Cartão Roxo" in res["pending_actions"][0]["summary"]
 
 
 def test_missing_account_is_returned_to_model_and_cancel(client, setup):
-    fake = FakeProvider(script=[
-        call("create_transaction", date=today().isoformat(), description="Padaria", amount_cents=1200,
-             type="expense"),
-        "Em qual conta: Conta Corrente, Cartão Roxo ou Nubank?",
-    ])  # fmt: skip
+    fake = FakeProvider(
+        script=[
+            call(
+                "create_transaction",
+                date=today().isoformat(),
+                description="Padaria",
+                amount_cents=1200,
+                type="expense",
+            ),
+            "Em qual conta: Conta Corrente, Cartão Roxo ou Nubank?",
+        ]
+    )
     register_provider("fake", fake)
     res = chat(client, "gastei 12 na padaria")
     assert res["pending_actions"] == []
@@ -125,9 +174,17 @@ def test_missing_account_is_returned_to_model_and_cancel(client, setup):
     assert "Pergunte ao usuário" in fake.calls[1]["messages"][-1]["content"]
 
     # cancel flow + conversation memory
-    register_provider("fake", FakeProvider(script=[
-        call("set_budget", category="Delivery", month=month_key(today()), limit_cents=50000), "Confirma?",
-    ]))  # fmt: skip
+    register_provider(
+        "fake",
+        FakeProvider(
+            script=[
+                call(
+                    "set_budget", category="Delivery", month=month_key(today()), limit_cents=50000
+                ),
+                "Confirma?",
+            ]
+        ),
+    )
     res2 = chat(client, "orçamento de delivery 500", res["conversation_id"])
     assert res2["conversation_id"] == res["conversation_id"]
     act = res2["pending_actions"][0]
@@ -159,9 +216,16 @@ def test_goal_tools(client, setup):
 
 
 def test_delete_transaction_tool(client, setup):
-    tx = client.post("/api/transactions", json={
-        "date": today().isoformat(), "description": "Cinema", "amount_cents": 5000, "type": "expense",
-        "account_id": setup["checking"]["id"]}).json()  # fmt: skip
+    tx = client.post(
+        "/api/transactions",
+        json={
+            "date": today().isoformat(),
+            "description": "Cinema",
+            "amount_cents": 5000,
+            "type": "expense",
+            "account_id": setup["checking"]["id"],
+        },
+    ).json()
     register_provider(
         "fake", FakeProvider(script=[call("delete_transaction", transaction_id=tx["id"]), "ok"])
     )

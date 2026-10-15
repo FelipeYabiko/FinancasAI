@@ -93,14 +93,21 @@ def build_context(db: Session, on: date | None = None) -> str:
     budgets = budgets_for_month(db, month)
     if budgets:
         names = {c.id: c.name for c in cats}
-        lines.append("Orçamentos do mês: " + "; ".join(
-            f"{names.get(b['category_id'])} {format_brl(b['spent_cents'])} de {format_brl(b['limit_cents'])}"
-            for b in budgets
-        ))  # fmt: skip
+        lines.append(
+            "Orçamentos do mês: "
+            + "; ".join(
+                f"{names.get(b['category_id'])} {format_brl(b['spent_cents'])} de {format_brl(b['limit_cents'])}"
+                for b in budgets
+            )
+        )
     if goals:
-        lines.append("Metas: " + "; ".join(
-            f"{g.name} ({g.id}) {format_brl(g.current_cents)} de {format_brl(g.target_cents)}" for g in goals
-        ))  # fmt: skip
+        lines.append(
+            "Metas: "
+            + "; ".join(
+                f"{g.name} ({g.id}) {format_brl(g.current_cents)} de {format_brl(g.target_cents)}"
+                for g in goals
+            )
+        )
     return "\n".join(lines)
 
 

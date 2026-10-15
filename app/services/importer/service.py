@@ -50,10 +50,20 @@ def _mark_duplicates(db: Session, account_id: int, rows: list[PreviewRow]) -> No
             r.duplicate = "file"
         else:
             near = next(
-                (t for t in existing if is_near_duplicate(r.date, r.amount_cents, norm, t.date, t.amount_cents,
-                                                          t.description_normalized)),
+                (
+                    t
+                    for t in existing
+                    if is_near_duplicate(
+                        r.date,
+                        r.amount_cents,
+                        norm,
+                        t.date,
+                        t.amount_cents,
+                        t.description_normalized,
+                    )
+                ),
                 None,
-            )  # fmt: skip
+            )
             if near:
                 r.duplicate = "near"
                 r.duplicate_of = near.id
@@ -75,8 +85,9 @@ def preview_import(db: Session, data: bytes, filename: str, account_id: int) -> 
         pdf = extract_pdf_text(data)  # in memory; the bytes are discarded after this request
         provider, model = feature_config(db, "extraction")
         client = client_for(db)
-        run = extract_transactions(pdf, client, provider, model,
-                                   chunk_tokens=get_settings().extraction_chunk_tokens)  # fmt: skip
+        run = extract_transactions(
+            pdf, client, provider, model, chunk_tokens=get_settings().extraction_chunk_tokens
+        )
     except Exception as exc:
         batch.status = "failed"
         batch.warnings = [str(exc)[:300]]
@@ -222,8 +233,12 @@ def commit_import(db: Session, batch_id: int, rows: list[CommitRow], invoice: st
     batch.status = "committed"
     db.add(batch)
     db.commit()
-    return {"batch_id": batch.id, "imported": created, "skipped": skipped,
-            "latest_month": month_key(latest) if latest else None}  # fmt: skip
+    return {
+        "batch_id": batch.id,
+        "imported": created,
+        "skipped": skipped,
+        "latest_month": month_key(latest) if latest else None,
+    }
 
 
 def undo_import(db: Session, batch_id: int) -> dict:

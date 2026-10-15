@@ -11,8 +11,8 @@ To resume in a new session: read this file, then continue with the first phase n
 | 3 — LLM providers, prompts, tracing, diagnostics | ✅ done |
 | 4 — PDF import pipeline + review screen | ✅ done |
 | 5 — Assistant with function calling | ✅ done |
-| 6 — Synthetic generator, eval suites, report | ⏳ next |
-| 7 — Insights | ⬜ |
+| 6 — Synthetic generator, eval suites, report | 🟡 harness done — real 3-model run needs API keys |
+| 7 — Insights | ⏳ next |
 | 8 — Docker | ⬜ |
 | 9 — MCP server | ⬜ |
 | 10 — README | ⬜ |
@@ -102,3 +102,22 @@ To resume in a new session: read this file, then continue with the first phase n
 - UI: side panel (Ctrl+/), tool activity hints, confirmation cards.
 - Acceptance: `tests/test_assistant.py` covers the three examples end to end (scripted model) incl.
   "no write before confirmation". With a real key, the same flow runs against the configured model.
+
+## Phase 6
+- Datasets: 40 statement PDFs + ground truth (phase 4), 145 labelled descriptions
+  (`evals/generators/categorization.py`), 31 agent cases (`evals/datasets/agent_cases.yaml`) incl. 6 where
+  the right move is to ask. `tests/test_evals.py` checks that every expected number in the agent cases is
+  what the tools actually return, and that the checkers pass/fail the right behaviours.
+- Suites (`evals/suites/`): extraction (P/R/F1 by date±3d + |amount|, per-field accuracy, parse failure
+  rate, cost/statement, p50/p95, per layout), categorization (with/without memory, per category),
+  agent (tool, args, final state after confirming, answer numbers, ask-when-ambiguous, confirmation,
+  steps, cost, latency), baseline (regex parser).
+- Runner `uv run python -m evals.run --suite <s|all> --models provider:model,...` → dated JSON+MD in
+  `evals/results/`, `latest.md` with comparison table + data-driven conclusion, regression check against
+  `evals/baseline.json` (`--update-baseline`, `--fail-on-regression`).
+- CI: offline eval smoke job always; LLM subset job when `GROQ_API_KEY` secret exists.
+- **Blocked:** no provider API keys in this environment, so `latest.md` currently only has the offline
+  provider + regex baseline (regex: F1 0.855 overall; 1.0 on its own layout, 0.0 on the card invoice, wrong
+  signs on the in/out-column layout). To finish the acceptance criterion: put `GROQ_API_KEY`,
+  `GEMINI_API_KEY`, `OPENROUTER_API_KEY` in `.env` and run
+  `uv run python -m evals.run --suite all --skip-unavailable --update-baseline`.

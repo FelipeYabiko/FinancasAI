@@ -86,3 +86,17 @@ measures whether the *proposed* action is the right one.
 Tools accept "Nubank" or "3". Resolution is deterministic (exact → unique substring), and ambiguity
 returns an error telling the model to ask the user. This keeps ids out of the model's memory burden
 and makes ambiguous cases testable.
+
+## D19 — Extraction matching by |amount| + date ± 3 days
+Matching on exact date+amount would make date/amount accuracy trivially 100%. Matching on the absolute
+amount with a small date window lets the suite measure sign errors (in/out columns, card invoices) and
+date errors (year inference) as field accuracy instead of as missing transactions.
+
+## D20 — Memory eval uses one plain descriptor per merchant
+"With memory" seeds `CategoryMemory` with what a single user correction would store, then scores all
+statement variants. Gains therefore come from normalization quality, not from leaking labels.
+
+## D21 — The report's conclusion is generated from the numbers
+`evals/report.py` writes the "which model for which feature" paragraph from the latest results (best
+quality vs. cheapest within 2 points). The offline provider is never recommended. No numbers are
+written by hand.

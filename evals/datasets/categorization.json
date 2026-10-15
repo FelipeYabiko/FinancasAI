@@ -1,0 +1,872 @@
+[
+ {
+  "description": "COMPRA DEBITO SUPERMERCADO BOM PRECO",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 0
+ },
+ {
+  "description": "SUPERMERCADO BOM PRECO",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 1
+ },
+ {
+  "description": "SUPERM BOM PRECO LTDA SAO PAULO BR",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 2
+ },
+ {
+  "description": "Pag*Superm Bom Preco Ltda",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 3
+ },
+ {
+  "description": "Compra Cartao Mercadinho Da Esquina Belo Horizont",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 4
+ },
+ {
+  "description": "MERCADINHO DA ESQUINA *1234",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 5
+ },
+ {
+  "description": "PAG*ATACADAO DO POVO",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 6
+ },
+ {
+  "description": "DEB AUT ATACADAO DO POVO 03/10",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 7
+ },
+ {
+  "description": "ATACADAO POVO SP *1234",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 8
+ },
+ {
+  "description": "Atacadao Povo Sp",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 9
+ },
+ {
+  "description": "HORTIFRUTI VERDE VIDA SAO PAULO BR",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 10
+ },
+ {
+  "description": "PAG*HORTIFRUTI VERDE VIDA",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 11
+ },
+ {
+  "description": "PAG*PADARIA PAO DOURADO CURITIBA",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 12
+ },
+ {
+  "description": "PADARIA PAO DOURADO *1234",
+  "type": "expense",
+  "category": "Mercado",
+  "id": 13
+ },
+ {
+  "description": "Ifood *Restaurante Sabor Sao Paulo Br",
+  "type": "expense",
+  "category": "Delivery",
+  "id": 14
+ },
+ {
+  "description": "DEB AUT IFOOD *RESTAURANTE SABOR",
+  "type": "expense",
+  "category": "Delivery",
+  "id": 15
+ },
+ {
+  "description": "PAG*IFD*SABOR CASEIRO",
+  "type": "expense",
+  "category": "Delivery",
+  "id": 16
+ },
+ {
+  "description": "PAG*IFD*SABOR CASEIRO BELO HORIZONT",
+  "type": "expense",
+  "category": "Delivery",
+  "id": 17
+ },
+ {
+  "description": "COMPRA CARTAO IFOOD *PIZZARIA FORNO *1234",
+  "type": "expense",
+  "category": "Delivery",
+  "id": 18
+ },
+ {
+  "description": "Compra Debito Ifood *Pizzaria Forno Sao Paulo Br",
+  "type": "expense",
+  "category": "Delivery",
+  "id": 19
+ },
+ {
+  "description": "IFD*PIZZARIA FORNO 03/10",
+  "type": "expense",
+  "category": "Delivery",
+  "id": 20
+ },
+ {
+  "description": "IFD*PIZZARIA FORNO *1234",
+  "type": "expense",
+  "category": "Delivery",
+  "id": 21
+ },
+ {
+  "description": "COMPRA CARTAO RAPPI *BURGER HOUSE SAO PAULO BR",
+  "type": "expense",
+  "category": "Delivery",
+  "id": 22
+ },
+ {
+  "description": "COMPRA DEBITO RAPPI *BURGER HOUSE *1234",
+  "type": "expense",
+  "category": "Delivery",
+  "id": 23
+ },
+ {
+  "description": "RESTAURANTE SABOR DE MINAS *1234",
+  "type": "expense",
+  "category": "Restaurantes",
+  "id": 24
+ },
+ {
+  "description": "COMPRA DEBITO RESTAURANTE SABOR DE MINAS",
+  "type": "expense",
+  "category": "Restaurantes",
+  "id": 25
+ },
+ {
+  "description": "COMPRA CARTAO CANTINA DA NONNA",
+  "type": "expense",
+  "category": "Restaurantes",
+  "id": 26
+ },
+ {
+  "description": "CANTINA DA NONNA CURITIBA",
+  "type": "expense",
+  "category": "Restaurantes",
+  "id": 27
+ },
+ {
+  "description": "COMPRA DEBITO CAFE GRAO NOBRE SAO PAULO BR",
+  "type": "expense",
+  "category": "Restaurantes",
+  "id": 28
+ },
+ {
+  "description": "PAG*CAFE GRAO NOBRE BELO HORIZONT",
+  "type": "expense",
+  "category": "Restaurantes",
+  "id": 29
+ },
+ {
+  "description": "COMPRA CARTAO UBER *TRIP",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 30
+ },
+ {
+  "description": "COMPRA DEBITO UBER *TRIP BELO HORIZONT",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 31
+ },
+ {
+  "description": "UBER *TRIP HELP.UBER.COM",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 32
+ },
+ {
+  "description": "COMPRA DEBITO UBER *TRIP HELP.UBER.COM 03/10",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 33
+ },
+ {
+  "description": "DEB AUT 99APP *CORRIDA CURITIBA",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 34
+ },
+ {
+  "description": "DEB AUT 99APP *CORRIDA BELO HORIZONT",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 35
+ },
+ {
+  "description": "COMPRA DEBITO 99 TECNOLOGIA CORRIDA",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 36
+ },
+ {
+  "description": "Compra Cartao Posto Estrela Combustiveis",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 37
+ },
+ {
+  "description": "COMPRA DEBITO POSTO ESTRELA COMBUSTIVEIS",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 38
+ },
+ {
+  "description": "COMPRA CARTAO AUTO POSTO ESTRELA BELO HORIZONT",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 39
+ },
+ {
+  "description": "Compra Cartao Auto Posto Estrela",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 40
+ },
+ {
+  "description": "Compra Cartao Estac Centro Park *1234",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 41
+ },
+ {
+  "description": "ESTAC CENTRO PARK CURITIBA",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 42
+ },
+ {
+  "description": "PAG*NETFLIX.COM SAO PAULO BR",
+  "type": "expense",
+  "category": "Assinaturas",
+  "id": 43
+ },
+ {
+  "description": "COMPRA DEBITO NETFLIX.COM 03/10",
+  "type": "expense",
+  "category": "Assinaturas",
+  "id": 44
+ },
+ {
+  "description": "Spotify Brasil",
+  "type": "expense",
+  "category": "Assinaturas",
+  "id": 45
+ },
+ {
+  "description": "AMAZON PRIME BR BELO HORIZONT",
+  "type": "expense",
+  "category": "Assinaturas",
+  "id": 46
+ },
+ {
+  "description": "Amazon Prime Br Sao Paulo Br",
+  "type": "expense",
+  "category": "Assinaturas",
+  "id": 47
+ },
+ {
+  "description": "YOUTUBE PREMIUM BELO HORIZONT",
+  "type": "expense",
+  "category": "Assinaturas",
+  "id": 48
+ },
+ {
+  "description": "PAG*YOUTUBE PREMIUM *1234",
+  "type": "expense",
+  "category": "Assinaturas",
+  "id": 49
+ },
+ {
+  "description": "FARMACIA VIDA SAUDE 03/10",
+  "type": "expense",
+  "category": "Saúde",
+  "id": 50
+ },
+ {
+  "description": "PAG*FARMACIA VIDA SAUDE 03/10",
+  "type": "expense",
+  "category": "Saúde",
+  "id": 51
+ },
+ {
+  "description": "DROGARIA VIDA SAUDE BELO HORIZONT",
+  "type": "expense",
+  "category": "Saúde",
+  "id": 52
+ },
+ {
+  "description": "DEB AUT DROGARIA VIDA SAUDE CURITIBA",
+  "type": "expense",
+  "category": "Saúde",
+  "id": 53
+ },
+ {
+  "description": "COMPRA CARTAO LAB CLINICO EXAME BELO HORIZONT",
+  "type": "expense",
+  "category": "Saúde",
+  "id": 54
+ },
+ {
+  "description": "COMPRA CARTAO LAB CLINICO EXAME 03/10",
+  "type": "expense",
+  "category": "Saúde",
+  "id": 55
+ },
+ {
+  "description": "ACADEMIA CORPO ATIVO",
+  "type": "expense",
+  "category": "Saúde",
+  "id": 56
+ },
+ {
+  "description": "Compra Cartao Academia Corpo Ativo",
+  "type": "expense",
+  "category": "Saúde",
+  "id": 57
+ },
+ {
+  "description": "Pag*Livraria Ler Mais",
+  "type": "expense",
+  "category": "Educação",
+  "id": 58
+ },
+ {
+  "description": "Compra Debito Curso Idiomas Fala Bem *1234",
+  "type": "expense",
+  "category": "Educação",
+  "id": 59
+ },
+ {
+  "description": "CURSO IDIOMAS FALA BEM *1234",
+  "type": "expense",
+  "category": "Educação",
+  "id": 60
+ },
+ {
+  "description": "DEB AUT CINEMA ESTRELA SHOP SAO PAULO BR",
+  "type": "expense",
+  "category": "Lazer",
+  "id": 61
+ },
+ {
+  "description": "PAG*CINEMA ESTRELA SHOP SAO PAULO BR",
+  "type": "expense",
+  "category": "Lazer",
+  "id": 62
+ },
+ {
+  "description": "INGRESSOS SHOW E CIA CURITIBA",
+  "type": "expense",
+  "category": "Lazer",
+  "id": 63
+ },
+ {
+  "description": "COMPRA CARTAO INGRESSOS SHOW E CIA BELO HORIZONT",
+  "type": "expense",
+  "category": "Lazer",
+  "id": 64
+ },
+ {
+  "description": "Loja Moda Urbana",
+  "type": "expense",
+  "category": "Compras",
+  "id": 65
+ },
+ {
+  "description": "Compra Debito Loja Moda Urbana 03/10",
+  "type": "expense",
+  "category": "Compras",
+  "id": 66
+ },
+ {
+  "description": "DEB AUT MAGAZINE CASA TUDO",
+  "type": "expense",
+  "category": "Compras",
+  "id": 67
+ },
+ {
+  "description": "MAGAZINE CASA TUDO *1234",
+  "type": "expense",
+  "category": "Compras",
+  "id": 68
+ },
+ {
+  "description": "DEB AUT ELETRO CENTER ONLINE *1234",
+  "type": "expense",
+  "category": "Compras",
+  "id": 69
+ },
+ {
+  "description": "PAG*ELETRO CENTER ONLINE SAO PAULO BR",
+  "type": "expense",
+  "category": "Compras",
+  "id": 70
+ },
+ {
+  "description": "PET SHOP AMIGO FIEL 03/10",
+  "type": "expense",
+  "category": "Pets",
+  "id": 71
+ },
+ {
+  "description": "PAG*PET SHOP AMIGO FIEL SAO PAULO BR",
+  "type": "expense",
+  "category": "Pets",
+  "id": 72
+ },
+ {
+  "description": "Compra Debito Cia Aerea Voe Bem Curitiba",
+  "type": "expense",
+  "category": "Viagem",
+  "id": 73
+ },
+ {
+  "description": "PAG*CIA AEREA VOE BEM CURITIBA",
+  "type": "expense",
+  "category": "Viagem",
+  "id": 74
+ },
+ {
+  "description": "DEB AUT HOTEL PRAIA AZUL",
+  "type": "expense",
+  "category": "Viagem",
+  "id": 75
+ },
+ {
+  "description": "Hotel Praia Azul Curitiba",
+  "type": "expense",
+  "category": "Viagem",
+  "id": 76
+ },
+ {
+  "description": "COMPRA CARTAO ENERGIA LUZ FORTE SA 03/10",
+  "type": "expense",
+  "category": "Contas e serviços",
+  "id": 77
+ },
+ {
+  "description": "ENERGIA LUZ FORTE SA *1234",
+  "type": "expense",
+  "category": "Contas e serviços",
+  "id": 78
+ },
+ {
+  "description": "DEB AUT AGUA E SANEAMENTO CIDADE",
+  "type": "expense",
+  "category": "Contas e serviços",
+  "id": 79
+ },
+ {
+  "description": "Compra Debito Agua E Saneamento Cidade Belo Horizont",
+  "type": "expense",
+  "category": "Contas e serviços",
+  "id": 80
+ },
+ {
+  "description": "DEB AUT INTERNET FIBRA RAPIDA *1234",
+  "type": "expense",
+  "category": "Contas e serviços",
+  "id": 81
+ },
+ {
+  "description": "COMPRA CARTAO INTERNET FIBRA RAPIDA CURITIBA",
+  "type": "expense",
+  "category": "Contas e serviços",
+  "id": 82
+ },
+ {
+  "description": "Compra Debito Telefonia Celular Mais Sao Paulo Br",
+  "type": "expense",
+  "category": "Contas e serviços",
+  "id": 83
+ },
+ {
+  "description": "TELEFONIA CELULAR MAIS",
+  "type": "expense",
+  "category": "Contas e serviços",
+  "id": 84
+ },
+ {
+  "description": "COMPRA DEBITO CONDOMINIO RES JARDINS",
+  "type": "expense",
+  "category": "Moradia",
+  "id": 85
+ },
+ {
+  "description": "Pag*Condominio Res Jardins Curitiba",
+  "type": "expense",
+  "category": "Moradia",
+  "id": 86
+ },
+ {
+  "description": "DEB AUT IPTU PREFEITURA PARC SAO PAULO BR",
+  "type": "expense",
+  "category": "Impostos e taxas",
+  "id": 87
+ },
+ {
+  "description": "IPTU PREFEITURA PARC CURITIBA",
+  "type": "expense",
+  "category": "Impostos e taxas",
+  "id": 88
+ },
+ {
+  "description": "COMPRA CARTAO TARIFA PACOTE SERVICOS CURITIBA",
+  "type": "expense",
+  "category": "Impostos e taxas",
+  "id": 89
+ },
+ {
+  "description": "TARIFA PACOTE SERVICOS BELO HORIZONT",
+  "type": "expense",
+  "category": "Impostos e taxas",
+  "id": 90
+ },
+ {
+  "description": "PIX ENVIADO MARIA S OLIVEIRA",
+  "type": "expense",
+  "category": "Outros",
+  "id": 91
+ },
+ {
+  "description": "PIX RECEBIDO MARIA S OLIVEIRA",
+  "type": "income",
+  "category": "Outras receitas",
+  "id": 92
+ },
+ {
+  "description": "PIX ENVIADO JOAO P SANTOS",
+  "type": "expense",
+  "category": "Outros",
+  "id": 93
+ },
+ {
+  "description": "PIX RECEBIDO JOAO P SANTOS",
+  "type": "income",
+  "category": "Outras receitas",
+  "id": 94
+ },
+ {
+  "description": "PIX ENVIADO ANA CAROLINA LIMA",
+  "type": "expense",
+  "category": "Outros",
+  "id": 95
+ },
+ {
+  "description": "PIX RECEBIDO ANA CAROLINA LIMA",
+  "type": "income",
+  "category": "Outras receitas",
+  "id": 96
+ },
+ {
+  "description": "PIX ENVIADO PEDRO H COSTA",
+  "type": "expense",
+  "category": "Outros",
+  "id": 97
+ },
+ {
+  "description": "PIX RECEBIDO PEDRO H COSTA",
+  "type": "income",
+  "category": "Outras receitas",
+  "id": 98
+ },
+ {
+  "description": "PIX ENVIADO LUCIANA M ROCHA",
+  "type": "expense",
+  "category": "Outros",
+  "id": 99
+ },
+ {
+  "description": "PIX RECEBIDO LUCIANA M ROCHA",
+  "type": "income",
+  "category": "Outras receitas",
+  "id": 100
+ },
+ {
+  "description": "PIX ENVIADO CARLOS E SOUZA",
+  "type": "expense",
+  "category": "Outros",
+  "id": 101
+ },
+ {
+  "description": "PIX RECEBIDO CARLOS E SOUZA",
+  "type": "income",
+  "category": "Outras receitas",
+  "id": 102
+ },
+ {
+  "description": "PIX ENVIADO FERNANDA ALVES",
+  "type": "expense",
+  "category": "Outros",
+  "id": 103
+ },
+ {
+  "description": "PIX RECEBIDO FERNANDA ALVES",
+  "type": "income",
+  "category": "Outras receitas",
+  "id": 104
+ },
+ {
+  "description": "PIX ENVIADO RAFAEL G PEREIRA",
+  "type": "expense",
+  "category": "Outros",
+  "id": 105
+ },
+ {
+  "description": "PIX RECEBIDO RAFAEL G PEREIRA",
+  "type": "income",
+  "category": "Outras receitas",
+  "id": 106
+ },
+ {
+  "description": "SALARIO EMPRESA ALFA TECNOLOGIA LTDA",
+  "type": "income",
+  "category": "Salário",
+  "id": 107
+ },
+ {
+  "description": "CRED SALARIO EMPRESA",
+  "type": "income",
+  "category": "Salário",
+  "id": 108
+ },
+ {
+  "description": "SALARIO COMERCIO BETA SA",
+  "type": "income",
+  "category": "Salário",
+  "id": 109
+ },
+ {
+  "description": "CRED SALARIO COMERCIO",
+  "type": "income",
+  "category": "Salário",
+  "id": 110
+ },
+ {
+  "description": "SALARIO INSTITUTO GAMA",
+  "type": "income",
+  "category": "Salário",
+  "id": 111
+ },
+ {
+  "description": "CRED SALARIO INSTITUTO",
+  "type": "income",
+  "category": "Salário",
+  "id": 112
+ },
+ {
+  "description": "PIX RECEBIDO REEMBOLSO ALMOCO",
+  "type": "income",
+  "category": "Outras receitas",
+  "id": 113
+ },
+ {
+  "description": "TED RECEBIDA CLIENTE PROJETO SITE",
+  "type": "income",
+  "category": "Freelance",
+  "id": 114
+ },
+ {
+  "description": "PAGTO NF SERVICOS DESIGN",
+  "type": "income",
+  "category": "Freelance",
+  "id": 115
+ },
+ {
+  "description": "RESGATE CDB LIQUIDEZ",
+  "type": "income",
+  "category": "Investimentos",
+  "id": 116
+ },
+ {
+  "description": "DIVIDENDOS FII XPTO11",
+  "type": "income",
+  "category": "Investimentos",
+  "id": 117
+ },
+ {
+  "description": "RENDIMENTO POUPANCA",
+  "type": "income",
+  "category": "Investimentos",
+  "id": 118
+ },
+ {
+  "description": "SHELL BOX POSTO",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 119
+ },
+ {
+  "description": "SEM PARAR PEDAGIO",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 120
+ },
+ {
+  "description": "METRO RECARGA BILHETE",
+  "type": "expense",
+  "category": "Transporte",
+  "id": 121
+ },
+ {
+  "description": "DROGASIL 1234",
+  "type": "expense",
+  "category": "Saúde",
+  "id": 122
+ },
+ {
+  "description": "UNIMED MENSALIDADE",
+  "type": "expense",
+  "category": "Saúde",
+  "id": 123
+ },
+ {
+  "description": "DISNEY PLUS",
+  "type": "expense",
+  "category": "Assinaturas",
+  "id": 124
+ },
+ {
+  "description": "APPLE.COM/BILL",
+  "type": "expense",
+  "category": "Assinaturas",
+  "id": 125
+ },
+ {
+  "description": "GOOGLE ONE STORAGE",
+  "type": "expense",
+  "category": "Assinaturas",
+  "id": 126
+ },
+ {
+  "description": "STEAM PURCHASE",
+  "type": "expense",
+  "category": "Lazer",
+  "id": 127
+ },
+ {
+  "description": "BAR DO ZE",
+  "type": "expense",
+  "category": "Restaurantes",
+  "id": 128
+ },
+ {
+  "description": "MC DONALDS 0042",
+  "type": "expense",
+  "category": "Restaurantes",
+  "id": 129
+ },
+ {
+  "description": "ZE DELIVERY BEBIDAS",
+  "type": "expense",
+  "category": "Delivery",
+  "id": 130
+ },
+ {
+  "description": "ALUGUEL APTO 42",
+  "type": "expense",
+  "category": "Moradia",
+  "id": 131
+ },
+ {
+  "description": "IPVA 2026 PARCELA 1",
+  "type": "expense",
+  "category": "Impostos e taxas",
+  "id": 132
+ },
+ {
+  "description": "IOF COMPRA INTERNACIONAL",
+  "type": "expense",
+  "category": "Impostos e taxas",
+  "id": 133
+ },
+ {
+  "description": "ANUIDADE CARTAO",
+  "type": "expense",
+  "category": "Impostos e taxas",
+  "id": 134
+ },
+ {
+  "description": "PETZ FILIAL 22",
+  "type": "expense",
+  "category": "Pets",
+  "id": 135
+ },
+ {
+  "description": "VETERINARIO AMIGO BICHO",
+  "type": "expense",
+  "category": "Pets",
+  "id": 136
+ },
+ {
+  "description": "BOOKING.COM HOTEL",
+  "type": "expense",
+  "category": "Viagem",
+  "id": 137
+ },
+ {
+  "description": "LATAM AIRLINES",
+  "type": "expense",
+  "category": "Viagem",
+  "id": 138
+ },
+ {
+  "description": "ESCOLA PEQUENO SABER MENS",
+  "type": "expense",
+  "category": "Educação",
+  "id": 139
+ },
+ {
+  "description": "UDEMY CURSO ONLINE",
+  "type": "expense",
+  "category": "Educação",
+  "id": 140
+ },
+ {
+  "description": "SHOPEE COMPRA",
+  "type": "expense",
+  "category": "Compras",
+  "id": 141
+ },
+ {
+  "description": "MERCADOLIVRE*VENDEDOR",
+  "type": "expense",
+  "category": "Compras",
+  "id": 142
+ },
+ {
+  "description": "CLARO RESIDENCIAL",
+  "type": "expense",
+  "category": "Contas e serviços",
+  "id": 143
+ },
+ {
+  "description": "COPEL ENERGIA",
+  "type": "expense",
+  "category": "Contas e serviços",
+  "id": 144
+ }
+]

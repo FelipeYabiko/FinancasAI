@@ -386,8 +386,10 @@ def _prepare(db: Session, name: str, args: dict) -> Prepared:
             category_id=cat.id if cat else None,
         )
         verb = "Receita" if tx_type == "income" else "Despesa"
-        summary = (f"{verb} de {format_brl(data.amount_cents)} — “{data.description}” em "
-                   f"{data.date.strftime('%d/%m/%Y')}, conta {acc.name}, categoria {_cat_name(db, data.category_id)}")  # fmt: skip
+        summary = (
+            f"{verb} de {format_brl(data.amount_cents)} — “{data.description}” em "
+            f"{data.date.strftime('%d/%m/%Y')}, conta {acc.name}, categoria {_cat_name(db, data.category_id)}"
+        )
         return Prepared(name, data.model_dump(mode="json"), summary)
 
     if name == "create_installment_purchase":
@@ -402,10 +404,12 @@ def _prepare(db: Session, name: str, args: dict) -> Prepared:
             category_id=cat.id if cat else None,
         )
         parts = split_amount(data.total_cents, data.installments)
-        summary = (f"Compra parcelada “{data.description}”: {format_brl(data.total_cents)} em "
-                   f"{data.installments}x de {format_brl(parts[0])}"
-                   f"{f' (última {format_brl(parts[-1])})' if parts[-1] != parts[0] else ''}"
-                   f" na conta {acc.name}, a partir de {data.date.strftime('%d/%m/%Y')}")  # fmt: skip
+        summary = (
+            f"Compra parcelada “{data.description}”: {format_brl(data.total_cents)} em "
+            f"{data.installments}x de {format_brl(parts[0])}"
+            f"{f' (última {format_brl(parts[-1])})' if parts[-1] != parts[0] else ''}"
+            f" na conta {acc.name}, a partir de {data.date.strftime('%d/%m/%Y')}"
+        )
         return Prepared(name, data.model_dump(mode="json"), summary)
 
     if name == "create_transfer":
@@ -420,8 +424,10 @@ def _prepare(db: Session, name: str, args: dict) -> Prepared:
             amount_cents=_cents(args.get("amount_cents"), "amount_cents"),
             description=str(args.get("description") or "Transferência"),
         )
-        summary = (f"Transferência de {format_brl(data.amount_cents)} de {src.name} para {dst.name} em "
-                   f"{data.date.strftime('%d/%m/%Y')}")  # fmt: skip
+        summary = (
+            f"Transferência de {format_brl(data.amount_cents)} de {src.name} para {dst.name} em "
+            f"{data.date.strftime('%d/%m/%Y')}"
+        )
         return Prepared(name, data.model_dump(mode="json"), summary)
 
     if name == "set_budget":
@@ -471,8 +477,10 @@ def _prepare(db: Session, name: str, args: dict) -> Prepared:
             raise ToolError("informe add_cents ou current_cents")
         if new < 0:
             raise ToolError("o valor da meta não pode ficar negativo")
-        summary = (f"Meta “{goal.name}”: {format_brl(goal.current_cents)} → {format_brl(new)} "
-                   f"de {format_brl(goal.target_cents)}")  # fmt: skip
+        summary = (
+            f"Meta “{goal.name}”: {format_brl(goal.current_cents)} → {format_brl(new)} "
+            f"de {format_brl(goal.target_cents)}"
+        )
         return Prepared(name, {"goal_id": goal.id, "current_cents": new}, summary)
 
     if name == "delete_transaction":
@@ -483,8 +491,11 @@ def _prepare(db: Session, name: str, args: dict) -> Prepared:
         if not tx:
             raise ToolError("transação não encontrada; use query_transactions para achar o id")
         whole = bool(args.get("whole_group")) and bool(tx.installment_group_id)
-        what = (f"todas as {tx.installment_total} parcelas de “{tx.description}”" if whole
-                else f"“{tx.description}” de {format_brl(tx.amount_cents)} em {tx.date.strftime('%d/%m/%Y')}")  # fmt: skip
+        what = (
+            f"todas as {tx.installment_total} parcelas de “{tx.description}”"
+            if whole
+            else f"“{tx.description}” de {format_brl(tx.amount_cents)} em {tx.date.strftime('%d/%m/%Y')}"
+        )
         if tx.transfer_pair_id:
             what += " (e o outro lado da transferência)"
         return Prepared(name, {"transaction_id": tx.id, "whole_group": whole}, f"Apagar {what}")

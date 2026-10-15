@@ -1,0 +1,53 @@
+{
+ "extraction": {
+  "fake:fake": {
+   "f1": 0.8551,
+   "precision": 1.0,
+   "recall": 0.7469,
+   "acc_date": 1.0,
+   "acc_amount": 0.7315,
+   "acc_description": 0.9598,
+   "acc_type": 0.7443,
+   "parse_failure_rate": 0.0,
+   "cost_per_statement_usd": 0.0,
+   "latency_p50_ms": 3,
+   "latency_p95_ms": 5
+  }
+ },
+ "categorization": {
+  "fake:fake": {
+   "accuracy_without_memory": 0.6138,
+   "accuracy_with_memory": 0.6759,
+   "cost_usd": 0.0
+  }
+ },
+ "agent": {
+  "fake:fake": {
+   "pass_rate": 0.0,
+   "tool_accuracy": 0.3913,
+   "args_accuracy": 0.0,
+   "state_accuracy": 0.0,
+   "answer_accuracy": 0.0,
+   "ask_when_ambiguous": 0.0,
+   "confirmation_before_write": 1.0,
+   "avg_steps": 2.0,
+   "cost_per_case_usd": 0.0,
+   "latency_p95_ms": 2
+  }
+ },
+ "baseline": {
+  "regex-baseline": {
+   "f1": 0.8551,
+   "precision": 1.0,
+   "recall": 0.7469,
+   "acc_date": 1.0,
+   "acc_amount": 0.7315,
+   "acc_description": 0.9598,
+   "acc_type": 0.7443,
+   "parse_failure_rate": 0.0,
+   "cost_per_statement_usd": 0.0,
+   "latency_p50_ms": 62,
+   "latency_p95_ms": 154
+  }
+ }
+}

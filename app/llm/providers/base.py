@@ -114,15 +114,20 @@ class OpenAICompatibleProvider:
             except json.JSONDecodeError:
                 args = {"__invalid_json__": raw_args}
             tool_calls.append(
-                ToolCall(id=tc.get("id") or "", name=fn.get("name", ""), arguments=args or {},
-                         raw_arguments=raw_args if isinstance(raw_args, str) else json.dumps(raw_args))
-            )  # fmt: skip
+                ToolCall(
+                    id=tc.get("id") or "",
+                    name=fn.get("name", ""),
+                    arguments=args or {},
+                    raw_arguments=raw_args if isinstance(raw_args, str) else json.dumps(raw_args),
+                )
+            )
         usage = data.get("usage") or {}
         text = msg.get("content") or ""
         estimated = not usage
         in_tok = usage.get("prompt_tokens") or estimate_tokens(json.dumps(messages))
-        out_tok = usage.get("completion_tokens") or estimate_tokens(text + json.dumps(
-            [t.arguments for t in tool_calls]))  # fmt: skip
+        out_tok = usage.get("completion_tokens") or estimate_tokens(
+            text + json.dumps([t.arguments for t in tool_calls])
+        )
         raw = {k: v for k, v in msg.items() if v is not None}
         raw["role"] = "assistant"
         raw.setdefault("content", text)

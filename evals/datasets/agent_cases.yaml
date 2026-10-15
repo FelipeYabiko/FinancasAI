@@ -1,0 +1,153 @@
+# Agent eval cases. Every case starts from the same seeded household (see `seed` below) and the
+# fixed date `today`. Checks:
+#   actions:         write tools the agent must PROPOSE (pending actions), with expected args
+#   read_tools:      at least one of these read tools must be called
+#   ask:             true → the right move is to ask (no pending action, reply has a question)
+#   answer_contains: the reply must contain one of these strings (numbers come from tools)
+#   state:           extra checks on the DB after confirming every proposed action
+today: "2026-10-15"
+seed:
+  accounts:
+    - {name: Conta Corrente, type: checking, initial_balance_cents: 500000}
+    - {name: Nubank, type: credit_card, closing_day: 3, due_day: 10}
+    - {name: Carteira, type: cash, initial_balance_cents: 20000}
+  transactions:
+    - {date: "2026-10-01", description: "SALARIO EMPRESA ALFA", amount_cents: 720000, type: income, account: Conta Corrente, category: Salário}
+    - {date: "2026-10-02", description: "IFOOD *PIZZARIA FORNO", amount_cents: 6890, type: expense, account: Nubank, category: Delivery}
+    - {date: "2026-10-06", description: "IFOOD *RESTAURANTE SABOR", amount_cents: 3450, type: expense, account: Nubank, category: Delivery}
+    - {date: "2026-10-09", description: "RAPPI *BURGER HOUSE", amount_cents: 2000, type: expense, account: Nubank, category: Delivery}
+    - {date: "2026-10-05", description: "SUPERMERCADO BOM PRECO", amount_cents: 41230, type: expense, account: Conta Corrente, category: Mercado}
+    - {date: "2026-10-07", description: "UBER *TRIP", amount_cents: 2370, type: expense, account: Nubank, category: Transporte}
+    - {date: "2026-10-08", description: "CINEMA ESTRELA SHOP", amount_cents: 6400, type: expense, account: Nubank, category: Lazer}
+    - {date: "2026-10-10", description: "NETFLIX.COM", amount_cents: 5590, type: expense, account: Nubank, category: Assinaturas}
+    - {date: "2026-09-03", description: "SALARIO EMPRESA ALFA", amount_cents: 720000, type: income, account: Conta Corrente, category: Salário}
+    - {date: "2026-09-05", description: "SUPERMERCADO BOM PRECO", amount_cents: 38990, type: expense, account: Conta Corrente, category: Mercado}
+    - {date: "2026-09-12", description: "POSTO ESTRELA COMBUSTIVEIS", amount_cents: 25000, type: expense, account: Nubank, category: Transporte}
+    - {date: "2026-09-18", description: "CIA AEREA VOE BEM", amount_cents: 129900, type: expense, account: Nubank, category: Viagem}
+    - {date: "2026-09-20", description: "UBER *TRIP", amount_cents: 4100, type: expense, account: Nubank, category: Transporte}
+  budgets:
+    - {category: Delivery, month: "2026-10", limit_cents: 40000}
+  goals:
+    - {name: Viagem, target_cents: 500000, current_cents: 120000}
+
+cases:
+  - id: expense_yesterday_card
+    message: "gastei 45 no mercado ontem no Nubank"
+    actions:
+      - {tool: create_transaction, args: {date: "2026-10-14", amount_cents: 4500, type: expense, account: Nubank, category: Mercado}}
+  - id: delivery_this_month
+    message: "quanto gastei com delivery esse mês?"
+    read_tools: [get_summary, query_transactions]
+    answer_contains: ["123,40"]
+  - id: tv_installments
+    message: "comprei uma TV de 3 mil em 10x no cartão"
+    actions:
+      - {tool: create_installment_purchase, args: {date: "2026-10-15", total_cents: 300000, installments: 10, account: Nubank}}
+    state: {transactions_with_text: {TV: 10}}
+  - id: freelance_income
+    message: "recebi 2500 de freela hoje na conta corrente"
+    actions:
+      - {tool: create_transaction, args: {date: "2026-10-15", amount_cents: 250000, type: income, account: Conta Corrente, category: Freelance}}
+  - id: uber_today_card
+    message: "paguei 32,90 de uber hoje no cartão"
+    actions:
+      - {tool: create_transaction, args: {date: "2026-10-15", amount_cents: 3290, type: expense, account: Nubank, category: Transporte}}
+  - id: ambiguous_account
+    message: "gastei 50 na farmácia"
+    ask: true
+  - id: pay_invoice_transfer
+    message: "transferi 800 da conta corrente pro nubank pra pagar a fatura hoje"
+    actions:
+      - {tool: create_transfer, args: {date: "2026-10-15", amount_cents: 80000, from_account: Conta Corrente, to_account: Nubank}}
+  - id: set_budget_market
+    message: "define um orçamento de 600 para mercado esse mês"
+    actions:
+      - {tool: set_budget, args: {category: Mercado, month: "2026-10", limit_cents: 60000}}
+  - id: create_goal
+    message: "cria uma meta de 10 mil para reserva de emergência"
+    actions:
+      - {tool: create_goal, args: {target_cents: 1000000}}
+  - id: update_goal_add
+    message: "guardei mais 300 na meta viagem"
+    actions:
+      - {tool: update_goal, args: {goal: Viagem}}
+    state: {goal_current: {Viagem: 150000}}
+  - id: delete_cinema
+    message: "apaga a transação do cinema"
+    actions:
+      - {tool: delete_transaction, args: {transaction_text: CINEMA}}
+    state: {transactions_with_text: {CINEMA: 0}}
+  - id: balance_checking
+    message: "qual meu saldo na conta corrente?"
+    answer_contains: ["18.597,80"]
+  - id: spent_september
+    message: "quanto gastei em setembro?"
+    read_tools: [get_summary, query_transactions]
+    answer_contains: ["1.979,90"]
+  - id: biggest_expenses_month
+    message: "qual foi meu maior gasto esse mês?"
+    read_tools: [get_summary, query_transactions]
+    answer_contains: ["412,30", "SUPERMERCADO", "Supermercado", "Mercado"]
+  - id: missing_amount
+    message: "gastei dinheiro no mercado"
+    ask: true
+  - id: ambiguous_delete
+    message: "apaga a compra do ifood"
+    ask: true
+  - id: phone_installments_yesterday
+    message: "comprei um celular de 2.400 em 12 vezes no nubank ontem"
+    actions:
+      - {tool: create_installment_purchase, args: {date: "2026-10-14", total_cents: 240000, installments: 12, account: Nubank}}
+  - id: cash_lunch
+    message: "lança um almoço de 38 reais hoje, paguei em dinheiro"
+    actions:
+      - {tool: create_transaction, args: {date: "2026-10-15", amount_cents: 3800, type: expense, account: Carteira, category: Restaurantes}}
+  - id: budget_remaining
+    message: "quanto ainda posso gastar de delivery esse mês sem estourar o orçamento?"
+    read_tools: [get_summary, query_transactions]
+    answer_contains: ["276,60"]
+  - id: change_budget
+    message: "muda o orçamento de delivery desse mês para 500"
+    actions:
+      - {tool: set_budget, args: {category: Delivery, month: "2026-10", limit_cents: 50000}}
+  - id: salary_checking
+    message: "recebi meu salário de 7.200 hoje na conta corrente"
+    actions:
+      - {tool: create_transaction, args: {date: "2026-10-15", amount_cents: 720000, type: income, account: Conta Corrente, category: Salário}}
+  - id: transport_two_months
+    message: "quanto gastei com transporte somando setembro e outubro?"
+    read_tools: [get_summary, query_transactions]
+    answer_contains: ["314,70"]
+  - id: two_expenses
+    message: "gastei 120 no mercado ontem e 80 na farmácia hoje, os dois no nubank"
+    actions:
+      - {tool: create_transaction, args: {date: "2026-10-14", amount_cents: 12000, type: expense, account: Nubank, category: Mercado}}
+      - {tool: create_transaction, args: {date: "2026-10-15", amount_cents: 8000, type: expense, account: Nubank, category: Saúde}}
+  - id: unknown_account
+    message: "transfere 200 da conta corrente pra poupança"
+    ask: true
+  - id: biggest_september
+    message: "qual foi o gasto mais caro de setembro?"
+    read_tools: [get_summary, query_transactions]
+    answer_contains: ["1.299,00"]
+  - id: goal_status_from_context
+    message: "quanto já tenho guardado na meta viagem?"
+    answer_contains: ["1.200,00"]
+  - id: vague_delete_all
+    message: "apaga tudo"
+    ask: true
+  - id: ifood_today
+    message: "gastei 25,50 no ifood hoje no nubank"
+    actions:
+      - {tool: create_transaction, args: {date: "2026-10-15", amount_cents: 2550, type: expense, account: Nubank, category: Delivery}}
+  - id: budget_missing_category
+    message: "coloca 15 mil de orçamento"
+    ask: true
+  - id: flight_installments_date
+    message: "comprei passagem aérea de 1.800 em 3x no cartão no dia 10/10"
+    actions:
+      - {tool: create_installment_purchase, args: {date: "2026-10-10", total_cents: 180000, installments: 3, account: Nubank, category: Viagem}}
+  - id: netflix_how_much
+    message: "quanto pago de netflix?"
+    read_tools: [query_transactions, get_summary]
+    answer_contains: ["55,90"]

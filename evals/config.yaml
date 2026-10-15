@@ -1,0 +1,16 @@
+# Default model line-up for eval runs (provider:model). Names verified against provider docs
+# on 2026-10-15 — re-check before running (models get retired).
+models:
+  - groq:openai/gpt-oss-20b
+  - groq:openai/gpt-oss-120b
+  - gemini:gemini-3.5-flash-lite
+  - gemini:gemini-3.1-flash-lite
+  - openrouter:deepseek/deepseek-v4-flash
+  - openrouter:qwen/qwen3.7-flash
+# Small subset run in CI when a key is available (cost: a few cents)
+ci_models:
+  - groq:openai/gpt-oss-20b
+# Regression thresholds: a metric is flagged when it gets worse by more than this
+regression:
+  rate_drop: 0.03        # absolute drop for accuracy-like metrics (0..1)
+  cost_increase: 0.5     # relative increase for cost/latency (+50%)

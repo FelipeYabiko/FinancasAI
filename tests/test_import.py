@@ -84,8 +84,10 @@ def test_chunk_limit_warns():
 
 
 def test_boilerplate_removed_only_on_repeat():
-    pages = [["BANCO X", "Data Hist Valor", "01/01 A 10,00", "pag 1"],
-             ["BANCO X", "Data Hist Valor", "02/01 B 10,00", "pag 2"]]  # fmt: skip
+    pages = [
+        ["BANCO X", "Data Hist Valor", "01/01 A 10,00", "pag 1"],
+        ["BANCO X", "Data Hist Valor", "02/01 B 10,00", "pag 2"],
+    ]
     out, removed = strip_repeated_boilerplate(pages)
     assert out[1] == ["02/01 B 10,00"]
     assert "01/01 A 10,00" in out[0]
@@ -99,8 +101,9 @@ def test_baseline_parser_trailing_sign_and_saldo():
         2026,
     )
     assert [(r["date"], r["amount_cents"], r["type"]) for r in rows] == [
-        ("2026-09-03", -1599, "expense"), ("2026-09-04", 100000, "income"),
-    ]  # fmt: skip
+        ("2026-09-03", -1599, "expense"),
+        ("2026-09-04", 100000, "income"),
+    ]
 
 
 # ---------- step 5: categorization ----------
@@ -120,8 +123,11 @@ def test_categorize_memory_first_then_llm():
     ]
     run = categorize(items, cats, {"padaria pao dourado": 1}, LLMClient(), "fake", "fake")
     assert [(r.category_id, r.source) for r in run.results] == [
-        (1, "memory"), (2, "llm"), (None, "none"), (None, "none"),
-    ]  # fmt: skip
+        (1, "memory"),
+        (2, "llm"),
+        (None, "none"),
+        (None, "none"),
+    ]
     assert len(fake.calls) == 1
     assert "PADARIA" not in fake.calls[0]["messages"][1]["content"]  # memory hit never sent
 

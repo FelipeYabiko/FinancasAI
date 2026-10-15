@@ -64,9 +64,17 @@ def test_split_amount_invalid():
 def test_plan_installments_consecutive_invoices_across_year():
     plan = plan_installments(300000, 10, date(2026, 11, 28), closing_day=25)
     assert [p.invoice_month for p in plan] == [
-        "2026-12", "2027-01", "2027-02", "2027-03", "2027-04",
-        "2027-05", "2027-06", "2027-07", "2027-08", "2027-09",
-    ]  # fmt: skip
+        "2026-12",
+        "2027-01",
+        "2027-02",
+        "2027-03",
+        "2027-04",
+        "2027-05",
+        "2027-06",
+        "2027-07",
+        "2027-08",
+        "2027-09",
+    ]
     assert sum(p.amount_cents for p in plan) == 300000
     assert [p.number for p in plan] == list(range(1, 11))
     assert plan[2].date == date(2027, 1, 28)

@@ -212,9 +212,19 @@ def test_ai_test_endpoint_records_llmcall(client, db):
     rows = db.exec(select(LLMCall)).all()
     assert len(rows) == 1
     row = rows[0]
-    assert (row.feature, row.prompt_version, row.input_tokens, row.output_tokens, row.latency_ms) == (
-        "extraction", "ping.v1", 12, 2, 150,
-    )  # fmt: skip
+    assert (
+        row.feature,
+        row.prompt_version,
+        row.input_tokens,
+        row.output_tokens,
+        row.latency_ms,
+    ) == (
+        "extraction",
+        "ping.v1",
+        12,
+        2,
+        150,
+    )
     d = client.get("/api/ai/diagnostics").json()
     assert d["total_calls"] == 1
     assert d["p95_ms"] == 150

@@ -42,13 +42,15 @@ def parse_lines(lines: list[str], reference_year: int | None = None) -> list[dic
             tx_type = "transfer"
         else:
             tx_type = "income" if amount > 0 else "expense"
-        out.append({
-            "date": d.isoformat(),
-            "description": desc,
-            "amount_cents": amount,
-            "type": tx_type,
-            "confidence": 0.9,
-            "installment_number": None,
-            "installment_total": None,
-        })  # fmt: skip
+        out.append(
+            {
+                "date": d.isoformat(),
+                "description": desc,
+                "amount_cents": amount,
+                "type": tx_type,
+                "confidence": 0.9,
+                "installment_number": None,
+                "installment_total": None,
+            }
+        )
     return out

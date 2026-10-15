@@ -62,8 +62,10 @@ def _demo_agent(messages):
         if "preview" in result:
             return f"Preparei: {result['preview']}. Confirme abaixo."
         if "expense_brl" in result:
-            return (f"(modo demonstração, sem IA) Em {result.get('month', 'período')}: receitas "
-                    f"{result['income_brl']}, despesas {result['expense_brl']}.")  # fmt: skip
+            return (
+                f"(modo demonstração, sem IA) Em {result.get('month', 'período')}: receitas "
+                f"{result['income_brl']}, despesas {result['expense_brl']}."
+            )
         return "(modo demonstração) " + str(result.get("error", "ok"))
     text = last["content"].lower()
     m = re.search(
@@ -74,8 +76,12 @@ def _demo_agent(messages):
 
         cents = abs(parse_brl(m.group(1).replace(".", ",")))
         acc = re.search(r"\bno\s+(\w+)\s*$", text)
-        args = {"date": date.today().isoformat(), "description": m.group(2).strip().split(" ")[0].title(),
-                "amount_cents": cents, "type": "expense"}  # fmt: skip
+        args = {
+            "date": date.today().isoformat(),
+            "description": m.group(2).strip().split(" ")[0].title(),
+            "amount_cents": cents,
+            "type": "expense",
+        }
         if acc:
             args["account"] = acc.group(1)
         return {"tool_calls": [{"name": "create_transaction", "arguments": args}]}
@@ -121,10 +127,13 @@ class FakeProvider:
             resp.raw_message = {"role": "assistant", "content": resp.text}
             if resp.tool_calls:
                 resp.raw_message["tool_calls"] = [
-                    {"id": t.id, "type": "function",
-                     "function": {"name": t.name, "arguments": json.dumps(t.arguments)}}
+                    {
+                        "id": t.id,
+                        "type": "function",
+                        "function": {"name": t.name, "arguments": json.dumps(t.arguments)},
+                    }
                     for t in resp.tool_calls
-                ]  # fmt: skip
+                ]
         resp.input_tokens = resp.input_tokens or estimate_tokens(json.dumps(messages))
         resp.output_tokens = resp.output_tokens or estimate_tokens(resp.text or "x")
         resp.latency_ms = resp.latency_ms or 1
