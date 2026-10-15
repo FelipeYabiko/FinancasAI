@@ -6,7 +6,17 @@ from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from app.api import accounts, ai, assistant, auth, dashboard, imports, planning, transactions
+from app.api import (
+    accounts,
+    ai,
+    assistant,
+    auth,
+    dashboard,
+    imports,
+    insights,
+    planning,
+    transactions,
+)
 from app.config import BASE_DIR
 from app.db import init_db
 from app.services.ledger import LedgerError
@@ -58,6 +68,7 @@ for r in (
     ai.router,
     imports.router,
     assistant.router,
+    insights.router,
 ):
     app.include_router(r)
 

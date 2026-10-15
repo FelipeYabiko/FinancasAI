@@ -50,5 +50,9 @@ class CategorizationOutput(BaseModel):
 
 
 class InsightText(BaseModel):
-    title: str = Field(max_length=80)
-    body: str = Field(max_length=400)
+    title: str = Field(max_length=100)
+    body: str = Field(max_length=500)
+
+
+class InsightTexts(BaseModel):
+    items: list[InsightText]

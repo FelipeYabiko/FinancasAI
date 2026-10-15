@@ -12,8 +12,8 @@ To resume in a new session: read this file, then continue with the first phase n
 | 4 — PDF import pipeline + review screen | ✅ done |
 | 5 — Assistant with function calling | ✅ done |
 | 6 — Synthetic generator, eval suites, report | 🟡 harness done — real 3-model run needs API keys |
-| 7 — Insights | ⏳ next |
-| 8 — Docker | ⬜ |
+| 7 — Insights | ✅ done |
+| 8 — Docker | ⏳ next |
 | 9 — MCP server | ⬜ |
 | 10 — README | ⬜ |
 
@@ -121,3 +121,13 @@ To resume in a new session: read this file, then continue with the first phase n
   signs on the in/out-column layout). To finish the acceptance criterion: put `GROQ_API_KEY`,
   `GEMINI_API_KEY`, `OPENROUTER_API_KEY` in `.env` and run
   `uv run python -m evals.run --suite all --skip-unavailable --update-baseline`.
+
+## Phase 7
+- `app/domain/insights.py` (pure, tested): subscription detection (same merchant, ±15% of median, 25–35
+  day gaps, ≥3 charges, still active), category anomalies (current vs 3-month average, ≥30% and ≥ R$ 50),
+  budget pace projection (linear, day the limit is crossed), end-of-month cash forecast (today's balance +
+  future-dated recurring/scheduled entries − card invoices due this month net of payments).
+- `app/services/insights.py`: facts with numbers + deterministic default text; `POST /api/insights/narrate`
+  asks the LLM (`insights.v1`) to rewrite only title/body from the formatted numbers, falling back to the
+  default text on any failure or item-count mismatch.
+- Insights screen with "✨ Escrever com IA" (on demand, so no LLM cost on page load).

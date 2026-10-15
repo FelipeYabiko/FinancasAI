@@ -100,3 +100,8 @@ statement variants. Gains therefore come from normalization quality, not from le
 `evals/report.py` writes the "which model for which feature" paragraph from the latest results (best
 quality vs. cheapest within 2 points). The offline provider is never recommended. No numbers are
 written by hand.
+
+## D22 — Insights: numbers first, LLM as copywriter
+Every number is computed in Python and pre-formatted (`R$ 1.234,56`) before the LLM sees it; the
+prompt forbids new numbers and the response must have one item per fact or it is discarded. Narration
+is on demand, so page loads cost nothing.

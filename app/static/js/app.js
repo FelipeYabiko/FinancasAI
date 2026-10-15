@@ -18,7 +18,7 @@ import * as insights from "./views/insights.js";
 import * as assistant from "./assistant.js";
 
 const routes = { dashboard, transactions, budgets, goals, recurring, settings, import: importView, insights };
-const MONTHLESS = new Set(["goals", "recurring", "settings", "import"]);
+const MONTHLESS = new Set(["goals", "recurring", "settings", "import", "insights"]);
 
 function currentRoute() {
   const name = location.hash.replace(/^#\/?/, "").split("?")[0];
