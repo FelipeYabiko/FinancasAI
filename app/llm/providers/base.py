@@ -32,6 +32,9 @@ def estimate_tokens(text: str) -> int:
     return max(1, len(text) // 4)
 
 
+ECHO_KEYS = {"role", "content", "tool_calls", "extra_content"}
+
+
 class OpenAICompatibleProvider:
     name = "openai-compatible"
     base_url = ""
@@ -89,6 +92,20 @@ class OpenAICompatibleProvider:
         except httpx.HTTPError as exc:
             raise ProviderError(f"erro de rede: {exc}", retryable=True) from exc
         latency_ms = int((time.perf_counter() - started) * 1000)
+        if resp.status_code == 400:
+            failed = self._failed_generation(resp)
+            if failed is not None:
+                # JSON mode: the provider refused an invalid JSON generation. Hand the text to the
+                # client so its schema validation + corrective retry can handle it.
+                return LLMResponse(
+                    text=failed,
+                    input_tokens=estimate_tokens(json.dumps(messages)),
+                    output_tokens=estimate_tokens(failed),
+                    latency_ms=latency_ms,
+                    tokens_estimated=True,
+                    raw_message={"role": "assistant", "content": failed},
+                    finish_reason="json_validate_failed",
+                )
         if resp.status_code >= 400:
             retryable = resp.status_code == 429 or resp.status_code >= 500
             raise ProviderError(
@@ -97,6 +114,16 @@ class OpenAICompatibleProvider:
                 retryable=retryable,
             )
         return self.parse_response(resp.json(), messages, latency_ms)
+
+    @staticmethod
+    def _failed_generation(resp: httpx.Response) -> str | None:
+        try:
+            err = resp.json().get("error") or {}
+        except ValueError:
+            return None
+        if isinstance(err, dict) and err.get("code") == "json_validate_failed":
+            return str(err.get("failed_generation") or "")
+        return None
 
     def parse_response(self, data: dict, messages: list[Message], latency_ms: int) -> LLMResponse:
         if "error" in data and not data.get("choices"):
@@ -128,7 +155,10 @@ class OpenAICompatibleProvider:
         out_tok = usage.get("completion_tokens") or estimate_tokens(
             text + json.dumps([t.arguments for t in tool_calls])
         )
-        raw = {k: v for k, v in msg.items() if v is not None}
+        # Echo back only what the chat-completions API accepts as input. Providers add output-only
+        # fields (e.g. Groq gpt-oss `reasoning`) that are rejected when sent back in the next turn;
+        # `extra_content` carries Gemini thought signatures and must be preserved.
+        raw = {k: v for k, v in msg.items() if v is not None and k in ECHO_KEYS}
         raw["role"] = "assistant"
         raw.setdefault("content", text)
         return LLMResponse(

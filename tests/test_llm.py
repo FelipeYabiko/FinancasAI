@@ -249,3 +249,51 @@ def test_ai_rate_limit(client, monkeypatch):
     codes = [client.post("/api/ai/test/assistant").status_code for _ in range(3)]
     assert codes == [200, 200, 429]
     ratelimit.reset_rate_limits()
+
+
+def test_output_only_fields_are_not_echoed_back():
+    """Groq gpt-oss returns `reasoning`; sending it back in the next turn is rejected."""
+    body = {
+        "choices": [
+            {
+                "message": {
+                    "role": "assistant",
+                    "content": "",
+                    "reasoning": "pensando…",
+                    "tool_calls": [
+                        {
+                            "id": "c1",
+                            "type": "function",
+                            "function": {"name": "get_summary", "arguments": "{}"},
+                        }
+                    ],
+                }
+            }
+        ]
+    }
+    p = GroqProvider("k", http=httpx.Client(transport=_transport(200, body, [])))
+    r = p.chat([{"role": "user", "content": "x"}], "m")
+    assert "reasoning" not in r.raw_message
+    assert r.raw_message["tool_calls"][0]["id"] == "c1"
+
+
+def test_json_validate_failed_goes_to_corrective_retry():
+    body = {
+        "error": {
+            "message": "Failed to generate JSON",
+            "type": "invalid_request_error",
+            "code": "json_validate_failed",
+            "failed_generation": '{"answer": 4',
+        }
+    }
+    seen = []
+    p = GroqProvider("k", http=httpx.Client(transport=_transport(400, body, seen)))
+    r = p.chat([{"role": "user", "content": "x"}], "m", response_schema={"type": "object"})
+    assert r.text == '{"answer": 4'
+    assert r.finish_reason == "json_validate_failed"
+    # other 400s are still errors
+    p = GroqProvider(
+        "k", http=httpx.Client(transport=_transport(400, {"error": {"message": "bad"}}, []))
+    )
+    with pytest.raises(ProviderError):
+        p.chat([{"role": "user", "content": "x"}], "m")

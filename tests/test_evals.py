@@ -150,3 +150,37 @@ def test_report_conclusion_prefers_cheap_model_within_tolerance():
     assert "`a:big` has the best F1" in text  # fake provider is never recommended
     assert "use `b:small` by default" in text
     assert "No real LLM" in conclusion({"fake:fake": ext["fake:fake"]}, {}, {})
+
+
+def test_agent_case_fails_when_turn_errors(cases):
+    """Proposing the right action and then crashing on the next model call is not a pass."""
+    from app.llm.types import ProviderError
+
+    by_id = {c["id"]: c for c in cases["cases"]}
+    _scripted(
+        {
+            "tool_calls": [
+                {
+                    "name": "create_transaction",
+                    "arguments": {
+                        "date": "2026-10-14",
+                        "description": "Mercado",
+                        "amount_cents": 4500,
+                        "type": "expense",
+                        "account": "Nubank",
+                        "category": "Mercado",
+                    },
+                }
+            ]
+        },
+        ProviderError("HTTP 400", 400, False),
+    )
+    r = agent.run_case(
+        ModelSpec("fake", "fake"),
+        by_id["expense_yesterday_card"],
+        cases["seed"],
+        date.fromisoformat(cases["today"]),
+    )
+    assert r["checks"]["turn_completed"] is False
+    assert not r["passed"]
+    assert "400" in r["error"]

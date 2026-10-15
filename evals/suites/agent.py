@@ -152,6 +152,7 @@ def run_case(
         "no_write_before_confirm": no_write_before_confirm,
         "proposed": [p.tool for p in proposed],
         "reply": reply.text[:300],
+        "error": reply.error,
     }
     checks = {}
     expected = case.get("actions") or []
@@ -190,6 +191,8 @@ def run_case(
     if not expected and not case.get("read_tools") and not case.get("ask"):
         checks["no_write"] = not proposed
     checks["confirmation"] = no_write_before_confirm
+    # A turn that died on a provider error is a failure even if a proposal was made before it.
+    checks["turn_completed"] = reply.error is None and not reply.hit_limit
     result["checks"] = checks
     result["passed"] = all(checks.values())
     db.close()
@@ -217,6 +220,8 @@ def run_model(spec: ModelSpec, data: dict, prompt_version: str | None = None) ->
         print(
             f"  {spec.label:45} {case['id']:30} {'PASS' if r['passed'] else 'fail'} {r.get('checks')}"
         )
+        if r.get("error"):
+            print(f"      ⚠ {r['error'][:300]}")
 
     def rate(check):
         vals = [c["checks"][check] for c in cases if check in c.get("checks", {})]

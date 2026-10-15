@@ -158,6 +158,7 @@ def run_model(
                 failed_chunks=run.failed_chunks,
                 latency_ms=run.latency_ms,
                 validation_retries=run.validation_retries,
+                warnings=run.warnings,
             )
         except Exception as exc:  # a model blowing up on one document must not stop the run
             entry.update(
@@ -172,6 +173,8 @@ def run_model(
             f"  {spec.label:45} {entry['id']:14} tp={entry['tp']:3} fp={entry['fp']:3} fn={entry['fn']:3}"
             f" {entry.get('error', '')}"
         )
+        for w in entry.get("warnings", [])[:3]:
+            print(f"      ⚠ {w[:300]}")
     by_layout = defaultdict(list)
     for d in per_doc:
         by_layout[d["layout"]].append(d)

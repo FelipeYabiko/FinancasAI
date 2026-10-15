@@ -61,6 +61,7 @@ class AgentReply:
     cost_usd: float = 0.0
     latency_ms: int = 0
     hit_limit: bool = False
+    error: str | None = None  # provider failure that ended the turn (not shown to the user)
 
 
 def build_context(db: Session, on: date | None = None) -> str:
@@ -153,6 +154,7 @@ def run_agent(
                 temperature=0.1,
             )
         except (ProviderError, LLMConfigError) as exc:
+            reply.error = str(exc)[:500]
             reply.text = f"Não consegui falar com o modelo de IA agora ({exc.__class__.__name__}). Tente de novo em instantes."
             break
         reply.llm_calls += res.calls
