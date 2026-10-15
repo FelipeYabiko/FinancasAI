@@ -12,6 +12,7 @@ from app.llm.types import LLMConfigError, ProviderError
 from app.schemas.llm import ExtractedTransaction, ExtractionOutput
 from app.services.importer.chunking import chunk_lines, strip_repeated_boilerplate
 from app.services.importer.detect import DocumentInfo, detect_document
+from app.services.importer.guards import amounts_in_text, find_injection_markers, is_grounded
 from app.services.importer.pdf_text import PdfText
 
 DOC_TYPE_PT = {
@@ -28,6 +29,8 @@ class ExtractionRun:
     warnings: list[str] = field(default_factory=list)
     chunks: int = 0
     boilerplate_lines_removed: int = 0
+    ungrounded: int = 0  # extracted amounts not present in the source text
+    injection_markers: list[str] = field(default_factory=list)
     failed_chunks: int = 0
     llm_calls: int = 0
     validation_retries: int = 0
@@ -76,6 +79,13 @@ def extract_transactions(
     )
     if info.document_type == "unknown":
         run.warnings.append("tipo de documento não identificado; confira o resultado com atenção")
+    markers = find_injection_markers([ln for c in chunked.chunks for ln in c])
+    run.injection_markers = markers
+    if markers:
+        run.warnings.append(
+            f"o documento contém {len(markers)} linha(s) que parecem instruções para a IA "
+            f"(possível prompt injection), ex.: “{markers[0]}”. Revise com atenção."
+        )
     system, version = load_prompt(
         "extraction", prompt_version.split(".")[-1] if prompt_version else None
     )
@@ -118,8 +128,19 @@ def extract_transactions(
             run.cost_usd += res.cost_usd
             run.input_tokens += res.input_tokens
             run.output_tokens += res.output_tokens
+            # Grounding: an amount that is not in the text the model read was invented.
+            available = amounts_in_text("\n".join(chunked.chunks[idx]))
+            for tx in res.parsed.transactions:
+                if not is_grounded(tx.amount_cents, available):
+                    tx.confidence = min(tx.confidence, 0.3)
+                    run.ungrounded += 1
             run.transactions.extend(res.parsed.transactions)
     run.latency_ms = int((time.perf_counter() - started) * 1000)
+    if run.ungrounded:
+        run.warnings.append(
+            f"{run.ungrounded} transação(ões) com valor que não aparece no documento "
+            "(possível invenção da IA); marcadas como baixa confiança"
+        )
     _sanity_check(run)
     return run
 

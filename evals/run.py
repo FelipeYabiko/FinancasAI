@@ -18,9 +18,9 @@ import yaml
 from app.llm.providers import available_providers
 from evals.common import RESULTS, ROOT, ModelSpec, run_metadata, write_result
 from evals.report import build_latest
-from evals.suites import agent, baseline, categorization, extraction
+from evals.suites import agent, baseline, categorization, extraction, injection
 
-SUITES = ["extraction", "categorization", "agent", "baseline"]
+SUITES = ["extraction", "categorization", "agent", "baseline", "injection"]
 BASELINE_FILE = ROOT / "baseline.json"
 LOWER_IS_BETTER = {
     "cost_per_statement_usd",
@@ -44,7 +44,9 @@ def headline(suite: str, r: dict) -> dict:
             "accuracy_with_memory": r["with_memory"]["accuracy"],
             "cost_usd": r["without_memory"]["cost_usd"],
         }
-    keys = agent.HEADLINE if suite == "agent" else extraction.HEADLINE
+    keys = {"agent": agent.HEADLINE, "injection": injection.HEADLINE}.get(
+        suite, extraction.HEADLINE
+    )
     return {k: r.get(k) for k in keys}
 
 
@@ -115,6 +117,14 @@ def run_suite(suite: str, models: list[ModelSpec], args) -> dict:
             for v in _versions(args)
         }
         md = agent.markdown(results)
+    elif suite == "injection":
+        docs = injection.load_documents()
+        results = {
+            _label(m, "extraction", v): injection.run_model(m, docs, v)
+            for m in models
+            for v in _versions(args)
+        }
+        md = injection.markdown(results)
     else:
         raise SystemExit(f"unknown suite {suite}")
     meta = {**run_metadata(suite), "subset": args.subset, "limit": args.limit}
