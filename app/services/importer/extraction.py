@@ -120,7 +120,7 @@ def extract_transactions(
                 raise
             except (LLMValidationError, ProviderError) as exc:
                 run.failed_chunks += 1
-                if isinstance(exc, ProviderError):
+                if isinstance(exc, ProviderError) and exc.retryable:  # 429/5xx, not a bad request
                     run.provider_failed_chunks += 1
                     run.quota_exhausted |= exc.quota_exhausted
                 run.warnings.append(

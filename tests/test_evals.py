@@ -243,3 +243,14 @@ def test_report_compares_prompt_versions_instead_of_picking_by_f1():
     assert "amount accuracy 0.73" in text and "amount accuracy 1.0" in text
     assert "best F1" not in text  # no winner picked on F1 alone
     assert "Only one LLM" in text
+
+
+def test_agent_case_cut_by_quota_is_skipped_and_stops_the_run(cases):
+    from app.llm.types import ProviderError
+
+    quota = ProviderError("429 tokens per day", 429, True, retry_after=3600)
+    register_provider("fake", FakeProvider(handler=lambda *a: (_ for _ in ()).throw(quota)))
+    data = {**cases, "cases": cases["cases"][:3]}
+    res = agent.run_model(ModelSpec("fake", "fake"), data)
+    assert res["cases"] == 0 and res["cases_skipped"] == 3
+    assert res["pass_rate"] is None  # nothing scored, no 0% pass rate

@@ -186,10 +186,12 @@ def main(argv=None) -> int:
             continue
         results = run_suite(suite, models, args)
         incomplete = {
-            k: r["documents_skipped"] for k, r in results.items() if r.get("documents_skipped")
+            k: r.get("documents_skipped") or r.get("cases_skipped")
+            for k, r in results.items()
+            if r.get("documents_skipped") or r.get("cases_skipped")
         }
         if incomplete:
-            print(f"\n⚠️  {suite}: documents not scored because of provider errors: {incomplete}")
+            print(f"\n⚠️  {suite}: items not scored because of provider errors: {incomplete}")
         flags += compare(suite, results, cfg)
         if args.update_baseline:
             if incomplete:

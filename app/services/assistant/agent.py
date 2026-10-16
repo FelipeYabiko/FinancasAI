@@ -62,6 +62,8 @@ class AgentReply:
     latency_ms: int = 0
     hit_limit: bool = False
     error: str | None = None  # provider failure that ended the turn (not shown to the user)
+    provider_failure: bool = False  # rate limit / outage: says nothing about the model
+    quota_exhausted: bool = False
 
 
 def build_context(db: Session, on: date | None = None) -> str:
@@ -155,6 +157,9 @@ def run_agent(
             )
         except (ProviderError, LLMConfigError) as exc:
             reply.error = str(exc)[:500]
+            # rate limit / outage; a 400 can be our own request's fault and stays a failure
+            reply.provider_failure = isinstance(exc, ProviderError) and exc.retryable
+            reply.quota_exhausted = getattr(exc, "quota_exhausted", False)
             reply.text = f"Não consegui falar com o modelo de IA agora ({exc.__class__.__name__}). Tente de novo em instantes."
             break
         reply.llm_calls += res.calls

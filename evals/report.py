@@ -166,7 +166,16 @@ def build_latest(results_dir: Path) -> Path:
                 )
                 if e
                 else "",
-                f"{a['cases']} cases" if a else "",
+                (
+                    f"{a['cases']} cases"
+                    + (
+                        f" ({a['cases_skipped']} skipped: provider errors)"
+                        if a.get("cases_skipped")
+                        else ""
+                    )
+                )
+                if a
+                else "",
                 f"{len(c.get('without_memory', {}).get('per_category', {}))} categories"
                 if c
                 else "",

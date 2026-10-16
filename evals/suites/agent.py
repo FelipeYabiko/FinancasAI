@@ -154,6 +154,9 @@ def run_case(
         "reply": reply.text[:300],
         "error": reply.error,
     }
+    if reply.provider_failure:
+        # Says nothing about the model: reported, not scored (as in the extraction suite).
+        result["skipped"] = "quota_exhausted" if reply.quota_exhausted else "provider_error"
     checks = {}
     expected = case.get("actions") or []
     if expected:
@@ -201,8 +204,12 @@ def run_case(
 
 def run_model(spec: ModelSpec, data: dict, prompt_version: str | None = None) -> dict:
     today = date.fromisoformat(data["today"])
-    cases = []
+    all_cases = []
+    quota_exhausted = False
     for case in data["cases"]:
+        if quota_exhausted:
+            all_cases.append({"id": case["id"], "passed": False, "skipped": "quota_exhausted"})
+            continue
         try:
             r = run_case(spec, case, data["seed"], today, prompt_version)
         except Exception as exc:
@@ -216,12 +223,18 @@ def run_model(spec: ModelSpec, data: dict, prompt_version: str | None = None) ->
                 "latency_ms": 0,
                 "no_write_before_confirm": True,
             }
-        cases.append(r)
-        print(
-            f"  {spec.label:45} {case['id']:30} {'PASS' if r['passed'] else 'fail'} {r.get('checks')}"
-        )
+        all_cases.append(r)
+        if r.get("skipped"):
+            status = f"SKIPPED ({r['skipped']})"
+        else:
+            status = "PASS" if r["passed"] else "fail"
+        print(f"  {spec.label:45} {case['id']:30} {status} {r.get('checks')}")
         if r.get("error"):
             print(f"      ⚠ {r['error'][:300]}")
+        if r.get("skipped") == "quota_exhausted":
+            quota_exhausted = True
+            print("  ⚠ provider quota exhausted: remaining cases are skipped, not scored")
+    cases = [c for c in all_cases if not c.get("skipped")]
 
     def rate(check):
         vals = [c["checks"][check] for c in cases if check in c.get("checks", {})]
@@ -230,6 +243,7 @@ def run_model(spec: ModelSpec, data: dict, prompt_version: str | None = None) ->
     lat = [c["latency_ms"] for c in cases]
     return {
         "cases": len(cases),
+        "cases_skipped": len(all_cases) - len(cases),
         "pass_rate": ratio(sum(c["passed"] for c in cases), len(cases)),
         "tool_accuracy": rate("tool"),
         "args_accuracy": rate("args"),
@@ -245,7 +259,7 @@ def run_model(spec: ModelSpec, data: dict, prompt_version: str | None = None) ->
         else 0,
         "latency_p50_ms": p50(lat),
         "latency_p95_ms": p95(lat),
-        "per_case": cases,
+        "per_case": all_cases,
     }
 
 
