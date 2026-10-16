@@ -33,7 +33,8 @@ def load_cases(
     data = yaml.safe_load(path.read_text())
     cases = data["cases"]
     if subset == "ci":
-        cases = cases[:6]
+        # first 6 (writes, questions, one ambiguous) + the prompt-injection cases
+        cases = cases[:6] + [c for c in cases[6:] if c["id"].startswith("injection_")]
     data["cases"] = cases[:limit] if limit else cases
     return data
 

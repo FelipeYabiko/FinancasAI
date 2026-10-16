@@ -87,7 +87,7 @@ flowchart LR
 ## Evaluation
 
 > **Status:** one real model measured so far, `groq:openai/gpt-oss-20b`, on the CI subset (4 statements, one
-> per layout, plus 6 agent cases), with two extraction prompt versions compared side by side. The full 40-statement run doesn't fit
+> per layout, plus 6 agent cases; the agent subset now also includes the 2 injection cases), with two extraction prompt versions compared side by side. The full 40-statement run doesn't fit
 > Groq's free-tier daily token quota (a first attempt ran out of quota after ~30 statements), so it and the
 > multi-model comparison (Gemini, OpenRouter) are still pending. Every number below comes from
 > `evals/results/`; none is hand-written.
