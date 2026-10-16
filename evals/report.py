@@ -35,9 +35,35 @@ def _pick(
     return best, cheapest
 
 
+def _base(label: str) -> str:
+    return label.split(" @")[0]  # "model @extraction.v2" → "model"
+
+
+def prompt_comparison(ext: dict) -> str | None:
+    """Side-by-side prompt versions of the same model: report the trade-off, don't pick by F1 alone
+    (F1 matches on |amount|, so sign errors only show up in amount accuracy)."""
+    versioned = {k: v for k, v in ext.items() if " @" in k}
+    if len(versioned) < 2:
+        return None
+    bits = [
+        f"`{k.split(' @')[1]}` F1 {v['f1']}, precision {v['precision']}, recall {v['recall']}, "
+        f"amount accuracy {v['acc_amount']}, US$ {v['cost_per_statement_usd']}/statement"
+        for k, v in versioned.items()
+    ]
+    return (
+        f"**Extraction prompts** (`{_base(next(iter(versioned)))}`, same statements): "
+        + "; ".join(bits)
+        + ". The default prompt and the reasoning behind it are in `docs/decisions.md`."
+    )
+
+
 def conclusion(ext: dict, cat: dict, ag: dict) -> str:
     parts = []
-    llms = sorted({k for k in (*ext, *cat, *ag) if _is_llm(k)})
+    llms = sorted({_base(k) for k in (*ext, *cat, *ag) if _is_llm(k)})
+    versions = prompt_comparison(ext)
+    if versions:
+        parts.append(versions)
+        ext = {k: v for k, v in ext.items() if " @" not in k}
     if len(llms) == 1:
         m = llms[0]
         bits = []
@@ -51,11 +77,13 @@ def conclusion(ext: dict, cat: dict, ag: dict) -> str:
             bits.append(f"categorization accuracy {cat[m]['without_memory']['accuracy']}")
         if m in ag:
             bits.append(f"agent pass rate {ag[m]['pass_rate']} on {ag[m]['cases']} cases")
-        return (
-            f"Only one LLM has been evaluated so far: `{m}` — {'; '.join(bits)}. "
-            "No model choice can be made from a single data point; the multi-model comparison is pending "
-            "(run `uv run python -m evals.run --suite all` with keys for other providers)."
+        single = (
+            f"Only one LLM has been evaluated so far: `{m}`"
+            + (f" — {'; '.join(bits)}" if bits else "")
+            + ". No model choice can be made from a single data point; the multi-model comparison is "
+            "pending (run `uv run python -m evals.run --suite all` with keys for other providers)."
         )
+        return "\n\n".join([*parts, single])
     if ext:
         pick = _pick(ext, "f1", "cost_per_statement_usd")
         if pick:

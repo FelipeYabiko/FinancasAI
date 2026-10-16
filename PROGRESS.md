@@ -190,3 +190,10 @@ To resume in a new session: read this file, then continue with the first phase n
 - `docker-compose.yml` runs app + alerts-service + RabbitMQ + MongoDB; `k8s/` manifests (Kustomize, probes,
   StatefulSets, template Secret) validated by kubeconform in CI; CI builds and tests the Java service.
 - README: skills map, event-driven section, injection section, alerts screenshot.
+
+## extraction.v2 measured and adopted
+- First full attempt (40 statements × 2 prompts) exhausted the free daily quota; rate-limited chunks were being
+  scored as misses → fixed (D27): skipped documents, fail-fast on quota, no baseline update from partial runs.
+- Subset run (4 statements, same run): v1 F1 0.970 / amount acc 0.73; v2 F1 0.962 / amount acc 1.00 (sign right
+  on 39/39 trailing-minus rows vs 5/39). v2 is the default (D28); baseline updated to v2.
+- Report now presents prompt-version comparisons as a trade-off instead of picking a winner by F1.

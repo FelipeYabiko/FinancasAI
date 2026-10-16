@@ -87,44 +87,50 @@ flowchart LR
 ## Evaluation
 
 > **Status:** one real model measured so far, `groq:openai/gpt-oss-20b`, on the CI subset (4 statements, one
-> per layout, plus 6 agent cases), re-run by GitHub Actions on `main`. The full 40-statement run doesn't fit
+> per layout, plus 6 agent cases), with two extraction prompt versions compared side by side. The full 40-statement run doesn't fit
 > Groq's free-tier daily token quota (a first attempt ran out of quota after ~30 statements), so it and the
 > multi-model comparison (Gemini, OpenRouter) are still pending. Every number below comes from
 > `evals/results/`; none is hand-written.
 
 ### Current results (CI subset)
 
-| model | eval set | extraction F1 | precision / recall | amount acc. | cost / statement | p95 / statement | agent pass rate | cost / agent case |
-|---|---|---|---|---|---|---|---|---|
-| `groq:openai/gpt-oss-20b` | 4 PDFs · 6 cases | **0.925** | 1.00 / 0.86 | 0.71 | US$ 0.0007 | 22.8 s | **6/6** | US$ 0.0003 |
-| regex baseline (no LLM) | same 4 PDFs | 0.867 | 1.00 / 0.76 | 0.77 | $0 | 0.1 s | — | — |
+| model / prompt | eval set | extraction F1 | precision / recall | amount acc. | cost / statement | agent pass rate | cost / agent case |
+|---|---|---|---|---|---|---|---|
+| `gpt-oss-20b` · `extraction.v2` (**default**) | 4 PDFs | 0.962 | 0.98 / 0.94 | **1.00** | US$ 0.0008 | — | — |
+| `gpt-oss-20b` · `extraction.v1` | same 4 PDFs, same run | **0.970** | 1.00 / 0.94 | 0.73 | US$ 0.0007 | — | — |
+| `gpt-oss-20b` · `assistant.v1` | 6 cases | — | — | — | — | **6/6** | US$ 0.0003 |
+| regex baseline (no LLM) | same 4 PDFs | 0.867 | 1.00 / 0.76 | 0.77 | $0 | — | — |
 
-Per layout (F1):
+Per layout (F1 · amount accuracy):
 
 | | aurora (checking, signed column) | ipe (checking, `150,00-`, 2-line descriptions) | lume (card invoice, `12 MAR`, installments) | maré (checking, in/out columns) |
 |---|---|---|---|---|
-| `gpt-oss-20b` | 1.00 | 0.95 | 0.69 | 1.00 |
-| regex baseline | 1.00 | 1.00 | 0.00 | 1.00 |
+| `extraction.v2` | 1.00 · 1.00 | 0.95 · **1.00** | 0.90 · 1.00 | 1.00 · 1.00 |
+| `extraction.v1` | 1.00 · 1.00 | 0.95 · **0.13** | 0.93 · 1.00 | 1.00 · 1.00 |
+| regex baseline | 1.00 · 1.00 | 1.00 · 1.00 | 0.00 · — | 1.00 · 0.17 |
 
 What the numbers say:
 
-- **The LLM reads layouts the regex can't:** the card invoice goes from F1 0.00 to 0.69. On the in/out-column
-  layout the regex finds every row but gets the sign wrong on 81% of them (full 40-PDF set); the LLM got every
-  sign right on that layout's subset statement.
-- **Its weak spot is the trailing minus sign:** on the `150,00-` layout only 13% of the amounts came out with
-  the right sign (amount accuracy 0.13), even though 91% of the rows were found. This is the first target
-  for `extraction.v2`.
-- **Invoice recall is the other gap:** 0.53 on the card invoice (precision 1.00: what it extracts is right,
-  but it misses rows).
-- **Runs vary:** the run before this one (no change to the extraction code) scored F1 0.958; this one 0.925. Single runs on 4
-  documents are noisy, which is why the full 40-statement set matters.
+- **`extraction.v2` fixed the sign errors it was written for.** On the trailing-minus layout (`150,00-`) v1
+  got the sign right on 5 of 39 rows; v2 on 39 of 39. F1 can't see this, because transactions are matched on
+  |amount|, which is why amount accuracy is reported next to it. F1 is a tie (0.962 vs 0.970: v2 added 2
+  false positives on the invoice, one of them already flagged by the grounding check). A wrong sign turns an
+  expense into income, so v2 is the default ([D28](docs/decisions.md)).
+- **The LLM reads layouts the regex can't:** the card invoice goes from F1 0.00 to 0.90+. On the in/out-column
+  layout the regex finds every row but gets the sign wrong on most of them; the LLM gets all of them right.
+- **Runs vary a lot on 4 documents:** v1 scored 0.925 and 0.958 in earlier runs, 0.970 in this one (invoice
+  recall 0.53 → 0.88). Differences of a few F1 points between single runs aren't signal; the 39/39 vs 5/39
+  sign result is.
+- **Latency isn't comparable between the two prompts here:** with Groq's free tier (8k tokens/min) and one
+  chunk at a time, the second version run mostly waits on `retry-after`.
 - **Agent:** right tool, arguments and final state in every write case; it asked "qual conta?" in the
   ambiguous case; nothing was written before confirmation; the spending answer (R$ 123,40) came from
   `get_summary`.
-- **Getting there took four fixes**, all found by the evals and now covered by tests: echoing
-  output-only fields (`reasoning`) back to the API, Groq's 8k tokens/min free-tier limit (now honoring
-  `retry-after`), JSON-mode `json_validate_failed` errors, and empty answers from the reasoning model
-  (`reasoning_effort=low`).
+- **Getting there took five fixes**, all found by running evals against the real API and now covered by
+  tests: echoing output-only fields (`reasoning`) back to the API, the 8k tokens/min limit (honoring
+  `retry-after`), JSON-mode `json_validate_failed` errors, empty answers from the reasoning model
+  (`reasoning_effort=low`), and rate-limited chunks being scored as missed transactions (now *skipped*,
+  [D27](docs/decisions.md)).
 
 On the full 40-statement set the regex baseline scores F1 0.855 (1.00 / 1.00 / 0.00 / 1.00 by layout).
 
@@ -151,8 +157,9 @@ CI runs the unit tests and the whole eval harness offline on every push, and a s
 quota) are reported as *skipped*, never scored as misses, and an incomplete run can't update the baseline.
 
 **Prompt versions.** Every `LLMCall` stores its prompt version (`extraction.v1`, `assistant.v1`…). A prompt
-change means a new `vN.md` file, `--prompt-version vN` eval runs, and only then a new default. All prompts
-are still at **v1**; the first v1 → v2 comparison will be `extraction.v2` (trailing-minus signs).
+change means a new `vN.md` file, `--prompt-version v1,v2` eval runs, and only then a new default. Extraction
+is on **v2** (results above); the other prompts are on v1, and `assistant.v2` (an injection rule) is written
+but not yet measured.
 
 ## Event-driven alerts service (Java)
 
@@ -276,9 +283,10 @@ uv run python -m evals.run --suite extraction --models groq:openai/gpt-oss-20b,g
 
 ## Known limitations and next steps
 
-- **Only one model measured, on a 4-statement subset** (see Evaluation). Next: run the full 40-statement set
-  and the 6-model line-up in `evals/config.yaml`, pick per-feature defaults from the data, then write
-  `extraction.v2` for the trailing-minus sign errors and compare before/after.
+- **Only one model measured, on a 4-statement subset** (see Evaluation). The full 40-statement set needs more
+  than Groq's free daily quota. Next: run it (paid tier or spread over days) plus the multi-model line-up in
+  `evals/config.yaml`, pick per-feature defaults from the data, and measure `assistant.v2` and the injection
+  suite on a real model.
 - No OCR: scanned PDFs are rejected with a clear message (out of scope).
 - The synthetic layouts are clean PDFs; real bank statements are messier. `evals/private/` exists so real
   statements with hand-made ground truth can be scored locally without being committed.

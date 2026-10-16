@@ -1,6 +1,6 @@
 # Eval results (latest)
 
-- **extraction**: 2026-10-15T15:16:58+00:00 · commit `b55936d` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1 · subset ci
+- **extraction**: 2026-10-16T10:33:56+00:00 · commit `625d936` · prompts extraction.v1,v2, categorization.v1, assistant.v1, insights.v1 · subset ci
 - **categorization**: 2026-10-15T14:00:50+00:00 · commit `9674aa6` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1
 - **agent**: 2026-10-15T15:19:05+00:00 · commit `b55936d` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1 · subset ci
 - **baseline**: 2026-10-15T16:40:01+00:00 · commit `b55936d` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1 · subset ci
@@ -9,13 +9,17 @@
 
 | model | eval set | extraction F1 | cost / statement (USD) | extraction p95 (ms) | categ. acc | categ. acc + memory | agent pass rate | cost / agent case (USD) |
 |---|---|---|---|---|---|---|---|---|
-| groq:openai/gpt-oss-20b | 4 PDFs / 6 cases | 0.9249 | 0.0007 | 22839 | — | — | 1.00 | 0.0003 |
+| groq:openai/gpt-oss-20b @extraction.v1 | 4 PDFs | 0.9697 | 0.0007 | 23326 | — | — | — | — |
+| groq:openai/gpt-oss-20b @extraction.v2 | 4 PDFs | 0.9624 | 0.0008 | 54679 | — | — | — | — |
 | fake:fake | 19 categories | — | — | — | 0.6138 | 0.6759 | — | — |
+| groq:openai/gpt-oss-20b | 6 cases | — | — | — | — | — | 1.00 | 0.0003 |
 | regex-baseline (no LLM) | 4 PDFs | 0.8667 | 0.0000 | 90 | — | — | — | — |
 
 ## Conclusion
 
-Only one LLM has been evaluated so far: `groq:openai/gpt-oss-20b` — extraction F1 0.9249 on 4 statements (US$ 0.000708/statement, p95 22839 ms); agent pass rate 1.0 on 6 cases. No model choice can be made from a single data point; the multi-model comparison is pending (run `uv run python -m evals.run --suite all` with keys for other providers).
+**Extraction prompts** (`groq:openai/gpt-oss-20b`, same statements): `extraction.v1` F1 0.9697, precision 1.0, recall 0.9412, amount accuracy 0.7344, US$ 0.000708/statement; `extraction.v2` F1 0.9624, precision 0.9846, recall 0.9412, amount accuracy 1.0, US$ 0.000768/statement. The default prompt and the reasoning behind it are in `docs/decisions.md`.
+
+Only one LLM has been evaluated so far: `groq:openai/gpt-oss-20b` — agent pass rate 1.0 on 6 cases. No model choice can be made from a single data point; the multi-model comparison is pending (run `uv run python -m evals.run --suite all` with keys for other providers).
 
 > `fake:fake` is the offline stand-in provider (regex parser for extraction, keyword rules for categorization, a rule-based toy for the agent). It is **not an LLM**; it shows the deterministic floor and proves the harness runs end to end without API keys.
 
@@ -25,13 +29,15 @@ Only one LLM has been evaluated so far: `groq:openai/gpt-oss-20b` — extraction
 
 | model | f1 | precision | recall | acc_date | acc_amount | acc_description | acc_type | parse_failure_rate | cost_per_statement_usd | latency_p50_ms | latency_p95_ms |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| groq:openai/gpt-oss-20b | 0.9249 | 1.00 | 0.8603 | 1.00 | 0.7094 | 1.00 | 1.00 | 0.0000 | 0.0007 | 4279 | 22839 |
+| groq:openai/gpt-oss-20b @extraction.v1 | 0.9697 | 1.00 | 0.9412 | 1.00 | 0.7344 | 1.00 | 1.00 | 0.0000 | 0.0007 | 2796 | 23326 |
+| groq:openai/gpt-oss-20b @extraction.v2 | 0.9624 | 0.9846 | 0.9412 | 1.00 | 1.00 | 1.00 | 1.00 | 0.0000 | 0.0008 | 34120 | 54679 |
 
 F1 by layout:
 
 | model | aurora | ipe | lume | mare |
 |---|---|---|---|---|
-| groq:openai/gpt-oss-20b | 1.00 | 0.9512 | 0.6938 | 1.00 |
+| groq:openai/gpt-oss-20b @extraction.v1 | 1.00 | 0.9512 | 0.9333 | 1.00 |
+| groq:openai/gpt-oss-20b @extraction.v2 | 1.00 | 0.9512 | 0.9032 | 1.00 |
 
 ### Baseline (regex parser, no LLM)
 

@@ -227,3 +227,19 @@ def test_provider_errors_are_skipped_not_scored_as_misses():
     assert agg["documents_skipped"] == 1
     assert agg["recall"] == 0.9  # the 40 rate-limited rows are not counted as misses
     assert aggregate([rate_limited])["f1"] is None  # nothing scored: no number, not 0
+
+
+def test_report_compares_prompt_versions_instead_of_picking_by_f1():
+    from evals.report import conclusion
+
+    def r(f1, amount):
+        return {"f1": f1, "precision": 1.0, "recall": 0.9, "acc_amount": amount,
+                "cost_per_statement_usd": 0.001, "documents": 4, "latency_p95_ms": 100}  # fmt: skip
+
+    text = conclusion(
+        {"groq:x @extraction.v1": r(0.97, 0.73), "groq:x @extraction.v2": r(0.96, 1.0)}, {}, {}
+    )
+    assert "Extraction prompts" in text
+    assert "amount accuracy 0.73" in text and "amount accuracy 1.0" in text
+    assert "best F1" not in text  # no winner picked on F1 alone
+    assert "Only one LLM" in text

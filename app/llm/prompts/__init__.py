@@ -10,7 +10,7 @@ from pathlib import Path
 PROMPTS_DIR = Path(__file__).parent
 
 DEFAULT_VERSIONS = {
-    "extraction": "v1",
+    "extraction": "v2",  # v1 → v2: amount sign 0.73 → 1.00 at equal F1 (D28)
     "categorization": "v1",
     "assistant": "v1",
     "insights": "v1",

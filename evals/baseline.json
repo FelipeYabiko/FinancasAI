@@ -14,17 +14,17 @@
    "latency_p95_ms": 5
   },
   "groq:openai/gpt-oss-20b": {
-   "f1": 0.9249,
-   "precision": 1.0,
-   "recall": 0.8603,
+   "f1": 0.9624,
+   "precision": 0.9846,
+   "recall": 0.9412,
    "acc_date": 1.0,
-   "acc_amount": 0.7094,
+   "acc_amount": 1.0,
    "acc_description": 1.0,
    "acc_type": 1.0,
    "parse_failure_rate": 0.0,
-   "cost_per_statement_usd": 0.000708,
-   "latency_p50_ms": 4279,
-   "latency_p95_ms": 22839
+   "cost_per_statement_usd": 0.000768,
+   "latency_p50_ms": 34120,
+   "latency_p95_ms": 54679
   }
  },
  "categorization": {

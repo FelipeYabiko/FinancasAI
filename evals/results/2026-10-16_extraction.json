@@ -1,0 +1,274 @@
+{
+ "meta": {
+  "suite": "extraction",
+  "timestamp": "2026-10-16T10:33:56+00:00",
+  "git_sha": "625d936",
+  "prompt_versions": {
+   "extraction": "v1,v2",
+   "categorization": "v1",
+   "assistant": "v1",
+   "insights": "v1",
+   "ping": "v1"
+  },
+  "subset": "ci",
+  "limit": null
+ },
+ "results": {
+  "groq:openai/gpt-oss-20b @extraction.v1": {
+   "documents": 4,
+   "documents_skipped": 0,
+   "documents_failed": 0,
+   "precision": 1.0,
+   "recall": 0.9412,
+   "f1": 0.9697,
+   "acc_date": 1.0,
+   "acc_amount": 0.7344,
+   "acc_description": 1.0,
+   "acc_type": 1.0,
+   "acc_installment": 1.0,
+   "parse_failure_rate": 0.0,
+   "cost_per_statement_usd": 0.000708,
+   "latency_p50_ms": 2796,
+   "latency_p95_ms": 23326,
+   "validation_retries": 0,
+   "per_layout": {
+    "aurora": {
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "acc_amount": 1.0
+    },
+    "ipe": {
+     "f1": 0.9512,
+     "precision": 1.0,
+     "recall": 0.907,
+     "acc_amount": 0.1282
+    },
+    "lume": {
+     "f1": 0.9333,
+     "precision": 1.0,
+     "recall": 0.875,
+     "acc_amount": 1.0
+    },
+    "mare": {
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "acc_amount": 1.0
+    }
+   },
+   "per_document": [
+    {
+     "id": "aurora_000",
+     "layout": "aurora",
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "fields": {
+      "date": 32,
+      "amount": 32,
+      "type": 32,
+      "description": 32
+     },
+     "installments": 0,
+     "chunks": 2,
+     "failed_chunks": 0,
+     "latency_ms": 2796,
+     "validation_retries": 0,
+     "warnings": [],
+     "cost_usd": 0.00076
+    },
+    {
+     "id": "ipe_001",
+     "layout": "ipe",
+     "tp": 39,
+     "fp": 0,
+     "fn": 4,
+     "fields": {
+      "date": 39,
+      "amount": 5,
+      "type": 39,
+      "description": 39
+     },
+     "installments": 0,
+     "chunks": 1,
+     "failed_chunks": 0,
+     "latency_ms": 2546,
+     "validation_retries": 0,
+     "warnings": [],
+     "cost_usd": 0.000749
+    },
+    {
+     "id": "lume_002",
+     "layout": "lume",
+     "tp": 28,
+     "fp": 0,
+     "fn": 4,
+     "fields": {
+      "date": 28,
+      "amount": 28,
+      "type": 28,
+      "description": 28,
+      "installment": 3
+     },
+     "installments": 3,
+     "chunks": 1,
+     "failed_chunks": 0,
+     "latency_ms": 17117,
+     "validation_retries": 0,
+     "warnings": [],
+     "cost_usd": 0.000728
+    },
+    {
+     "id": "mare_003",
+     "layout": "mare",
+     "tp": 29,
+     "fp": 0,
+     "fn": 0,
+     "fields": {
+      "date": 29,
+      "amount": 29,
+      "type": 29,
+      "description": 29
+     },
+     "installments": 0,
+     "chunks": 1,
+     "failed_chunks": 0,
+     "latency_ms": 23326,
+     "validation_retries": 0,
+     "warnings": [],
+     "cost_usd": 0.000594
+    }
+   ]
+  },
+  "groq:openai/gpt-oss-20b @extraction.v2": {
+   "documents": 4,
+   "documents_skipped": 0,
+   "documents_failed": 0,
+   "precision": 0.9846,
+   "recall": 0.9412,
+   "f1": 0.9624,
+   "acc_date": 1.0,
+   "acc_amount": 1.0,
+   "acc_description": 1.0,
+   "acc_type": 1.0,
+   "acc_installment": 1.0,
+   "parse_failure_rate": 0.0,
+   "cost_per_statement_usd": 0.000768,
+   "latency_p50_ms": 34120,
+   "latency_p95_ms": 54679,
+   "validation_retries": 0,
+   "per_layout": {
+    "aurora": {
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "acc_amount": 1.0
+    },
+    "ipe": {
+     "f1": 0.9512,
+     "precision": 1.0,
+     "recall": 0.907,
+     "acc_amount": 1.0
+    },
+    "lume": {
+     "f1": 0.9032,
+     "precision": 0.9333,
+     "recall": 0.875,
+     "acc_amount": 1.0
+    },
+    "mare": {
+     "f1": 1.0,
+     "precision": 1.0,
+     "recall": 1.0,
+     "acc_amount": 1.0
+    }
+   },
+   "per_document": [
+    {
+     "id": "aurora_000",
+     "layout": "aurora",
+     "tp": 32,
+     "fp": 0,
+     "fn": 0,
+     "fields": {
+      "date": 32,
+      "amount": 32,
+      "type": 32,
+      "description": 32
+     },
+     "installments": 0,
+     "chunks": 2,
+     "failed_chunks": 0,
+     "latency_ms": 54679,
+     "validation_retries": 0,
+     "warnings": [],
+     "cost_usd": 0.000848
+    },
+    {
+     "id": "ipe_001",
+     "layout": "ipe",
+     "tp": 39,
+     "fp": 0,
+     "fn": 4,
+     "fields": {
+      "date": 39,
+      "amount": 39,
+      "type": 39,
+      "description": 39
+     },
+     "installments": 0,
+     "chunks": 1,
+     "failed_chunks": 0,
+     "latency_ms": 24011,
+     "validation_retries": 0,
+     "warnings": [],
+     "cost_usd": 0.000801
+    },
+    {
+     "id": "lume_002",
+     "layout": "lume",
+     "tp": 28,
+     "fp": 2,
+     "fn": 4,
+     "fields": {
+      "date": 28,
+      "amount": 28,
+      "type": 28,
+      "description": 28,
+      "installment": 2
+     },
+     "installments": 2,
+     "chunks": 1,
+     "failed_chunks": 0,
+     "latency_ms": 34120,
+     "validation_retries": 0,
+     "warnings": [
+      "1 transação(ões) com valor que não aparece no documento (possível invenção da IA); marcadas como baixa confiança"
+     ],
+     "cost_usd": 0.00078
+    },
+    {
+     "id": "mare_003",
+     "layout": "mare",
+     "tp": 29,
+     "fp": 0,
+     "fn": 0,
+     "fields": {
+      "date": 29,
+      "amount": 29,
+      "type": 29,
+      "description": 29
+     },
+     "installments": 0,
+     "chunks": 1,
+     "failed_chunks": 0,
+     "latency_ms": 35045,
+     "validation_retries": 0,
+     "warnings": [],
+     "cost_usd": 0.000645
+    }
+   ]
+  }
+ }
+}

@@ -138,3 +138,12 @@ document with any provider-failed chunk is *skipped* (reported, not scored), a 4
 than a per-minute window (`try again in 1h…`) marks the quota as exhausted and fails fast instead of
 retrying, the eval stops calling the provider for the remaining documents, and an incomplete run can't
 update `baseline.json`. The real-LLM CI job moved to `main` so pushes don't drain the quota.
+
+## D28 — `extraction.v2` becomes the default on a subset result
+Measured side by side on the 4-statement subset (same run, same model): F1 0.962 (v2) vs 0.970 (v1), amount
+accuracy 1.00 vs 0.73; on the trailing-minus layout the sign was right on 39/39 rows vs 5/39. D23 asked for
+the full 40-statement set before switching, but that set doesn't fit the free tier's daily quota, and the
+sign result is not noise: it is the exact failure v2 targets, on every row of that layout. The F1 gap is two
+false positives on one invoice (one already flagged by grounding) and sits inside the run-to-run variation
+seen for v1 (0.925–0.970). A sign error silently flips an expense into income, while an extra row shows up in
+the review screen, so v2 wins on the error that matters. Revisit when the full set is run.
