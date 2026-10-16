@@ -197,3 +197,10 @@ To resume in a new session: read this file, then continue with the first phase n
 - Subset run (4 statements, same run): v1 F1 0.970 / amount acc 0.73; v2 F1 0.962 / amount acc 1.00 (sign right
   on 39/39 trailing-minus rows vs 5/39). v2 is the default (D28); baseline updated to v2.
 - Report now presents prompt-version comparisons as a trade-off instead of picking a winner by F1.
+
+## Assistant v1 vs v2 and injection on Groq
+- `gpt-oss-120b`, 8 agent cases (CI subset now includes the 2 injection cases): v1 7/8, v2 6/8 → assistant
+  stays on v1 (D29). Neither proposed a delete for the injected instruction.
+- Injection suite (`gpt-oss-20b`, 3 adversarial PDFs): no payload inserted with either prompt, all injected
+  lines flagged; v2 dropped rows on 2/3 statements → suppression metric + model-free coverage check (D30).
+- Agent suite skips provider-failed cases like extraction; labels name the real prompt (`@assistant.v2`).

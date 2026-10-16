@@ -2,7 +2,7 @@
 
 - **extraction**: 2026-10-16T10:33:56+00:00 · commit `625d936` · prompts extraction.v1,v2, categorization.v1, assistant.v1, insights.v1 · subset ci
 - **categorization**: 2026-10-15T14:00:50+00:00 · commit `9674aa6` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1
-- **agent**: 2026-10-15T15:19:05+00:00 · commit `b55936d` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1 · subset ci
+- **agent**: 2026-10-16T10:46:29+00:00 · commit `889e56a` · prompts extraction.v2, categorization.v1, assistant.v1,v2, insights.v1 · subset ci
 - **baseline**: 2026-10-15T16:40:01+00:00 · commit `b55936d` · prompts extraction.v1, categorization.v1, assistant.v1, insights.v1 · subset ci
 
 ## Comparison
@@ -12,14 +12,15 @@
 | groq:openai/gpt-oss-20b @extraction.v1 | 4 PDFs | 0.9697 | 0.0007 | 23326 | — | — | — | — |
 | groq:openai/gpt-oss-20b @extraction.v2 | 4 PDFs | 0.9624 | 0.0008 | 54679 | — | — | — | — |
 | fake:fake | 19 categories | — | — | — | 0.6138 | 0.6759 | — | — |
-| groq:openai/gpt-oss-20b | 6 cases | — | — | — | — | — | 1.00 | 0.0003 |
+| groq:openai/gpt-oss-120b @assistant.v1 | 8 cases | — | — | — | — | — | 0.8750 | 0.0006 |
+| groq:openai/gpt-oss-120b @assistant.v2 | 8 cases | — | — | — | — | — | 0.7500 | 0.0007 |
 | regex-baseline (no LLM) | 4 PDFs | 0.8667 | 0.0000 | 90 | — | — | — | — |
 
 ## Conclusion
 
 **Extraction prompts** (`groq:openai/gpt-oss-20b`, same statements): `extraction.v1` F1 0.9697, precision 1.0, recall 0.9412, amount accuracy 0.7344, US$ 0.000708/statement; `extraction.v2` F1 0.9624, precision 0.9846, recall 0.9412, amount accuracy 1.0, US$ 0.000768/statement. The default prompt and the reasoning behind it are in `docs/decisions.md`.
 
-Only one LLM has been evaluated so far: `groq:openai/gpt-oss-20b` — agent pass rate 1.0 on 6 cases. No model choice can be made from a single data point; the multi-model comparison is pending (run `uv run python -m evals.run --suite all` with keys for other providers).
+**Assistant prompts** (`groq:openai/gpt-oss-120b`, same cases): `assistant.v1` passes 0.875 of 8 cases (asks when ambiguous: 1.0, answers right: 0.5, no write before confirmation: 1.0); `assistant.v2` passes 0.75 of 8 cases (asks when ambiguous: 0.0, answers right: 0.5, no write before confirmation: 1.0). The default prompt and the reasoning behind it are in `docs/decisions.md`.
 
 > `fake:fake` is the offline stand-in provider (regex parser for extraction, keyword rules for categorization, a rule-based toy for the agent). It is **not an LLM**; it shows the deterministic floor and proves the harness runs end to end without API keys.
 
@@ -85,7 +86,8 @@ Per-category accuracy (no memory):
 
 | model | pass_rate | tool_accuracy | args_accuracy | state_accuracy | answer_accuracy | ask_when_ambiguous | confirmation_before_write | avg_steps | cost_per_case_usd | latency_p95_ms |
 |---|---|---|---|---|---|---|---|---|---|---|
-| groq:openai/gpt-oss-20b | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.83 | 0.0003 | 1094 |
+| groq:openai/gpt-oss-120b @assistant.v1 | 0.8750 | 1.00 | 1.00 | 1.00 | 0.5000 | 1.00 | 1.00 | 1.88 | 0.0006 | 1058 |
+| groq:openai/gpt-oss-120b @assistant.v2 | 0.7500 | 1.00 | 1.00 | 1.00 | 0.5000 | 0.0000 | 1.00 | 2.00 | 0.0007 | 2336 |
 
 ## Methodology
 

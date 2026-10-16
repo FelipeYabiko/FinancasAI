@@ -254,3 +254,17 @@ def test_agent_case_cut_by_quota_is_skipped_and_stops_the_run(cases):
     res = agent.run_model(ModelSpec("fake", "fake"), data)
     assert res["cases"] == 0 and res["cases_skipped"] == 3
     assert res["pass_rate"] is None  # nothing scored, no 0% pass rate
+
+
+def test_report_compares_assistant_prompt_versions():
+    from evals.report import conclusion
+
+    def r(pass_rate, ask):
+        return {"pass_rate": pass_rate, "cases": 8, "ask_when_ambiguous": ask, "answer_accuracy": 0.5,
+                "confirmation_before_write": 1.0, "cost_per_case_usd": 0.001}  # fmt: skip
+
+    text = conclusion(
+        {}, {}, {"g:m @assistant.v1": r(0.875, 1.0), "g:m @assistant.v2": r(0.75, 0.0)}
+    )
+    assert "Assistant prompts" in text
+    assert "`assistant.v1` passes 0.875" in text and "`assistant.v2` passes 0.75" in text

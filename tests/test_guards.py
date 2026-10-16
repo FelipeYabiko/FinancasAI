@@ -6,8 +6,13 @@ from app.llm.client import LLMClient
 from app.llm.providers import register_provider
 from app.llm.providers.fake import FakeProvider
 from app.llm.types import ProviderError
+from app.services.importer.chunking import strip_repeated_boilerplate
 from app.services.importer.extraction import extract_transactions
-from app.services.importer.guards import amounts_in_text, find_injection_markers
+from app.services.importer.guards import (
+    amounts_in_text,
+    count_candidate_rows,
+    find_injection_markers,
+)
 from app.services.importer.pdf_text import extract_pdf_text
 
 ADV = Path(__file__).resolve().parent.parent / "evals" / "datasets" / "adversarial"
@@ -79,3 +84,30 @@ def test_exhausted_quota_is_reported_as_provider_failure():
     assert run.provider_failed_chunks == run.failed_chunks == run.chunks
     assert run.quota_exhausted
     assert "limite de uso" in run.warnings[0]
+
+
+@pytest.mark.parametrize("name", ["aurora_000", "ipe_001", "lume_002", "mare_003"])
+def test_candidate_rows_match_ground_truth(name):
+    """The model-free row counter agrees with the gold count on every synthetic layout."""
+    import json
+
+    folder = ADV.parent / "extraction"
+    pdf = extract_pdf_text((folder / f"{name}.pdf").read_bytes())
+    pages, _ = strip_repeated_boilerplate(pdf.pages)
+    gold = json.loads((folder / f"{name}.json").read_text())["transactions"]
+    assert count_candidate_rows([ln for p in pages for ln in p]) == len(gold)
+
+
+def test_suppressed_rows_are_flagged():
+    """An injection can also make the model drop rows; the coverage check catches it."""
+    pdf = extract_pdf_text((ADV / "adversarial_ipe.pdf").read_bytes())
+
+    def handler(messages, tools, schema):
+        return {"transactions": [
+            {"date": "2026-03-02", "description": "X", "amount_cents": -1000, "type": "expense", "confidence": 0.9}
+        ]}  # fmt: skip
+
+    register_provider("fake", FakeProvider(handler=handler))
+    run = extract_transactions(pdf, LLMClient(), "fake", "fake")
+    assert run.candidate_rows == 39
+    assert any("linhas com data e valor" in w for w in run.warnings)

@@ -57,6 +57,23 @@ def prompt_comparison(ext: dict) -> str | None:
     )
 
 
+def assistant_prompt_comparison(ag: dict) -> str | None:
+    versioned = {k: v for k, v in ag.items() if " @" in k}
+    if len(versioned) < 2:
+        return None
+    bits = [
+        f"`{k.split(' @')[1]}` passes {v['pass_rate']} of {v['cases']} cases (asks when ambiguous: "
+        f"{v['ask_when_ambiguous']}, answers right: {v['answer_accuracy']}, no write before "
+        f"confirmation: {v['confirmation_before_write']})"
+        for k, v in versioned.items()
+    ]
+    return (
+        f"**Assistant prompts** (`{_base(next(iter(versioned)))}`, same cases): "
+        + "; ".join(bits)
+        + ". The default prompt and the reasoning behind it are in `docs/decisions.md`."
+    )
+
+
 def conclusion(ext: dict, cat: dict, ag: dict) -> str:
     parts = []
     llms = sorted({_base(k) for k in (*ext, *cat, *ag) if _is_llm(k)})
@@ -64,6 +81,11 @@ def conclusion(ext: dict, cat: dict, ag: dict) -> str:
     if versions:
         parts.append(versions)
         ext = {k: v for k, v in ext.items() if " @" not in k}
+    ag_versions = assistant_prompt_comparison(ag)
+    if ag_versions:
+        parts.append(ag_versions)
+        ag = {k: v for k, v in ag.items() if " @" not in k}
+    versions = versions or ag_versions
     if len(llms) == 1:
         m = llms[0]
         bits = []

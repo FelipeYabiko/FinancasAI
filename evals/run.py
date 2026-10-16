@@ -22,6 +22,8 @@ from evals.suites import agent, baseline, categorization, extraction, injection
 
 SUITES = ["extraction", "categorization", "agent", "baseline", "injection"]
 BASELINE_FILE = ROOT / "baseline.json"
+# which prompt a suite exercises (labels like "model @assistant.v2" name the real prompt file)
+PROMPT_FEATURE = {"extraction": "extraction", "agent": "assistant", "injection": "extraction"}
 LOWER_IS_BETTER = {
     "cost_per_statement_usd",
     "cost_per_case_usd",
@@ -86,7 +88,7 @@ def _versions(args) -> list[str | None]:
 
 
 def _label(m: ModelSpec, suite: str, version: str | None) -> str:
-    return m.label if version is None else f"{m.label} @{suite}.{version}"
+    return m.label if version is None else f"{m.label} @{PROMPT_FEATURE[suite]}.{version}"
 
 
 def run_suite(suite: str, models: list[ModelSpec], args) -> dict:
@@ -120,7 +122,7 @@ def run_suite(suite: str, models: list[ModelSpec], args) -> dict:
     elif suite == "injection":
         docs = injection.load_documents()
         results = {
-            _label(m, "extraction", v): injection.run_model(m, docs, v)
+            _label(m, suite, v): injection.run_model(m, docs, v)
             for m in models
             for v in _versions(args)
         }
@@ -129,7 +131,8 @@ def run_suite(suite: str, models: list[ModelSpec], args) -> dict:
         raise SystemExit(f"unknown suite {suite}")
     meta = {**run_metadata(suite), "subset": args.subset, "limit": args.limit}
     if args.prompt_version:
-        meta["prompt_versions"] = {**meta["prompt_versions"], suite: args.prompt_version}
+        feature = PROMPT_FEATURE.get(suite, suite)
+        meta["prompt_versions"] = {**meta["prompt_versions"], feature: args.prompt_version}
     if suite == "categorization":
         meta["items"] = len(items)
     payload = {"meta": meta, "results": results}

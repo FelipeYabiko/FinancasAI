@@ -147,3 +147,21 @@ sign result is not noise: it is the exact failure v2 targets, on every row of th
 false positives on one invoice (one already flagged by grounding) and sits inside the run-to-run variation
 seen for v1 (0.925–0.970). A sign error silently flips an expense into income, while an extra row shows up in
 the review screen, so v2 wins on the error that matters. Revisit when the full set is run.
+
+## D29 — `assistant.v2` measured and not adopted
+`assistant.v2` adds a rule that only the user's messages may request actions. On `gpt-oss-120b`, 8 cases
+including 2 injection cases: v1 7/8, v2 6/8. Both resisted the stored "delete everything" instruction (no
+delete proposed), so the rule bought nothing measurable, and v2 lost the "ask which account" behaviour in the
+ambiguous case. The architectural defense (writes are proposals a human confirms) is what holds; v1 stays.
+Both failed the injection-query case for an unrelated reason (searched the wrong category), which is a
+tool-use weakness to fix separately, not an injection success.
+
+## D30 — Injection by subtraction, and a model-free coverage check
+The injection suite only counted inserted payloads. On Groq, `extraction.v2` inserted none but dropped 12/41
+and 22/39 rows on two adversarial statements (v1 dropped almost none). A missing row is silent in the
+review screen, so it is the worse failure. Now the suite reports suppression, and extraction counts the lines
+that look like transactions (leading date + amount, not a balance/total) without the model: if the model
+returns fewer than 85% of them, the import shows a warning. The counter matches the ground truth exactly on
+all 43 synthetic PDFs; real layouts may differ, which is why it only warns. v2 stays the default: on clean
+statements its recall equals v1's and it fixes the sign errors; the suppression weakness is the next prompt's
+target.

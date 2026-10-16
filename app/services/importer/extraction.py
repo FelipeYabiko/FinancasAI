@@ -12,7 +12,13 @@ from app.llm.types import LLMConfigError, ProviderError
 from app.schemas.llm import ExtractedTransaction, ExtractionOutput
 from app.services.importer.chunking import chunk_lines, strip_repeated_boilerplate
 from app.services.importer.detect import DocumentInfo, detect_document
-from app.services.importer.guards import amounts_in_text, find_injection_markers, is_grounded
+from app.services.importer.guards import (
+    amounts_in_text,
+    count_candidate_rows,
+    find_injection_markers,
+    is_grounded,
+    low_coverage,
+)
 from app.services.importer.pdf_text import PdfText
 
 DOC_TYPE_PT = {
@@ -30,6 +36,7 @@ class ExtractionRun:
     chunks: int = 0
     boilerplate_lines_removed: int = 0
     ungrounded: int = 0  # extracted amounts not present in the source text
+    candidate_rows: int = 0  # lines that look like transactions, counted without the model
     injection_markers: list[str] = field(default_factory=list)
     failed_chunks: int = 0
     provider_failed_chunks: int = (
@@ -83,6 +90,7 @@ def extract_transactions(
     )
     if info.document_type == "unknown":
         run.warnings.append("tipo de documento não identificado; confira o resultado com atenção")
+    run.candidate_rows = count_candidate_rows([ln for c in chunked.chunks for ln in c])
     markers = find_injection_markers([ln for c in chunked.chunks for ln in c])
     run.injection_markers = markers
     if markers:
@@ -146,6 +154,11 @@ def extract_transactions(
     if run.quota_exhausted:
         run.warnings.insert(
             0, "limite de uso do provedor de IA esgotado; tente mais tarde ou troque o modelo"
+        )
+    if low_coverage(len(run.transactions), run.candidate_rows):
+        run.warnings.append(
+            f"o documento tem {run.candidate_rows} linhas com data e valor, mas só "
+            f"{len(run.transactions)} transações foram extraídas; confira se faltou alguma"
         )
     if run.ungrounded:
         run.warnings.append(

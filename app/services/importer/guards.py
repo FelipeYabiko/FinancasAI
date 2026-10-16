@@ -7,7 +7,10 @@ Statement text is external data: a description can carry instructions aimed at t
    A transaction whose value is not in the text was invented (by an injection or a
    hallucination) and is flagged with low confidence for the review screen.
 2. Detection: text that looks like instructions to an AI raises a visible warning.
-3. Architecture: imports are reviewed before saving and the assistant cannot write without a
+3. Coverage: lines that look like transactions (a leading date and an amount) are counted
+   without the model; an extraction that returns far fewer rows is flagged. This catches
+   rows the model skipped, including an injection that suppresses rows instead of adding one.
+4. Architecture: imports are reviewed before saving and the assistant cannot write without a
    human click, so a successful injection still cannot change data silently.
 """
 
@@ -30,6 +33,11 @@ INJECTION_PATTERNS = [
 ]
 _INJECTION_RE = [re.compile(p) for p in INJECTION_PATTERNS]
 
+# "12/05", "12/05/2026" or "12 MAR" at the start of the line
+_ROW_DATE = re.compile(r"^\s*(\d{2}/\d{2}(?:/\d{2,4})?|\d{2}\s+[A-Za-z]{3})\b")
+_NOT_A_ROW = re.compile(r"\b(saldo|total|subtotal|limite|pagamento minimo)\b")
+COVERAGE_MIN = 0.85  # warn when the model returns fewer rows than this share of candidates
+
 
 def amounts_in_text(text: str) -> set[int]:
     """Absolute values (cents) of every BRL-formatted amount in the text."""
@@ -41,6 +49,20 @@ def amounts_in_text(text: str) -> set[int]:
 
 def is_grounded(amount_cents: int, available: set[int]) -> bool:
     return abs(amount_cents) in available
+
+
+def count_candidate_rows(lines: list[str]) -> int:
+    """Lines with a leading date and an amount that aren't balances or totals."""
+    n = 0
+    for line in lines:
+        looks_like_row = _ROW_DATE.search(line) and _MONEY.search(line)
+        if looks_like_row and not _NOT_A_ROW.search(strip_accents(line).lower()):
+            n += 1
+    return n
+
+
+def low_coverage(extracted: int, candidates: int) -> bool:
+    return candidates >= 5 and extracted < COVERAGE_MIN * candidates
 
 
 def find_injection_markers(lines: list[str]) -> list[str]:
